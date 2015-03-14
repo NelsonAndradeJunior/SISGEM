@@ -18,6 +18,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import br.com.sisgem.model.UserEntity;
 import br.com.sisgem.model.repository.IUserRepository;
 
+
 @Named
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
