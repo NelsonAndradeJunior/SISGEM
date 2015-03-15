@@ -6,6 +6,13 @@
 	color: black;
 }
 
+#cadastrofornecedor{
+	font-family: Verdana,sans-serif;
+	color: #004080;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
 #textomenu{
 	font-family: Verdana,sans-serif;
 	color: #004080;
