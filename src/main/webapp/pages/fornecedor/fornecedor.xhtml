@@ -13,48 +13,85 @@
 				<f:facet name="header">
 					<p:row>
 						<p:column>
-							<p:outputLabel value="#{labels.legal_entity_cnpj}: " />
+							<p:outputLabel value="Cod Fornecedor" />
 						</p:column>
 						<p:column>
-							<p:outputLabel value="#{labels.legal_entity_name_fancy}: " />
+							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="Inscrição Estadual" />
 						</p:column>
 						<p:column>
-							<p:outputLabel value="#{labels.legal_entity_corporate_name}: " />
-						</p:column>
-						<p:column>
-							<p:outputLabel
-								value="#{labels.legal_entity_state_registration}: " />
-						</p:column>
-						<p:column>
-							<p:outputLabel value="#{labels.legal_entity_email}: " />
+							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
 						</p:column>
 					</p:row>
+
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Fornecedor" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="CEP" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
+						</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Nome Fantasia" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="Observação" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
+						</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Telefone" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="Contato" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
+						</p:column>
+					</p:row>
+					
+					<p:row>
+						<p:column>
+							<p:outputLabel value="E-mail" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="Endereço" />
+						</p:column>
+						<p:column>
+							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
+						</p:column>
+					</p:row>
+
 				</f:facet>
-				<p:row>
-					<p:column>
-						<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}">
-						</p:inputText>
-					</p:column>
-					<p:column>
-						<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}">
-						</p:inputText>
-					</p:column>
-					<p:column>
-						<p:inputText value="#{pessoaJuridicaAddEditMB.razaoSocialMB}">
-						</p:inputText>
-					</p:column>
-					<p:column>
-						<p:inputText
-							value="#{pessoaJuridicaAddEditMB.inscricaoEstadualMB}">
-
-						</p:inputText>
-					</p:column>
-					<p:column>
-						<p:inputText value="#{pessoaJuridicaAddEditMB.emailMB}">
-
-						</p:inputText>
-					</p:column>
-				</p:row>
 			</p:panelGrid>
 
 		</h:panelGroup>
