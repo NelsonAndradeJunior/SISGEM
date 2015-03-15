@@ -21,17 +21,99 @@
     
     <h:body >    
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="100" resizable="false" closable="false" collapsible="false">
+        
+       
+            
+            <p:layoutUnit position="west" size="200" header="#{labels.menu_name}" resizable="false" closable="false" collapsible="false">
+                <ui:include src="menu.xhtml" />
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="north" size="100" resizable="true" closable="false" collapsible="false">
                 <ui:include src="header.xhtml" />
             </p:layoutUnit>
+            
+<!--            Inicio Menu -->
+
+<p:megaMenu orientation="#{megaMenuView.orientation}" style="margin-top:50px">
+
+    <p:menuitem value="Sistema "  icon="ui-icon-contact" url="http://www.google.com.br" />
+ 
+    <p:submenu label="Cadastro " icon="ui-icon-document">
+     <p:column>
+          <p:submenu>
+                <p:menuitem value="Cliente" url="#" />
+                <p:menuitem value="Fornecedor" url="#" />
+                <p:menuitem value="Produtos" url="#" />
+                <p:menuitem value="Usuario" url="#" />
+           </p:submenu>
+        </p:column>
+      </p:submenu>
+ 
+   <p:submenu label="Vendas " icon="ui-icon-document">
+     <p:column>
+          <p:submenu>
+                <p:menuitem value="Caixa" url="#" />
+                <p:menuitem value="Consultas" url="#" />
+                <p:menuitem value="PDV" url="#" />
+                <p:menuitem value="Relatorios" url="#" />
+           </p:submenu>
+        </p:column>
+      </p:submenu>
+
+   <p:submenu label="Estoque " icon="ui-icon-document">
+     <p:column>
+          <p:submenu>
+                <p:menuitem value="Entrada Produtos" url="#" />
+                <p:menuitem value="Saida Produtos" url="#" />
+                <p:menuitem value="Relatorios" url="#" />
+           </p:submenu>
+        </p:column>
+      </p:submenu>
+
+       <p:submenu label="Administrativo " icon="ui-icon-document">
+     <p:column>
+          <p:submenu>
+                <p:menuitem value="Rotas" url="#" />
+                <p:menuitem value="Localização Vendedor" url="#" />
+                <p:menuitem value="Relatorios" url="#" />
+           </p:submenu>
+        </p:column>
+      </p:submenu>
+      
+     <p:submenu label="Consultas " icon="ui-icon-document">
+     <p:column>
+       <p:submenu label="Consultas"> 
+           <p:menuitem value="Produtos" url="#" />
+           <p:menuitem value="Vendedor" url="#" />
+           <p:menuitem value="Fornecedor" url="#" />
+           <p:menuitem value="Cliente" url="#" />
+           <p:menuitem value="Rotas" url="#" />
+           <p:menuitem value="Usuarios" url="#" />
+    </p:submenu>
+        </p:column>
+      </p:submenu>
+    
+ 
+    <p:menuitem value="Sair " url="http://www.primefaces.org" icon="ui-icon-close" />
+</p:megaMenu>
+
+            
+ <!--            Fim Menu -->           
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             <p:layoutUnit position="south" size="30" resizable="false" closable="false" collapsible="false">
                 <ui:include src="footer.xhtml" />
             </p:layoutUnit>
             
-            <p:layoutUnit position="west" size="200" header="#{labels.menu_name}" resizable="false" closable="false" collapsible="false">
-                <ui:include src="menu.xhtml" />
-            </p:layoutUnit>
+            
             
             <p:layoutUnit position="center">
                 <ui:insert name="content"/>
