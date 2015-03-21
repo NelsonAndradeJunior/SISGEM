@@ -19,183 +19,191 @@ public class FornecedorEntity extends BaseEntities<Long>{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String CNPJ;
-	private String IM; 
-	private String IE;
-	private String RazaoSocial;
-	private String Telefone;
-	private String Complemento;
-	private String Email;
-	private String Contato;
-	private Integer StatusForn;
-	private String Nome;
-	private String Rua;
-	private String CEP;
-	private Integer Numero;
-	private String Bairro;
-	private String Cidade;
-	private String Estado;
+	private String cnpj;
+	private String im; 
+	private String ie;
+	private String razaoSocial;
+	private String telefone;
+	private String complemento;
+	private String email;
+	private String contato;
+	private Integer statusForn;
+	private String nome;
+	private String rua;
+	private String cep;
+	private Integer numero;
+	private String bairro;
+	private String cidade;
+	private String estado;
 	
     @OneToMany(mappedBy="Fornecedor_idPessoaJuridica", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private List<ProdutoEntity> produtoEntity;
 	
 	public FornecedorEntity() {
-		
+		// TODO Auto-generated constructor stub
 	}
 
-	public String getRua() {
-		return Rua;
-	}
-
-	public void setRua(String rua) {
-		Rua = rua;
-	}
-
-	public String getCEP() {
-		return CEP;
-	}
-
-	public void setCEP(String cEP) {
-		CEP = cEP;
-	}
-
-	public Integer getNumero() {
-		return Numero;
-	}
-
-	public void setNumero(Integer numero) {
-		Numero = numero;
-	}
-
-	public String getBairro() {
-		return Bairro;
-	}
-
-	public void setBairro(String bairro) {
-		Bairro = bairro;
-	}
-
-	public String getCidade() {
-		return Cidade;
-	}
-
-	public void setCidade(String cidade) {
-		Cidade = cidade;
-	}
-
-	public String getEstado() {
-		return Estado;
-	}
-
-	public void setEstado(String estado) {
-		Estado = estado;
-	}
-
-	public FornecedorEntity(String cNPJ, String iM, String iE,
+	public FornecedorEntity(String cnpj, String im, String ie,
 			String razaoSocial, String telefone, String complemento,
 			String email, String contato, Integer statusForn, String nome,
-			String rua, String cEP, Integer numero, String bairro,
-			String cidade, String estado) {
+			String rua, String cep, Integer numero, String bairro,
+			String cidade, String estado, List<ProdutoEntity> produtoEntity) {
 		super();
-		CNPJ = cNPJ;
-		IM = iM;
-		IE = iE;
-		RazaoSocial = razaoSocial;
-		Telefone = telefone;
-		Complemento = complemento;
-		Email = email;
-		Contato = contato;
-		StatusForn = statusForn;
-		Nome = nome;
-		Rua = rua;
-		CEP = cEP;
-		Numero = numero;
-		Bairro = bairro;
-		Cidade = cidade;
-		Estado = estado;
+		this.cnpj = cnpj;
+		this.im = im;
+		this.ie = ie;
+		this.razaoSocial = razaoSocial;
+		this.telefone = telefone;
+		this.complemento = complemento;
+		this.email = email;
+		this.contato = contato;
+		this.statusForn = statusForn;
+		this.nome = nome;
+		this.rua = rua;
+		this.cep = cep;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.produtoEntity = produtoEntity;
 	}
 
-
-
-	public String getCNPJ() {
-		return CNPJ;
+	public String getCnpj() {
+		return cnpj;
 	}
 
-	public void setCNPJ(String cNPJ) {
-		CNPJ = cNPJ;
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
-	public String getIM() {
-		return IM;
+	public String getIm() {
+		return im;
 	}
 
-	public void setIM(String iM) {
-		IM = iM;
+	public void setIm(String im) {
+		this.im = im;
 	}
 
-	public String getIE() {
-		return IE;
+	public String getIe() {
+		return ie;
 	}
 
-	public void setIE(String iE) {
-		IE = iE;
+	public void setIe(String ie) {
+		this.ie = ie;
 	}
 
 	public String getRazaoSocial() {
-		return RazaoSocial;
+		return razaoSocial;
 	}
 
 	public void setRazaoSocial(String razaoSocial) {
-		RazaoSocial = razaoSocial;
+		this.razaoSocial = razaoSocial;
 	}
 
 	public String getTelefone() {
-		return Telefone;
+		return telefone;
 	}
 
 	public void setTelefone(String telefone) {
-		Telefone = telefone;
+		this.telefone = telefone;
 	}
 
 	public String getComplemento() {
-		return Complemento;
+		return complemento;
 	}
 
 	public void setComplemento(String complemento) {
-		Complemento = complemento;
+		this.complemento = complemento;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getContato() {
-		return Contato;
+		return contato;
 	}
 
 	public void setContato(String contato) {
-		Contato = contato;
+		this.contato = contato;
 	}
 
 	public Integer getStatusForn() {
-		return StatusForn;
+		return statusForn;
 	}
 
 	public void setStatusForn(Integer statusForn) {
-		StatusForn = statusForn;
+		this.statusForn = statusForn;
 	}
 
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
+
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public Integer getNumero() {
+		return numero;
+	}
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public List<ProdutoEntity> getProdutoEntity() {
+		return produtoEntity;
+	}
+
+	public void setProdutoEntity(List<ProdutoEntity> produtoEntity) {
+		this.produtoEntity = produtoEntity;
+	}
+
 	
 	
 

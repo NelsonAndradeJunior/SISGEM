@@ -8,93 +8,161 @@
 	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
 
 	<ui:define name="content">
+	<form id="fornecedorForm">
 		<h:panelGroup>
 			<p:panelGrid style="margin-bottom:10px" cellpadding="5">
 				<f:facet name="header">
 					<p:row>
-						<p:column>
-							<p:outputLabel value="Cod Fornecedor" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
-						</p:column>
-
-						<p:column>
-							<p:outputLabel value="Inscrição Estadual" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
+						<p:column colspan="4">
+							<p:outputLabel value="Cadastro de Fornecedor" />
 						</p:column>
 					</p:row>
-
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Fornecedor" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
-						</p:column>
-
-						<p:column>
-							<p:outputLabel value="CEP" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
-						</p:column>
-					</p:row>
-
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Nome Fantasia" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
-						</p:column>
-
-						<p:column>
-							<p:outputLabel value="Observação" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
-						</p:column>
-					</p:row>
-
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Telefone" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
-						</p:column>
-
-						<p:column>
-							<p:outputLabel value="Contato" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
-						</p:column>
-					</p:row>
-					
-					<p:row>
-						<p:column>
-							<p:outputLabel value="E-mail" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.cnpjMB}" />
-						</p:column>
-
-						<p:column>
-							<p:outputLabel value="Endereço" />
-						</p:column>
-						<p:column>
-							<p:inputText value="#{pessoaJuridicaAddEditMB.nomeFantasiaMB}" />
-						</p:column>
-					</p:row>
-
 				</f:facet>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Status Fornecedor" />
+					</p:column>
+					<p:column>
+						<p:selectOneRadio id="situacao"
+							value="#{fornecedorAddEditMB.fornecedorObj.statusForn}">
+							<f:selectItem itemLabel="Ativo" itemValue="1" />
+							<f:selectItem itemLabel="Inativo" itemValue="0" />
+						</p:selectOneRadio>
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Nome Fantasia" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.nome}" />
+					</p:column>
+
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="CNPJ" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.cnpj}" />
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Inscrição Estadual" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.ie}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Razão Social" />
+					</p:column>
+					<p:column>
+						<p:inputText
+							value="#{fornecedorAddEditMB.fornecedorObj.razaoSocial}" />
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Inscrição Municipal" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.im}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Telefone" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.telefone}" />
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Contato" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.contato}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="E-mail" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.email}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="CEP" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.cep}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Endereço" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.rua}" />
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Numero" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.numero}" />
+					</p:column>
+
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Estado" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.estado}" />
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Complemento" />
+					</p:column>
+					<p:column>
+						<p:inputText
+							value="#{fornecedorAddEditMB.fornecedorObj.complemento}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Bairro" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.bairro}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Cidade" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.cidade}" />
+					</p:column>
+
+				</p:row>
+				<p:row>
+					<p:column colspan="4">
+						<p:commandButton value="Salvar"
+							actionListener="#{fornecedorAddEditMB.salvar}"
+							style="margin: 130 auto" />
+						<p:commandButton value="Alterar" />
+						<p:commandButton value="Excluir" />
+					</p:column>
+				</p:row>
 			</p:panelGrid>
-
 		</h:panelGroup>
-
+		</form>
 	</ui:define>
 </ui:composition>
