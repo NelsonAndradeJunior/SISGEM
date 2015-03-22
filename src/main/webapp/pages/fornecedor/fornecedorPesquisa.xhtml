@@ -86,6 +86,7 @@
 							action="/pages/fornecedor/fornecedor.faces"/>
 
 						<p:commandButton widgetVar="updateButton" value="Editar"
+							disabled="#{fornecedorMB.flagBotaoUpdate}"
 							action="/pages/fornecedor/fornecedor.faces"
 							update="pesquisaFornecedorDataTable"
 							actionListener="#{fornecedorAddEditMB.update}" />

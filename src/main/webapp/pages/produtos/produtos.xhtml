@@ -12,47 +12,87 @@
 			<p:panelGrid style="margin-bottom:10px" cellpadding="5">
 				<f:facet name="header">
 					<p:row>
-						<p:column>
-							<p:outputLabel value="Fornecedor : " />
+						<p:column colspan="4">
+							<p:outputLabel value="Cadastro de Fornecedor" />
 						</p:column>
-						<p:column>
-							<p:inputText value="">
-							</p:inputText>
-						</p:column>
-						<p:column>
-							<p:outputLabel value="Nome Produto : " />
-							
-						</p:column>
-						
-						<p:column><p:inputText value="">
-							</p:inputText></p:column>
-						
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Unidade : " />
-							
-						</p:column>
-						<p:column><p:inputText value="">
-							</p:inputText></p:column>
-						
-						<p:column>
-							<p:outputLabel value="EPI : " />
-							
-						</p:column>
-						<p:column><p:inputText value="">
-							</p:inputText></p:column>
-						
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Valor : " />
-							
-						</p:column>
-						<p:column><p:inputText value="">
-							</p:inputText></p:column>
 					</p:row>
 				</f:facet>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Fornecedor : " />
+					</p:column>
+					<p:column>
+						<p:autoComplete id="acSimple" value="#{produtoMB.fornecedor.paramFornecedor}" completeMethod="#{produtoMB.fornecedor.findFornecedor}" />						
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Nome Produto : " />
+
+					</p:column>
+
+					<p:column>
+						<p:inputText value="">
+						</p:inputText>
+					</p:column>
+
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Unidade Medida: " />
+
+					</p:column>
+					<p:column>
+						<p:inputText value="">
+						</p:inputText>
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Conteudo : " />
+
+					</p:column>
+					<p:column>
+						<p:inputText value="">
+						</p:inputText>
+					</p:column>
+
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Valor Compra: " />
+
+					</p:column>
+					<p:column>
+						<p:inputText value="">
+						</p:inputText>
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Valor Venda " />
+
+					</p:column>
+					<p:column>
+						<p:inputText value="">
+						</p:inputText>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="EPI" />
+
+					</p:column>
+					<p:column>
+						<p:inputText value="">
+						</p:inputText>
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column colspan="4">
+						<p:commandButton value="Salvar"
+							actionListener="#{fornecedorAddEditMB.salvar}"
+							style="margin: 130 auto" />
+
+					</p:column>
+				</p:row>
 
 			</p:panelGrid>
 
