@@ -6,14 +6,13 @@ import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
 import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.repository.IFornecedorRepository;
 import br.com.sisgem.model.utils.BaseBeans;
 
 @Component
-@Scope (value = WebApplicationContext.SCOPE_REQUEST)
+@Scope ("view")
 @Named (value = "fornecedorAddEditMB")
 public class FornecedorAddEditMB extends BaseBeans{
 
