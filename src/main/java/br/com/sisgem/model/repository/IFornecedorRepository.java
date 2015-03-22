@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import br.com.sisgem.model.FornecedorEntity;
 
 public interface IFornecedorRepository extends JpaRepository<FornecedorEntity, Long>{
-//	@Query("select p from FornecedorEntity p where p.CNPJ like %?1% or p.Nome like %?1% or p.RazaoSocial like %?1%")
-//	public List<FornecedorEntity> findByCNPJ(String paramFornecedor);
+	@Query("select p from FornecedorEntity p where p.cnpj like %?1% or p.nome like %?1% or p.razaoSocial like %?1%")
+	public List<FornecedorEntity> findByCNPJ(String paramFornecedor);
 }

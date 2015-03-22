@@ -6,13 +6,14 @@ import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.repository.IFornecedorRepository;
 import br.com.sisgem.model.utils.BaseBeans;
 
 @Component
-@Scope ("view")
+@Scope (value = WebApplicationContext.SCOPE_REQUEST)
 @Named (value = "fornecedorAddEditMB")
 public class FornecedorAddEditMB extends BaseBeans{
 
@@ -24,6 +25,9 @@ public class FornecedorAddEditMB extends BaseBeans{
 	@Inject
 	private FacesContext context;
 	
+	@Inject
+	private FornecedorMB mbFornecedorBean;
+	
 	private FornecedorEntity fornecedorObj;
 	
 	public FornecedorAddEditMB() {
@@ -34,6 +38,9 @@ public class FornecedorAddEditMB extends BaseBeans{
 		this.fornecedorRepository.save(this.fornecedorObj);
 	}
 	
+	public void update(){
+		this.fornecedorObj = mbFornecedorBean.getFornecedorSelecionado();
+	}
 	
 	////Getters and Setters////
 	public IFornecedorRepository getFornecedorRepository() {

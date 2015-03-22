@@ -10,34 +10,28 @@
 	<ui:define name="content">
 		<h:form id="fornecedorPesquisaForm">
 			<p:panel header="Pesquisa Fornecedor">
-				<p:inputText
-					value="#{fornecedorMB.paramFornecedor}"
+				<p:inputText value="#{fornecedorMB.paramFornecedor}"
 					placeholder="Pesquise por CNPJ, Nome Fantasia ou Razão Social"
 					size="55" />
 				<br />
 				<br />
 				<p:commandButton value="Pesquisar"
 					action="#{fornecedorMB.findFornecedor(fornecedorMB.paramFornecedor)}"
-					widgetVar="searchButton"
-					update="pesquisaFornecedorDataTable" />
+					widgetVar="searchButton" update="pesquisaFornecedorDataTable" />
 				<p:dialog id="dialogSelect" header="Lista de Fornecedores"
 					widgetVar="dialogListaResultado" resizable="false"
 					position="center">
-					<p:dataTable id="pesquisaFornecedorDataTable"
-						widgetVar="dataTable" var="fornecedor"
-						loadingMessage="Carregando..."
-						value="#{fornecedorMB.fornecedorList}"
-						paginator="true" rows="10"
+					<p:dataTable id="pesquisaFornecedorDataTable" widgetVar="dataTable"
+						var="fornecedor" loadingMessage="Carregando..."
+						value="#{fornecedorMB.fornecedorList}" paginator="true" rows="10"
 						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-						rowsPerPageTemplate="5,10,15"
-						rowKey="#{fornecedor.id}"
+						rowsPerPageTemplate="5,10,15" rowKey="#{fornecedor.id}"
 						selectionMode="single">
 
 						<p:ajax event="rowSelect"
 							listener="#{fornecedorMB.selectFornecedor}"
 							update=":fornecedorPesquisaForm:panelGroupBotoes" />
-						<p:ajax event="page"
-							listener="#{fornecedorMB.unselectFornecedor}"
+						<p:ajax event="page" listener="#{fornecedorMB.unselectFornecedor}"
 							update=":fornecedorPesquisaForm:panelGroupBotoes"
 							oncomplete="dataTable.unselectAllRows()" />
 						<p:ajax event="rowUnselect"
@@ -46,48 +40,61 @@
 
 						<p:column sortBy="#{fornecedor.id}">
 							<f:facet name="header">
-								<h:outputText value="#{labels.legal_entity_id}" />
+								<h:outputText value="ID" />
 							</f:facet>
 							<h:outputText value="#{fornecedor.id}" />
 						</p:column>
 
 						<p:column sortBy="#{fornecedor.cnpj}">
 							<f:facet name="header">
-								<h:outputText value="#{labels.legal_entity_cnpj}" />
+								<h:outputText value="CNPJ" />
 							</f:facet>
 							<h:outputText value="#{fornecedor.cnpj}" />
 						</p:column>
 
 						<p:column sortBy="#{fornecedor.nomeFantasia}">
 							<f:facet name="header">
-								<h:outputText value="#{labels.legal_entity_name_fancy}" />
+								<h:outputText value="Nome Fantasia" />
 							</f:facet>
-							<h:outputText
-								value="#{fornecedor.nomeFantasia}" />
+							<h:outputText value="#{fornecedor.nome}" />
 						</p:column>
 
 						<p:column sortBy="#{fornecedor.razaoSocial}">
 							<f:facet name="header">
-								<h:outputText value="#{labels.legal_entity_corporate_name}" />
+								<h:outputText value="Razão Social" />
 							</f:facet>
-							<h:outputText
-								value="#{fornecedor.razaoSocial}" />
+							<h:outputText value="#{fornecedor.razaoSocial}" />
+						</p:column>
+
+						<p:column sortBy="#{fornecedor.contato}">
+							<f:facet name="header">
+								<h:outputText value="Contato" />
+							</f:facet>
+							<h:outputText value="#{fornecedor.contato}" />
+						</p:column>
+
+						<p:column sortBy="#{fornecedor.telefone}">
+							<f:facet name="header">
+								<h:outputText value="Telefone" />
+							</f:facet>
+							<h:outputText value="#{fornecedor.telefone}" />
 						</p:column>
 					</p:dataTable>
 					<h:panelGroup id="panelGroupBotoes">
 
-						<p:commandButton widgetVar="addButton"
-							value="#{labels.button_add}"
-							actionListener="#{pessoaJuridicaAddEditMB.exibePessoaJuridicaAddForm}"
-							update=":fornecedorPesquisaForm" />
-						<p:commandButton widgetVar="updateButton"
-							disabled="#{fornecedorMB.flagBotaoUpdate}"
-							value="#{labels.button_update}"
-							actionListener="#{pessoaJuridicaAddEditMB.add}" />
+						<p:commandButton widgetVar="addButton" value="Novo"
+							action="/pages/fornecedor/fornecedor.faces"/>
+
+						<p:commandButton widgetVar="updateButton" value="Editar"
+							action="/pages/fornecedor/fornecedor.faces"
+							update="pesquisaFornecedorDataTable"
+							actionListener="#{fornecedorAddEditMB.update}" />
+
 						<p:commandButton widgetVar="deleteButton"
 							disabled="#{fornecedorMB.flagBotaoDelete}"
 							value="#{labels.button_delete}"
-							actionListener="#{pessoaJuridicaAddEditMB.add}" />
+							update="pesquisaFornecedorDataTable"
+							actionListener="#{fornecedorMB.delete}" />
 					</h:panelGroup>
 				</p:dialog>
 			</p:panel>

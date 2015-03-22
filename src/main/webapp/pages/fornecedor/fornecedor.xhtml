@@ -10,6 +10,7 @@
 	<ui:define name="content">
 	<form id="fornecedorForm">
 		<h:panelGroup>
+				
 			<p:panelGrid style="margin-bottom:10px" cellpadding="5">
 				<f:facet name="header">
 					<p:row>
@@ -34,7 +35,7 @@
 						<p:outputLabel value="Nome Fantasia" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.nome}" />
+						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.nome}"  />
 					</p:column>
 
 				</p:row>
@@ -44,14 +45,14 @@
 						<p:outputLabel value="CNPJ" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.cnpj}" />
+						<p:inputMask mask="99.999.999/9999-99" value="#{maskView.fornecedorAddEditMB.fornecedorObj.cnpj}" />
 					</p:column>
 
 					<p:column>
 						<p:outputLabel value="Inscrição Estadual" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.ie}" />
+						<p:inputMask mask="99999999-99" value="#{maskView.fornecedorAddEditMB.fornecedorObj.ie}" />
 					</p:column>
 				</p:row>
 
@@ -68,7 +69,7 @@
 						<p:outputLabel value="Inscrição Municipal" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.im}" />
+						<p:inputMask mask="99999999-99" value="#{maskView.fornecedorAddEditMB.fornecedorObj.im}" />
 					</p:column>
 				</p:row>
 
@@ -77,7 +78,9 @@
 						<p:outputLabel value="Telefone" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.telefone}" />
+					
+        			<p:inputMask value="#{maskView.fornecedorAddEditMB.fornecedorObj.telefone}" mask="(99) 9999-9999"/>
+						
 					</p:column>
 
 					<p:column>
@@ -93,13 +96,15 @@
 						<p:outputLabel value="E-mail" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.email}" />
+						<p:inputText type="email" value="#{fornecedorAddEditMB.fornecedorObj.email}" />
+						
 					</p:column>
 					<p:column>
 						<p:outputLabel value="CEP" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.cep}" />
+						<p:inputMask value="#{maskView.fornecedorAddEditMB.fornecedorObj.cep}" mask="99.999-999"/>
+						
 					</p:column>
 				</p:row>
 
@@ -115,7 +120,7 @@
 						<p:outputLabel value="Numero" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.numero}" />
+						<p:inputMask value="#{maskView.fornecedorAddEditMB.fornecedorObj.numero}" mask="999999" />
 					</p:column>
 
 				</p:row>
@@ -125,7 +130,7 @@
 						<p:outputLabel value="Estado" />
 					</p:column>
 					<p:column>
-						<p:inputText value="#{fornecedorAddEditMB.fornecedorObj.estado}" />
+						<p:inputMask mask="aa" value="#{maskView.fornecedorAddEditMB.fornecedorObj.estado}" maxlength="2" />
 					</p:column>
 
 					<p:column>
@@ -157,8 +162,7 @@
 						<p:commandButton value="Salvar"
 							actionListener="#{fornecedorAddEditMB.salvar}"
 							style="margin: 130 auto" />
-						<p:commandButton value="Alterar" />
-						<p:commandButton value="Excluir" />
+
 					</p:column>
 				</p:row>
 			</p:panelGrid>
