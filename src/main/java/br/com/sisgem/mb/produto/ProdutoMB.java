@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.ProdutoEntity;
 import br.com.sisgem.model.repository.IProdutoRepository;
 import br.com.sisgem.model.utils.BaseBeans;
@@ -27,6 +26,7 @@ public class ProdutoMB extends BaseBeans{
 	
 	@Inject
 	private IProdutoRepository produtoRepository;
+
 	
 	private List<ProdutoEntity> produtoList;
 	
@@ -126,6 +126,5 @@ public class ProdutoMB extends BaseBeans{
 	public void setFlagBotaoDelete(Boolean flagBotaoDelete) {
 		this.flagBotaoDelete = flagBotaoDelete;
 	}
-
 
 }

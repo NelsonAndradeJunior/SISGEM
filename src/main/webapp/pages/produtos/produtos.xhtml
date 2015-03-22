@@ -8,95 +8,174 @@
 	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
 
 	<ui:define name="content">
-		<h:panelGroup>
-			<p:panelGrid style="margin-bottom:10px" cellpadding="5">
-				<f:facet name="header">
+		<h:form id="formProduto">
+			<h:panelGroup id="panelGroupProduto">
+				<p:panelGrid style="margin-bottom:10px" cellpadding="5">
+					<f:facet name="header">
+						<p:row>
+							<p:column colspan="4">
+								<p:outputLabel value="Cadastro de Fornecedor" />
+							</p:column>
+						</p:row>
+					</f:facet>
 					<p:row>
-						<p:column colspan="4">
-							<p:outputLabel value="Cadastro de Fornecedor" />
+						<p:column>
+							<p:outputLabel value="Fornecedor :" />
+						</p:column>
+						<p:column colspan="3">
+
+							<p:inputText value="#{produtoAddEditMB.fornecedor.paramFornecedor}"
+								placeholder="Pesquise por CNPJ, Nome Fantasia ou Razão Social"
+								size="75" />
+
+							<p:commandButton value="#{labels.button_search}"
+								action="#{produtoAddEditMB.fornecedor.findFornecedor(produtoAddEditMB.fornecedor.paramFornecedor)}"
+								widgetVar="searchButton" update=":fornecedorForm" />
 						</p:column>
 					</p:row>
-				</f:facet>
-				<p:row>
-					<p:column>
-						<p:outputLabel value="Fornecedor : " />
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Fornecedor selecionado : " />
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="#{fornecedorAddEditMB.fornecedorObj.nome}" />
+						</p:column>
+						<p:column>
+							<p:outputLabel value="Nome Produto : " />
+
+						</p:column>
+						<p:column>
+							<p:inputText value="#{produtoAddEditMB.produtoObj.nome}" />
+						</p:column>
+
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Unidade Medida: " />
+
+						</p:column>
+						<p:column>
+							<p:inputText
+								value="#{produtoAddEditMB.produtoObj.unidade_medida}" />
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="Conteudo : " />
+
+						</p:column>
+						<p:column>
+							<p:inputText value="#{produtoAddEditMB.produtoObj.conteudo}"/>
+						</p:column>
+
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Valor Compra: " />
+
+						</p:column>
+						<p:column>
+							<p:inputText value="#{produtoAddEditMB.produtoObj.valor_compra}"/>
+							
+						</p:column>
+
+						<p:column>
+							<p:outputLabel value="Valor Venda " />
+
+						</p:column>
+						<p:column>
+							<p:inputText value="#{produtoAddEditMB.produtoObj.valor_venda}"/>
+							
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="EPI" />
+
+						</p:column>
+						<p:column>
+							<p:inputText value="#{produtoAddEditMB.produtoObj.epi}"/>
+							
+						</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column colspan="4">
+							<p:commandButton value="Salvar"
+								actionListener="#{produtoAddEditMB.salvar}"
+								style="margin: 130 auto" />
+
+						</p:column>
+					</p:row>
+
+				</p:panelGrid>
+
+			</h:panelGroup>
+		</h:form>
+
+		<h:form id="fornecedorForm">
+			<p:dialog widgetVar="dialogListaResultado" header="Fornecedor"
+				resizable="false" position="center">
+
+
+
+				<p:dataTable id="PessoaJuridicaClienteFornecedorDataTable2"
+					widgetVar="dataTableAdd" var="fornecedor"
+					loadingMessage="#{labels.legal_entity_load}"
+					value="#{produtoAddEditMB.fornecedor.fornecedorList}" paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" rowKey="#{fornecedor.id}"
+					selectionMode="single">
+
+					<p:ajax event="rowSelect"
+						listener="#{produtoAddEditMB.fornecedor.selectFornecedor}"
+						update=":fornecedorForm:panelBotoesInModalConsult" />
+					<p:ajax event="page" listener="#{produtoAddEditMB.fornecedor.unselectFornecedor}"
+						update=":fornecedorForm:panelBotoesInModalConsult"
+						oncomplete="dataTableAdd.unselectAllRows()" />
+					<p:ajax event="rowUnselect"
+						listener="#{produtoAddEditMB.fornecedor.unselectFornecedor}"
+						update=":fornecedorForm:panelBotoesInModalConsult"
+						oncomplete="dataTableAdd.unselectAllRows()" />
+
+					<p:column sortBy="#{fornecedor.id}">
+						<f:facet name="header">
+							<h:outputText value="#{labels.legal_entity_id}" />
+						</f:facet>
+						<h:outputText value="#{fornecedor.id}" />
 					</p:column>
-					<p:column>
-						<p:autoComplete id="acSimple" value="#{produtoMB.fornecedor.paramFornecedor}" completeMethod="#{produtoMB.fornecedor.findFornecedor}" />						
-					</p:column>
-					<p:column>
-						<p:outputLabel value="Nome Produto : " />
 
-					</p:column>
-
-					<p:column>
-						<p:inputText value="">
-						</p:inputText>
+					<p:column sortBy="#{fornecedor.cnpj}">
+						<f:facet name="header">
+							<h:outputText value="#{labels.legal_entity_cnpj}" />
+						</f:facet>
+						<h:outputText value="#{fornecedor.cnpj}" />
 					</p:column>
 
-				</p:row>
-				<p:row>
-					<p:column>
-						<p:outputLabel value="Unidade Medida: " />
-
-					</p:column>
-					<p:column>
-						<p:inputText value="">
-						</p:inputText>
+					<p:column sortBy="#{fornecedor.nome}">
+						<f:facet name="header">
+							<h:outputText value="#{labels.legal_entity_name_fancy}" />
+						</f:facet>
+						<h:outputText value="#{fornecedor.nome}" />
 					</p:column>
 
-					<p:column>
-						<p:outputLabel value="Conteudo : " />
-
-					</p:column>
-					<p:column>
-						<p:inputText value="">
-						</p:inputText>
+					<p:column sortBy="#{fornecedor.razaoSocial}">
+						<f:facet name="header">
+							<h:outputText value="#{labels.legal_entity_corporate_name}" />
+						</f:facet>
+						<h:outputText value="#{fornecedor.razaoSocial}" />
 					</p:column>
 
-				</p:row>
-				<p:row>
-					<p:column>
-						<p:outputLabel value="Valor Compra: " />
+				</p:dataTable>
+				<h:panelGroup id="panelBotoesInModalConsult">
+					<p:commandButton value="Selecionar Fornecedor"
+						update=":formProduto:panelGroupProduto"
+						actionListener="#{produtoMB.fornecedorAddEdit.fornecedorVinculado}"
+						oncomplete="dataTableAdd.unselectAllRows()" />
+				</h:panelGroup>
 
-					</p:column>
-					<p:column>
-						<p:inputText value="">
-						</p:inputText>
-					</p:column>
+			</p:dialog>
 
-					<p:column>
-						<p:outputLabel value="Valor Venda " />
-
-					</p:column>
-					<p:column>
-						<p:inputText value="">
-						</p:inputText>
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>
-						<p:outputLabel value="EPI" />
-
-					</p:column>
-					<p:column>
-						<p:inputText value="">
-						</p:inputText>
-					</p:column>
-				</p:row>
-
-				<p:row>
-					<p:column colspan="4">
-						<p:commandButton value="Salvar"
-							actionListener="#{fornecedorAddEditMB.salvar}"
-							style="margin: 130 auto" />
-
-					</p:column>
-				</p:row>
-
-			</p:panelGrid>
-
-		</h:panelGroup>
-
+		</h:form>
 	</ui:define>
 </ui:composition>

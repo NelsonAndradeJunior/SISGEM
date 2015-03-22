@@ -41,6 +41,12 @@ public class FornecedorAddEditMB extends BaseBeans{
 		this.fornecedorObj = mbFornecedorBean.getFornecedorSelecionado();
 	}
 	
+	public void fornecedorVinculado(){
+		this.update();
+		
+		hideDialog("dialogListaResultado");
+	}
+	
 	////Getters and Setters////
 	public IFornecedorRepository getFornecedorRepository() {
 		return fornecedorRepository;

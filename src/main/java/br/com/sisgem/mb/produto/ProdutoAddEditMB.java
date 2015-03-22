@@ -7,6 +7,8 @@ import javax.inject.Named;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import br.com.sisgem.mb.fornecedor.FornecedorAddEditMB;
+import br.com.sisgem.mb.fornecedor.FornecedorMB;
 import br.com.sisgem.model.ProdutoEntity;
 import br.com.sisgem.model.repository.IProdutoRepository;
 import br.com.sisgem.model.utils.BaseBeans;
@@ -27,6 +29,20 @@ public class ProdutoAddEditMB extends BaseBeans{
 	@Inject
 	private ProdutoMB mbProdutoBean;
 	
+	@Inject
+	private FornecedorMB fornecedor;
+	
+	@Inject
+	private FornecedorAddEditMB fornecedorAddEdit;
+	
+	public FornecedorAddEditMB getFornecedorAddEdit() {
+		return fornecedorAddEdit;
+	}
+
+	public void setFornecedorAddEdit(FornecedorAddEditMB fornecedorAddEdit) {
+		this.fornecedorAddEdit = fornecedorAddEdit;
+	}
+
 	private ProdutoEntity produtoObj;
 	
 	public ProdutoAddEditMB() {
@@ -40,6 +56,7 @@ public class ProdutoAddEditMB extends BaseBeans{
 	public void update(){
 		this.produtoObj = mbProdutoBean.getProdutoSelecionado();
 	}
+	
 	
 	////Getters and Setters////
 	public IProdutoRepository getProdutoRepository() {
@@ -64,6 +81,14 @@ public class ProdutoAddEditMB extends BaseBeans{
 
 	public void setProdutoObj(ProdutoEntity produtoObj) {
 		this.produtoObj = produtoObj;
+	}
+
+	public FornecedorMB getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(FornecedorMB fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 
 }
