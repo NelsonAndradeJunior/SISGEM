@@ -8,8 +8,9 @@
 	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
 
 	<ui:define name="content">
-		<h:form id="fornecedorPesquisaForm">
-			<p:panel header="Pesquisa Fornecedor">
+		<p:panel header="Pesquisa Fornecedor">
+			<h:form id="fornecedorPesquisaForm">
+
 				<p:inputText value="#{fornecedorMB.paramFornecedor}"
 					placeholder="Pesquise por CNPJ, Nome Fantasia ou Razão Social"
 					size="55" />
@@ -83,11 +84,11 @@
 					<h:panelGroup id="panelGroupBotoes">
 
 						<p:commandButton widgetVar="addButton" value="Novo"
-							action="/pages/fornecedor/fornecedor.faces"/>
+							action="/pages/fornecedor/fornecedorAddEdit.faces" ajax="false" />
 
 						<p:commandButton widgetVar="updateButton" value="Editar"
 							disabled="#{fornecedorMB.flagBotaoUpdate}"
-							action="/pages/fornecedor/fornecedor.faces"
+							action="/pages/fornecedor/fornecedorAddEdit.faces"
 							update="pesquisaFornecedorDataTable"
 							actionListener="#{fornecedorAddEditMB.update}" />
 
@@ -95,10 +96,20 @@
 							disabled="#{fornecedorMB.flagBotaoDelete}"
 							value="#{labels.button_delete}"
 							update="pesquisaFornecedorDataTable"
-							actionListener="#{fornecedorMB.delete}" />
+							actionListener="#{fornecedorMB.delete}">
+							<p:confirm header="Comfirmação" message="Tem Certeza?"
+										icon="ui-icon-alert" />
+							</p:commandButton>
 					</h:panelGroup>
 				</p:dialog>
-			</p:panel>
-		</h:form>
+				<p:confirmDialog global="true" showEffect="fade">
+					<p:commandButton value="Sim" type="button"
+						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					<p:commandButton value="Não" type="button"
+						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				</p:confirmDialog>
+
+			</h:form>
+		</p:panel>
 	</ui:define>
 </ui:composition>

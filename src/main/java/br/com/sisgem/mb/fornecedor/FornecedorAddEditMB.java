@@ -6,13 +6,15 @@ import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.repository.IFornecedorRepository;
 import br.com.sisgem.model.utils.BaseBeans;
+import br.com.sisgem.model.utils.Utilidades;
 
 @Component
-@Scope ("view")
+@Scope (value = WebApplicationContext.SCOPE_REQUEST)
 @Named (value = "fornecedorAddEditMB")
 public class FornecedorAddEditMB extends BaseBeans{
 
@@ -33,10 +35,24 @@ public class FornecedorAddEditMB extends BaseBeans{
 		this.fornecedorObj = new FornecedorEntity();
 	}
 	
-	public void salvar(){
-		this.fornecedorRepository.save(this.fornecedorObj);
-	}
 	
+	public void salvar() {
+		try {
+			if (this.fornecedorObj != null) {
+				if (this.fornecedorObj.getId() == null) {
+					// Add
+					this.fornecedorRepository.save(this.fornecedorObj);
+				} else {
+					// Update
+					this.fornecedorRepository.save(this.fornecedorObj);
+				}
+				Utilidades.showFacesMessage("Salvo com Sucesso", 2);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
 	public void update(){
 		this.fornecedorObj = mbFornecedorBean.getFornecedorSelecionado();
 	}
