@@ -57,6 +57,7 @@ public class ProdutoAddEditMB extends BaseBeans{
 		this.produtoObj = mbProdutoBean.getProdutoSelecionado();
 	}
 	
+//	teste commit
 	
 	////Getters and Setters////
 	public IProdutoRepository getProdutoRepository() {
