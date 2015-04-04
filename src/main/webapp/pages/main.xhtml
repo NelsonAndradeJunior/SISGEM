@@ -41,7 +41,7 @@
 					<p:submenu label="Cadastro " icon="ui-icon-document">
 						<p:column>
 							<p:submenu>
-								<p:menuitem value="Cliente" url="#" />
+								<p:menuitem value="Cliente" url="/pages/cliente/clienteAddEdit.faces" />
 								<p:menuitem value="Fornecedor"
 									url="/pages/fornecedor/fornecedorAddEdit.faces" />
 								<p:menuitem value="Produtos"
@@ -110,9 +110,7 @@
 				closable="false" collapsible="false">
 				<ui:include src="footer.xhtml" />
 			</p:layoutUnit>
-
-
-
+			
 			<p:layoutUnit position="center">
 				<ui:insert name="content" />
 			</p:layoutUnit>
