@@ -22,7 +22,7 @@
 							</p:column>
 						</p:row>
 					</f:facet>
-					<p:row>
+					
 						<!-- 						<p:column> -->
 						<!-- 							<p:outputLabel value="Nome Cliente" for="situacao" /> -->
 						<!-- 						</p:column> -->
@@ -36,6 +36,8 @@
 						<!-- 						</p:column> -->
 
 						<!-- Nome do Cliente -->
+						
+						<p:row>
 
 						<p:column>
 							<p:outputLabel value="Nome Cliente" for="nomeCliente" />
@@ -55,8 +57,6 @@
 								requiredMessage="Nome Razao Social é obrigatório" maxlength="50"
 								size="50" />
 						</p:column>
-
-
 
 					</p:row>
 					
@@ -85,7 +85,6 @@
 							
 						</p:row>
 						
-						
 							<p:row>
 
 							<!--  outra linha-->
@@ -94,11 +93,30 @@
 								<p:outputLabel value="Complemento" for="nomeComplemento" />
 							</p:column>
 							<p:column>
-								<p:inputText id="nomeComplemento" required="true"
-									requiredMessage="O Complemento  é obrigatório" maxlength="50"
+								<p:inputText id="nomeComplemento"  maxlength="50"
 									size="50" />
 							</p:column>
 							
+							<!--  CEP-->
+							
+							<p:column>
+								<p:outputLabel value="CEP" for="nomeCEP" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nomeCEP" required="true"
+									requiredMessage="O CEP é obrigatório" maxlength="50"
+									size="50" />
+							</p:column>	
+							
+						</p:row>
+						
+						<!--  outra linha-->
+						
+						<p:row>
+
+							
+							<!--Telefone-->
+
 							<p:column>
 								<p:outputLabel value="Telefone" for="nomeTelefone" />
 							</p:column>
@@ -106,11 +124,73 @@
 								<p:inputText id="nomeTelefone" required="true"
 									requiredMessage="O Telefone é obrigatório" maxlength="50"
 									size="50" />
+							</p:column>
+							
+							<!-- Telefone Celular-->
+							
+							<p:column>
+								<p:outputLabel value="Telefone Celular" for="nomeTelefoneCelular" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nomeTelefoneCelular"  maxlength="50"
+									size="50" />
 							</p:column>	
 							
 						</p:row>
+						
+						<!--outra linha-->
+						
+						<!--  Incricao Estadual-->
+						
+						<p:row>
+			
+							<p:column>
+								<p:outputLabel value="Incrição Estadual" for="nomeIncriçãoEstadual" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nomeIncriçãoEstadual" required="true"
+									requiredMessage="A Incrição Estadual  é obrigatório" maxlength="50"
+									size="50" />
+							</p:column>
+						
+						
+						<p:column>
+								<p:outputLabel value="Incrição Municipal" for="nomeIncriçãoMunicipal" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nomeIncriçãoMunicipal" required="true"
+									requiredMessage="A Incrição Municipal  é obrigatório" maxlength="50"
+									size="50" />
+							</p:column>
+						
+						</p:row>
+						
+						
+						<p:row>
+						
+						<p:column>
+								<p:outputLabel value="CNPJ" for="nomeCNPJ" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nomeCNPJ" required="true"
+									requiredMessage="A CNPJ  é obrigatório" maxlength="50"
+									size="50" />
+							</p:column>
 							
-
+							
+					<p:column>
+								<p:outputLabel value="E-mail" for="nomeE-mail" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nomeE-mail" required="true"
+									requiredMessage="A E-mail é obrigatório" maxlength="50"
+									size="50" />
+							</p:column>		
+							
+						
+						</p:row>
+						
+							
 				</p:panelGrid>
 
 			</h:panelGroup>
