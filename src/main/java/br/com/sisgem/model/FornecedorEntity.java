@@ -24,11 +24,13 @@ public class FornecedorEntity extends BaseEntities<Long>{
 	private String ie;
 	private String razaoSocial;
 	private String telefone;
+	private String telefone2;
 	private String complemento;
 	private String email;
 	private String contato;
 	private Integer statusForn;
-	private String nome;
+	private String nomeFantasia;
+	@Column(name="endereco")
 	private String rua;
 	private String cep;
 	private Integer numero;
@@ -45,7 +47,7 @@ public class FornecedorEntity extends BaseEntities<Long>{
 
 	public FornecedorEntity(String cnpj, String im, String ie,
 			String razaoSocial, String telefone, String complemento,
-			String email, String contato, Integer statusForn, String nome,
+			String email, String contato, Integer statusForn, String nomeFantasia,
 			String rua, String cep, Integer numero, String bairro,
 			String cidade, String estado, List<ProdutoEntity> produtoEntity) {
 		super();
@@ -58,7 +60,7 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.email = email;
 		this.contato = contato;
 		this.statusForn = statusForn;
-		this.nome = nome;
+		this.nomeFantasia = nomeFantasia;
 		this.rua = rua;
 		this.cep = cep;
 		this.numero = numero;
@@ -140,12 +142,12 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.statusForn = statusForn;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getnomeFantasia() {
+		return nomeFantasia;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setnomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
 	}
 
 	public String getRua() {
