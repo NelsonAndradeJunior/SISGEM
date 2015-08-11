@@ -1,5 +1,6 @@
 package br.com.sisgem.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -9,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import br.com.sisgem.model.utils.BaseEntities;
 
@@ -19,24 +22,77 @@ public class FornecedorEntity extends BaseEntities<Long>{
 
 	private static final long serialVersionUID = 1L;
 	
+	@Size(max=40)
+	@NotNull
 	private String cnpj;
+	
+	@Size(max=40)
+	@NotNull
 	private String im; 
+	
+	@Size(max=40)
+	@NotNull
 	private String ie;
-	private String razaoSocial;
+	
+	@Size(max=100)
+	@NotNull
+	private String razaoSocial;	
+	
+	@Size(max=40)
+	@NotNull
 	private String telefone;
+	
+	@Size(max=40)
+	@NotNull
 	private String telefone2;
+	
+	@Size(max=40)
 	private String complemento;
+	
+	@Size(max=40)
+	@NotNull
 	private String email;
+	
+	@Size(max=40)
 	private String contato;
-	private Integer statusForn;
+	
+	@NotNull
+	private Boolean statusForn;
+	
+	@Size(max=40)
+	@NotNull
 	private String nomeFantasia;
+	
+	@Size(max=11)
+	@NotNull
+	private String cep;
+	
+	@Size(max=255)
+	@NotNull
 	@Column(name="endereco")
 	private String rua;
-	private String cep;
-	private Integer numero;
+	
+	@Size(max=255)
+	@NotNull
 	private String bairro;
+	
+	@Size(max=255)
+	@NotNull
 	private String cidade;
+	
+	@Size(max=100)
+	@NotNull
 	private String estado;
+	
+	@Size(max=11)
+	@NotNull
+	private Integer numero;
+	
+	@Size(max=255)
+	private String observacao;
+	
+	private Date dtcadastro; 
+
 	
     @OneToMany(mappedBy="Fornecedor_idPessoaJuridica", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private List<ProdutoEntity> produtoEntity;
@@ -46,27 +102,32 @@ public class FornecedorEntity extends BaseEntities<Long>{
 	}
 
 	public FornecedorEntity(String cnpj, String im, String ie,
-			String razaoSocial, String telefone, String complemento,
-			String email, String contato, Integer statusForn, String nomeFantasia,
-			String rua, String cep, Integer numero, String bairro,
-			String cidade, String estado, List<ProdutoEntity> produtoEntity) {
+			String razaoSocial, String telefone, String telefone2,
+			String complemento, String email, String contato,
+			Boolean statusForn, String nomeFantasia, String cep, String rua,
+			String bairro, String cidade, String estado, Integer numero,
+			String observacao, Date dtcadastro,
+			List<ProdutoEntity> produtoEntity) {
 		super();
 		this.cnpj = cnpj;
 		this.im = im;
 		this.ie = ie;
 		this.razaoSocial = razaoSocial;
 		this.telefone = telefone;
+		this.telefone2 = telefone2;
 		this.complemento = complemento;
 		this.email = email;
 		this.contato = contato;
 		this.statusForn = statusForn;
 		this.nomeFantasia = nomeFantasia;
-		this.rua = rua;
 		this.cep = cep;
-		this.numero = numero;
+		this.rua = rua;
 		this.bairro = bairro;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.numero = numero;
+		this.observacao = observacao;
+		this.dtcadastro = dtcadastro;
 		this.produtoEntity = produtoEntity;
 	}
 
@@ -110,6 +171,14 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.telefone = telefone;
 	}
 
+	public String getTelefone2() {
+		return telefone2;
+	}
+
+	public void setTelefone2(String telefone2) {
+		this.telefone2 = telefone2;
+	}
+
 	public String getComplemento() {
 		return complemento;
 	}
@@ -134,28 +203,20 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.contato = contato;
 	}
 
-	public Integer getStatusForn() {
+	public Boolean getStatusForn() {
 		return statusForn;
 	}
 
-	public void setStatusForn(Integer statusForn) {
+	public void setStatusForn(Boolean statusForn) {
 		this.statusForn = statusForn;
 	}
 
-	public String getnomeFantasia() {
+	public String getNomeFantasia() {
 		return nomeFantasia;
 	}
 
-	public void setnomeFantasia(String nomeFantasia) {
+	public void setNomeFantasia(String nomeFantasia) {
 		this.nomeFantasia = nomeFantasia;
-	}
-
-	public String getRua() {
-		return rua;
-	}
-
-	public void setRua(String rua) {
-		this.rua = rua;
 	}
 
 	public String getCep() {
@@ -166,12 +227,12 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.cep = cep;
 	}
 
-	public Integer getNumero() {
-		return numero;
+	public String getRua() {
+		return rua;
 	}
 
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public void setRua(String rua) {
+		this.rua = rua;
 	}
 
 	public String getBairro() {
@@ -198,6 +259,30 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.estado = estado;
 	}
 
+	public Integer getNumero() {
+		return numero;
+	}
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
+	public Date getDtcadastro() {
+		return dtcadastro;
+	}
+
+	public void setDtcadastro(Date dtcadastro) {
+		this.dtcadastro = dtcadastro;
+	}
+
 	public List<ProdutoEntity> getProdutoEntity() {
 		return produtoEntity;
 	}
@@ -206,7 +291,5 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.produtoEntity = produtoEntity;
 	}
 
-	
-	
 
 }
