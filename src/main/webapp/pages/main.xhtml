@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -9,108 +9,51 @@
 
 <f:view locale="#{languageMB.localeCode}">
 	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!-- 			<h:outputScript library="js" name="validator.js" /> -->
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
+
 		<link rel="shortcut icon" type="image/x-icon"
 			href="#{request.contextPath}/resources/images/labtelecom.ico" />
-		<link rel="stylesheet" type="text/css"
-			href="#{request.contextPath}/resources/css/main.css" />
+
 		<script type="text/javascript"
 			src="#{request.contextPath}/resources/js/main.js" />
-		<title>SISGEM-Main</title>
+
+		<script type="text/javascript"
+			src="#{request.contextPath}/resources/js/pessoaJuridica.js" />
+
+		<script type="text/javascript"
+			src="#{request.contextPath}/resources/js/validators.js" />
+
+		<link type="text/css" rel="stylesheet"
+			href="#{request.contextPath}/resources/css/default.css" />
+
+		<link type="text/css" rel="stylesheet"
+			href="#{request.contextPath}/resources/css/main.css" />
+
+		<!-- 		<h:outputStylesheet name="main.css" library="css" /> -->
+		<title>ConlabWeb-Main</title>
 	</h:head>
 
 	<h:body>
 		<p:layout fullPage="true">
-
-			<p:layoutUnit position="north" size="100" resizable="false"
+			<p:layoutUnit position="north" size="65" resizable="false"
 				closable="false" collapsible="false">
 				<ui:include src="header.xhtml" />
 			</p:layoutUnit>
-
-			<!--            Inicio Menu -->
-			<h:form>
-				<p:megaMenu orientation="#{megaMenuView.orientation}"
-					style="margin-top:50px">
-
-					<p:menuitem value="Sistema " icon="ui-icon-contact"
-						url="http://www.google.com.br" />
-
-					<p:submenu label="Cadastro " icon="ui-icon-document">
-						<p:column>
-							<p:submenu>
-								<p:menuitem value="Cliente" url="/pages/cliente/clienteAddEdit.faces" />
-								<p:menuitem value="Fornecedor"
-									url="/pages/fornecedor/fornecedorAddEdit.faces" />
-								<p:menuitem value="Produtos"
-									url="/pages/produtos/produtoAddEdit.faces" />
-								<p:menuitem value="Usuario" url="#" />
-							</p:submenu>
-						</p:column>
-					</p:submenu>
-
-					<p:submenu label="Vendas " icon="ui-icon-document">
-						<p:column>
-							<p:submenu>
-								<p:menuitem value="Caixa" url="#" />
-								<p:menuitem value="Consultas" url="#" />
-								<p:menuitem value="PDV" url="#" />
-								<p:menuitem value="Relatorios" url="#" />
-							</p:submenu>
-						</p:column>
-					</p:submenu>
-
-					<p:submenu label="Estoque " icon="ui-icon-document">
-						<p:column>
-							<p:submenu>
-								<p:menuitem value="Entrada Produtos" url="#" />
-								<p:menuitem value="Saida Produtos" url="#" />
-								<p:menuitem value="Relatorios" url="#" />
-							</p:submenu>
-						</p:column>
-					</p:submenu>
-
-					<p:submenu label="Administrativo " icon="ui-icon-document">
-						<p:column>
-							<p:submenu>
-								<p:menuitem value="Rotas" url="#" />
-								<p:menuitem value="Localização Vendedor" url="#" />
-								<p:menuitem value="Relatorios" url="#" />
-							</p:submenu>
-						</p:column>
-					</p:submenu>
-
-					<p:submenu label="Consultas " icon="ui-icon-document">
-						<p:column>
-							<p:submenu label="Consultas">
-								<p:menuitem value="Produtos"
-									url="/pages/produtos/produtoPesquisa.faces" />
-								<p:menuitem value="Vendedor" url="#" />
-								<p:menuitem value="Fornecedor"
-									url="/pages/fornecedor/fornecedorPesquisa.faces" />
-								<p:menuitem value="Cliente" url="#" />
-								<p:menuitem value="Rotas" url="#" />
-								<p:menuitem value="Usuarios" url="#" />
-							</p:submenu>
-						</p:column>
-					</p:submenu>
-
-
-					<p:menuitem value="Sair " url="http://www.primefaces.org"
-						icon="ui-icon-close" />
-				</p:megaMenu>
-			</h:form>
-
-			<!--            Fim Menu -->
-
 
 			<p:layoutUnit position="south" size="30" resizable="false"
 				closable="false" collapsible="false">
 				<ui:include src="footer.xhtml" />
 			</p:layoutUnit>
-			
+
+			<p:layoutUnit position="west" size="200" header="#{labels.menu_name}"
+				resizable="false" closable="false" collapsible="false">
+				<ui:include src="menu.xhtml" />
+			</p:layoutUnit>
+
 			<p:layoutUnit position="center">
 				<ui:insert name="content" />
 			</p:layoutUnit>
