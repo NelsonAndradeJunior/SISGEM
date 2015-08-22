@@ -15,15 +15,27 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import br.com.sisgem.model.UserEntity;
-import br.com.sisgem.model.repository.IUserRepository;
+import br.com.sisgem.model.UsuarioEntity;
+import br.com.sisgem.model.repository.IUsuarioRepository;
 
 
 @Named
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
+	@Override
+	public Authentication authenticate(Authentication arg0) throws AuthenticationException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean supports(Class<?> arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+/*
 	@Inject
-	private IUserRepository userRepository;
+	private IUsuarioRepository UsuarioRepository;
 
 	public CustomAuthenticationProvider() {
 		super();
@@ -31,18 +43,18 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-		String username = authentication.getName();
-		String password = authentication.getCredentials().toString();
+		String nome = authentication.getName();
+		String senha = authentication.getCredentials().toString();
 
-		UserEntity user = this.userRepository.findByUsernameAndPassword(username, password);
+		UsuarioEntity user = this.UsuarioRepository.findByUsernameAndPassword(nome, senha);
 
 		if (user != null) {
 			List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
 
-			grantedAuthorities.add(new SimpleGrantedAuthority(user.getRole()));
+			grantedAuthorities.add(new SimpleGrantedAuthority(user.getSenha()));
 
-			UserDetails userDetails = new User(username, password, grantedAuthorities);
-			return new UsernamePasswordAuthenticationToken(userDetails, password, grantedAuthorities);
+			UserDetails userDetails = new User(nome, senha, grantedAuthorities);
+			return new UsernamePasswordAuthenticationToken(userDetails, senha, grantedAuthorities);
 		} else {
 			return null;
 		}
@@ -52,6 +64,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	public boolean supports(final Class<?> authentication) {
 		return authentication.equals(UsernamePasswordAuthenticationToken.class);
 	}
+	*/
 
 }
 
