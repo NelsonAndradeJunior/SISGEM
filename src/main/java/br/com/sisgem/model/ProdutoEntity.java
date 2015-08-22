@@ -3,10 +3,16 @@ package br.com.sisgem.model;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import br.com.sisgem.enums.EinativoAtivo;
 import br.com.sisgem.model.utils.BaseEntities;
 
 @Entity
@@ -16,12 +22,28 @@ public class ProdutoEntity extends BaseEntities<Long> {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Size(max=100)
+	@NotNull
 	private String nome;
-	private String unidade_medida;
-	private Integer valor_venda;
-	private Integer valor_compra;		
+	
+	@Size(max=40)
+	@NotNull
+	private String unidade;
+	
+    @DecimalMax(value= "9999999999.99")
+    @NotNull
+	private Double valorVenda;
+    
+    @DecimalMax(value= "9999999999.99")
+    @NotNull
+	private Double valorCompra;
+    
+    @Size(max=100)
 	private String epi;
-	private String conteudo;
+    
+	@Enumerated(EnumType.STRING)
+	@NotNull
+	private EinativoAtivo statusProduto;
 	
 	@ManyToOne
 	@JoinColumn(name="Fornecedor_idPessoaJuridica")
@@ -31,16 +53,17 @@ public class ProdutoEntity extends BaseEntities<Long> {
 		
 	}
 
-	public ProdutoEntity(String nome, String unidade_medida,
-			Integer valor_venda, Integer valor_compra, String epi,
-			String conteudo) {
+	public ProdutoEntity(String nome, String unidade, Double valorVenda,
+			Double valorCompra, String epi, EinativoAtivo statusProduto,
+			FornecedorEntity fornecedor_idPessoaJuridica) {
 		super();
 		this.nome = nome;
-		this.unidade_medida = unidade_medida;
-		this.valor_venda = valor_venda;
-		this.valor_compra = valor_compra;
+		this.unidade = unidade;
+		this.valorVenda = valorVenda;
+		this.valorCompra = valorCompra;
 		this.epi = epi;
-		this.conteudo = conteudo;
+		this.statusProduto = statusProduto;
+		Fornecedor_idPessoaJuridica = fornecedor_idPessoaJuridica;
 	}
 
 	public String getNome() {
@@ -51,28 +74,28 @@ public class ProdutoEntity extends BaseEntities<Long> {
 		this.nome = nome;
 	}
 
-	public String getUnidade_medida() {
-		return unidade_medida;
+	public String getUnidade() {
+		return unidade;
 	}
 
-	public void setUnidade_medida(String unidade_medida) {
-		this.unidade_medida = unidade_medida;
+	public void setUnidade(String unidade) {
+		this.unidade = unidade;
 	}
 
-	public Integer getValor_venda() {
-		return valor_venda;
+	public Double getValorVenda() {
+		return valorVenda;
 	}
 
-	public void setValor_venda(Integer valor_venda) {
-		this.valor_venda = valor_venda;
+	public void setValorVenda(Double valorVenda) {
+		this.valorVenda = valorVenda;
 	}
 
-	public Integer getValor_compra() {
-		return valor_compra;
+	public Double getValorCompra() {
+		return valorCompra;
 	}
 
-	public void setValor_compra(Integer valor_compra) {
-		this.valor_compra = valor_compra;
+	public void setValorCompra(Double valorCompra) {
+		this.valorCompra = valorCompra;
 	}
 
 	public String getEpi() {
@@ -83,12 +106,12 @@ public class ProdutoEntity extends BaseEntities<Long> {
 		this.epi = epi;
 	}
 
-	public String getConteudo() {
-		return conteudo;
+	public EinativoAtivo getStatusProduto() {
+		return statusProduto;
 	}
 
-	public void setConteudo(String conteudo) {
-		this.conteudo = conteudo;
+	public void setStatusProduto(EinativoAtivo statusProduto) {
+		this.statusProduto = statusProduto;
 	}
 
 	public FornecedorEntity getFornecedor_idPessoaJuridica() {
@@ -99,6 +122,7 @@ public class ProdutoEntity extends BaseEntities<Long> {
 			FornecedorEntity fornecedor_idPessoaJuridica) {
 		Fornecedor_idPessoaJuridica = fornecedor_idPessoaJuridica;
 	}
+
 	
 	
 }
