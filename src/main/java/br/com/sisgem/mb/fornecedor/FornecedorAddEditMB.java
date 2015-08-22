@@ -6,7 +6,6 @@ import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
 import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.repository.IFornecedorRepository;
@@ -14,7 +13,7 @@ import br.com.sisgem.model.utils.BaseBeans;
 import br.com.sisgem.model.utils.Utilidades;
 
 @Component
-@Scope (value = WebApplicationContext.SCOPE_REQUEST)
+@Scope("view")
 @Named (value = "fornecedorAddEditMB")
 public class FornecedorAddEditMB extends BaseBeans{
 
@@ -30,6 +29,10 @@ public class FornecedorAddEditMB extends BaseBeans{
 	private FornecedorMB mbFornecedorBean;
 	
 	private FornecedorEntity fornecedorObj;
+	
+	private Boolean flagExibeConsultaFornecedor = true;
+	
+	private Boolean flagExibeFormularioFornecedor;
 	
 	public FornecedorAddEditMB() {
 		this.fornecedorObj = new FornecedorEntity();
@@ -63,6 +66,12 @@ public class FornecedorAddEditMB extends BaseBeans{
 		hideDialog("dialogListaResultado");
 	}
 	
+	public void exibeFormularioFornecedor() {
+		flagExibeFormularioFornecedor = true;
+		flagExibeConsultaFornecedor = false;
+		hideDialog("dialogListaFornecedores");
+	}
+	
 	////Getters and Setters////
 	public IFornecedorRepository getFornecedorRepository() {
 		return fornecedorRepository;
@@ -86,6 +95,28 @@ public class FornecedorAddEditMB extends BaseBeans{
 
 	public void setFornecedorObj(FornecedorEntity fornecedorObj) {
 		this.fornecedorObj = fornecedorObj;
+	}
+
+
+	public Boolean getFlagExibeFormularioFornecedor() {
+		return flagExibeFormularioFornecedor;
+	}
+
+
+	public void setFlagExibeFormularioFornecedor(
+			Boolean flagExibeFormularioFornecedor) {
+		this.flagExibeFormularioFornecedor = flagExibeFormularioFornecedor;
+	}
+
+
+	public Boolean getFlagExibeConsultaFornecedor() {
+		return flagExibeConsultaFornecedor;
+	}
+
+
+	public void setFlagExibeConsultaFornecedor(
+			Boolean flagExibeConsultaFornecedor) {
+		this.flagExibeConsultaFornecedor = flagExibeConsultaFornecedor;
 	}
 
 }

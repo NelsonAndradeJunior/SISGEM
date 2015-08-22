@@ -8,8 +8,8 @@
 	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
 
 	<ui:define name="content">
-		<p:panel header="Pesquisa Fornecedor">
-			<h:form id="fornecedorPesquisaForm">
+		<h:form id="fornecedorPesquisaForm">
+			<p:panel header="Pesquisa Fornecedor">
 
 				<p:inputText value="#{fornecedorMB.paramFornecedor}"
 					placeholder="Pesquise por CNPJ, Nome Fantasia ou Razão Social"
@@ -98,8 +98,8 @@
 							update="pesquisaFornecedorDataTable"
 							actionListener="#{fornecedorMB.delete}">
 							<p:confirm header="Comfirmação" message="Tem Certeza?"
-										icon="ui-icon-alert" />
-							</p:commandButton>
+								icon="ui-icon-alert" />
+						</p:commandButton>
 					</h:panelGroup>
 				</p:dialog>
 				<p:confirmDialog global="true" showEffect="fade">
@@ -108,8 +108,7 @@
 					<p:commandButton value="Não" type="button"
 						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 				</p:confirmDialog>
-
-			</h:form>
-		</p:panel>
+			</p:panel>
+		</h:form>
 	</ui:define>
 </ui:composition>
