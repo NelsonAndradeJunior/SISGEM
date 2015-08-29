@@ -52,7 +52,7 @@ public class FornecedorAddEditMB extends BaseBeans{
 				Utilidades.showFacesMessage("Salvo com Sucesso", 2);
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			Utilidades.showFacesMessage(e.getMessage(), 1);
 		}
 	}
 

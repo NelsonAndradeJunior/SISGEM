@@ -1,6 +1,7 @@
 package br.com.sisgem.model;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -15,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.sisgem.enums.EinativoAtivo;
 import br.com.sisgem.model.utils.BaseEntities;
@@ -71,9 +74,7 @@ public class FornecedorEntity extends BaseEntities<Long>{
 	@NotNull
 	private String cep;
 	
-	@Size(max=11)
-	@NotNull
-	private Integer numeroEndereco;	
+	private int numeroEndereco;	
 
 	@Lob
 	@Size(max=65535)
@@ -87,9 +88,7 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.statusForn = statusForn;
 	}
 
-	@Size(max=10)
-	@NotNull
-	private Date dataCadastro;
+	private SimpleDateFormat dataCadastro = new SimpleDateFormat("dd/MM/yyyy");
 	
     @OneToMany(mappedBy="Fornecedor_idPessoaJuridica", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private List<ProdutoEntity> produtoEntity;
@@ -102,7 +101,7 @@ public class FornecedorEntity extends BaseEntities<Long>{
 			String razaoSocial, String telefone, String telefone2,
 			String complemento, String email, String nomeContato,
 			EinativoAtivo statusForn, String nomeFantasia, String cep,
-			Integer numeroEndereco, String observacao, Date dataCadastro,
+			int numeroEndereco, String observacao, SimpleDateFormat dataCadastro,
 			List<ProdutoEntity> produtoEntity) {
 		super();
 		this.cnpj = cnpj;
@@ -211,11 +210,11 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.cep = cep;
 	}
 
-	public Integer getNumeroEndereco() {
+	public int getNumeroEndereco() {
 		return numeroEndereco;
 	}
 
-	public void setNumeroEndereco(Integer numeroEndereco) {
+	public void setNumeroEndereco(int numeroEndereco) {
 		this.numeroEndereco = numeroEndereco;
 	}
 
@@ -227,13 +226,10 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.observacao = observacao;
 	}
 
-	public Date getDataCadastro() {
+	public SimpleDateFormat getDataCadastro() {
 		return dataCadastro;
 	}
 
-	public void setDataCadastro(Date dataCadastro) {
-		this.dataCadastro = dataCadastro;
-	}
 
 	public List<ProdutoEntity> getProdutoEntity() {
 		return produtoEntity;

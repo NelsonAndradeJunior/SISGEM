@@ -8,7 +8,6 @@
 	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
 
 	<ui:define name="content">
-
 		<h:form id="fornecedorPesquisaForm">
 			<p:panel header="Pesquisa Fornecedor"
 				rendered="#{fornecedorAddEditMB.flagExibeConsultaFornecedor}">
@@ -18,7 +17,7 @@
 					size="55" />
 				<br />
 				<br />
-				<p:commandButton value="Pesquisar"
+				<p:commandButton value="Pesquisar" 
 					action="#{fornecedorMB.findFornecedor(fornecedorMB.paramFornecedor)}"
 					widgetVar="searchButton" update="pesquisaFornecedorDataTable" />
 				<p:dialog id="dialogListaFornecedores"
@@ -104,12 +103,15 @@
 					<p:commandButton value="Não" type="button"
 						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 				</p:confirmDialog>
+
+
 			</p:panel>
 		</h:form>
 
 		<h:form id="fornecedorForm">
 			<p:panel
 				rendered="#{fornecedorAddEditMB.flagExibeFormularioFornecedor}">
+
 
 				<h:inputHidden value="#{fornecedorAddEditMB.fornecedorObj.id}" />
 				<h:panelGroup>
@@ -130,8 +132,8 @@
 								<p:selectOneRadio id="situacao" required="true"
 									requiredMessage="Status fornecedor é obrigatório"
 									value="#{fornecedorAddEditMB.fornecedorObj.statusForn}">
-									<f:selectItem itemLabel="Ativo" itemValue="1" />
-									<f:selectItem itemLabel="Inativo" itemValue="0" />
+									<f:selectItem itemLabel="Ativo" itemValue="Ativo" />
+									<f:selectItem itemLabel="Inativo" itemValue="Inativo" />
 								</p:selectOneRadio>
 							</p:column>
 
@@ -299,7 +301,7 @@
 						<f:facet name="footer">
 							<p:row>
 								<p:column colspan="4">
-									<p:commandButton value="Salvar" style="margin: 130 auto"
+									<p:commandButton value="Salvar" style="margin: 130 auto" ajax="false"
 										actionListener="#{fornecedorAddEditMB.salvar}">
 										<p:confirm header="Comfirmação" message="Tem Certeza?"
 											icon="ui-icon-alert" />
@@ -318,6 +320,8 @@
 				</p:confirmDialog>
 			</p:panel>
 		</h:form>
+
+
 
 	</ui:define>
 </ui:composition>
