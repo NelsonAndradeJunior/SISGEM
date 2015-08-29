@@ -6,7 +6,6 @@ import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
 import br.com.sisgem.model.UsuarioEntity;
 import br.com.sisgem.model.repository.IUsuarioRepository;
@@ -14,7 +13,7 @@ import br.com.sisgem.model.utils.BaseBeans;
 import br.com.sisgem.model.utils.Utilidades;
 
 @Component
-@Scope (value = WebApplicationContext.SCOPE_REQUEST)
+@Scope("view")
 @Named (value = "usuarioAddEditMB")
 public class UsuarioAddEditMB extends BaseBeans{
 
@@ -30,6 +29,10 @@ public class UsuarioAddEditMB extends BaseBeans{
 	private UsuarioMB mbUsuarioBean;
 	
 	private UsuarioEntity usuarioObj;
+	
+	private Boolean flagExibeConsultaUsuario = true;
+	
+	private Boolean flagExibeFormularioUsuario;
 	
 	public UsuarioAddEditMB() {
 		this.usuarioObj = new UsuarioEntity();
@@ -63,6 +66,12 @@ public class UsuarioAddEditMB extends BaseBeans{
 		hideDialog("dialogListaResultado");
 	}
 	
+	public void exibeFormularioUsuario() {
+		flagExibeFormularioUsuario = true;
+		flagExibeConsultaUsuario = false;
+		hideDialog("dialogListaUsuarios");
+	}
+	
 	////Getters and Setters////
 	public IUsuarioRepository getUsuarioRepository() {
 		return usuarioRepository;
@@ -86,6 +95,28 @@ public class UsuarioAddEditMB extends BaseBeans{
 
 	public void setUsuarioObj(UsuarioEntity usuarioObj) {
 		this.usuarioObj = usuarioObj;
+	}
+
+
+	public Boolean getFlagExibeFormularioUsuario() {
+		return flagExibeFormularioUsuario;
+	}
+
+
+	public void setFlagExibeFormularioUsuario(
+			Boolean flagExibeFormularioUsuario) {
+		this.flagExibeFormularioUsuario = flagExibeFormularioUsuario;
+	}
+
+
+	public Boolean getFlagExibeConsultaUsuario() {
+		return flagExibeConsultaUsuario;
+	}
+
+
+	public void setFlagExibeConsultaUsuario(
+			Boolean flagExibeConsultaUsuario) {
+		this.flagExibeConsultaUsuario = flagExibeConsultaUsuario;
 	}
 
 }

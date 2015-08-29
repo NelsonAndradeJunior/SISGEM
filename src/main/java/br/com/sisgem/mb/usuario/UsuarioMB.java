@@ -41,7 +41,7 @@ public class UsuarioMB extends BaseBeans{
 		
 	}
 	
-	public void findusuario(String paramUsuario){
+	public void findUsuario(String paramUsuario){
 		this.setUsuarioList(this.usuarioRepository.findByNome(paramUsuario));
 		this.paramUsuario = null;
 		showDialog("dialogListaResultado");

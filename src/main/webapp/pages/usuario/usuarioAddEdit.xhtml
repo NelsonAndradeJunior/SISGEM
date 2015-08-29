@@ -9,45 +9,45 @@
 
 	<ui:define name="content">
 
-		<h:form id="clientePesquisaForm">
-			<p:panel header="Pesquisa Cliente"
-				rendered="#{clienteAddEditMB.flagExibeConsultaCliente}">
+		<h:form id="usuarioPesquisaForm">
+			<p:panel header="Pesquisa Usuario"
+				rendered="#{usuarioAddEditMB.flagExibeConsultaUsuario}">
 
-				<p:inputText value="#{clienteMB.paramCliente}"
+				<p:inputText value="#{usuarioMB.paramUsuario}"
 					placeholder="Pesquise por Telefone, Nome ou CPF"
 					size="55" />
 				<br />
 				<br />
 				<p:commandButton value="Pesquisar"
-					action="#{clienteMB.findCliente(clienteMB.paramCliente)}"
-					widgetVar="searchButton" update="pesquisaClienteDataTable" />
+					action="#{usuarioMB.findUsuario(usuarioMB.paramUsuario)}"
+					widgetVar="searchButton" update="pesquisaUsuarioDataTable" />
 				
 				
-				<p:dialog id="dialogListaClientes"
-					header="Lista de Clientes" widgetVar="dialogListaResultado"
+				<p:dialog id="dialogListaUsuarios"
+					header="Lista de Usuarios" widgetVar="dialogListaResultado"
 					resizable="false" position="center">
-					<p:dataTable id="pesquisaClienteDataTable" widgetVar="dataTable"
-						var="cliente" loadingMessage="Carregando..."
-						value="#{clienteMB.clienteList}" paginator="true" rows="10"
+					<p:dataTable id="pesquisaUsuarioDataTable" widgetVar="dataTable"
+						var="usuario" loadingMessage="Carregando..."
+						value="#{usuarioMB.usuarioList}" paginator="true" rows="10"
 						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-						rowsPerPageTemplate="5,10,15" rowKey="#{cliente.id}"
+						rowsPerPageTemplate="5,10,15" rowKey="#{usuario.id}"
 						selectionMode="single">
 
 						<p:ajax event="rowSelect"
-							listener="#{clienteMB.selectCliente}"
-							update=":clientePesquisaForm:panelGroupBotoes" />
-						<p:ajax event="page" listener="#{clienteMB.unselectCliente}"
-							update=":clientePesquisaForm:panelGroupBotoes"
+							listener="#{usuarioMB.selectUsuario}"
+							update=":usuarioPesquisaForm:panelGroupBotoes" />
+						<p:ajax event="page" listener="#{usuarioMB.unselectUsuario}"
+							update=":usuarioPesquisaForm:panelGroupBotoes"
 							oncomplete="dataTable.unselectAllRows()" />
 						<p:ajax event="rowUnselect"
-							listener="#{clienteMB.unselectCliente}"
-							update=":clientePesquisaForm:panelGroupBotoes" />
+							listener="#{usuarioMB.unselectUsuario}"
+							update=":usuarioPesquisaForm:panelGroupBotoes" />
 
-						<p:column sortBy="#{cliente.nomeRazaoS}">
+						<p:column sortBy="#{usuario.nome}">
 							<f:facet name="header">
 								<h:outputText value="Nome" />
 							</f:facet>
-							<h:outputText value="#{cliente.nomeRazaoS}" />
+							<h:outputText value="#{usuario.nome}" />
 						</p:column>
 
 					
@@ -55,20 +55,20 @@
 					<h:panelGroup id="panelGroupBotoes">
 
 						<p:commandButton widgetVar="addButton" value="Novo"
-							actionListener="#{clienteAddEditMB.exibeFormularioCliente}"
-							update=":clientePesquisaForm :clienteForm" ajax="false"/>
+							actionListener="#{usuarioAddEditMB.exibeFormularioUsuario}"
+							update=":usuarioPesquisaForm :usuarioForm" ajax="false" />
 
 						<p:commandButton widgetVar="updateButton" value="Editar"
-							disabled="#{clienteMB.flagBotaoUpdate}"
-							action="/pages/cliente/clienteAddEdit.faces"
-							update="pesquisaClienteDataTable"
-							actionListener="#{clienteAddEditMB.update}" />
+							disabled="#{usuarioMB.flagBotaoUpdate}"
+							action="/pages/usuario/usuarioAddEdit.faces"
+							update="pesquisaUsuarioDataTable"
+							actionListener="#{usuarioAddEditMB.update}" />
 
 						<p:commandButton widgetVar="deleteButton"
-							disabled="#{clienteMB.flagBotaoDelete}"
+							disabled="#{usuarioMB.flagBotaoDelete}"
 							value="#{labels.button_delete}"
-							update="pesquisaClienteDataTable"
-							actionListener="#{clienteMB.delete}">
+							update="pesquisaUsuarioDataTable"
+							actionListener="#{usuarioMB.delete}">
 							<p:confirm header="Comfirmação" message="Tem Certeza?"
 								icon="ui-icon-alert" />
 						</p:commandButton>
@@ -82,28 +82,28 @@
 				</p:confirmDialog>
 			</p:panel>
 		</h:form>
-		<h:form id="clienteForm">
+		<h:form id="usuarioForm">
 			<p:panel
-				rendered="#{clienteAddEditMB.flagExibeFormularioCliente}">
+				rendered="#{usuarioAddEditMB.flagExibeFormularioUsuario}">
 
-				<h:inputHidden value="#{clienteAddEditMB.clienteObj.id}" />
+				<h:inputHidden value="#{usuarioAddEditMB.usuarioObj.id}" />
 				<h:panelGroup>
 					<p:messages id="messages" autoUpdate="true" closable="true" />
 					<p:panelGrid style="margin-bottom:10px" cellpadding="5">
 						<f:facet name="header">
 							<p:row>
 								<p:column colspan="4">
-									<p:outputLabel value="Cadastro de Cliente" />
+									<p:outputLabel value="Cadastro de Usuario" />
 								</p:column>
 							</p:row>
 						</f:facet>
 						<p:row>
 							<p:column>
-								<p:outputLabel value="Status Cliente" for="situacao" />
+								<p:outputLabel value="Status Usuario" for="situacao" />
 							</p:column>
 							<p:column>
 								<p:selectOneRadio id="situacao" required="true"
-									requiredMessage="Status cliente é obrigatório"
+									requiredMessage="Status usuario é obrigatório"
 									value="#">
 									<f:selectItem itemLabel="Ativo" itemValue="1" />
 									<f:selectItem itemLabel="Inativo" itemValue="0" />
@@ -223,7 +223,7 @@
 							</p:column>
 							<p:column>
 								<p:inputText maxlength="40" size="40"
-									value="" />
+									value="#" />
 							</p:column>
 						</p:row>
 
