@@ -32,7 +32,7 @@ public class FornecedorTest extends AbstractDatabaseTest {
 			fornecedorEntity.setCep("83320000");
 			fornecedorEntity.setCnpj("testeCnpj");
 			fornecedorEntity.setComplemento("testeComplemento");
-			fornecedorEntity.setDataCadastro(d);
+//			fornecedorEntity.setDataCadastro(d);
 			fornecedorEntity.setEmail("teste@email");
 			fornecedorEntity.setIe("testeaie");
 			fornecedorEntity.setIm("testeIM");
