@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
+
+	<ui:define name="content">
+
+<h:form>
+    <h:panelGrid columns="3" cellpadding="5">
+        <h:outputLabel for="menu" value="Selecione o Vendedor :" />
+        <p:selectCheckboxMenu id="menu" value="#{localizaVendedor.selectedCities}" label="Vendedores"
+                              filter="true" filterMatchMode="startsWith" panelStyle="width:300px">
+            <f:selectItems value="#{localizaVendedor.cities}" />
+        </p:selectCheckboxMenu>
+       
+        <p:commandLink value="Selecionar" update="display" />
+    </h:panelGrid>
+ 
+    <p:outputPanel id="display" style="width:250px;padding-left:5px;margin-top:10px">
+        <p:dataList value="#{localizaVendedor.selectedCities}" var="city" emptyMessage="Sem Vendedores selecionados !">
+            #{city}
+        </p:dataList>
+          <br></br>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230483.05208082148!2d-49.2897982!3d-25.4951166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1440873404264" width="800" height="600" frameborder="0" style="border:0" ></iframe>     
+        
+        
+    </p:outputPanel>
+</h:form>
+
+
+	</ui:define>
+</ui:composition>
+
+
+
+
