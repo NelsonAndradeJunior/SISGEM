@@ -9,21 +9,18 @@
 
 	<ui:define name="content">
 
-<h:form>
-   
- 
- <p:dataTable var="car" value="#{dtBasicView.cars}">
-    <p:column headerText="Nome do Relatorio">
-      
-    </p:column>
- 
- 
- 
-</p:dataTable>
-   
-   
-</h:form>
 
+		<h:form>
+			<p:growl id="growl" life="2000" />
+			<p></p>
+			<p:commandButton value="Ajax Submit" id="ajaxz" update="growl"
+				actionListener="#{buttonView.buttonAction}"
+				styleClass="ui-priority-primary" />
+			<p></p>
+			<p:commandButton value="Ajax Submit" id="ajax" update="growl"
+				actionListener="#{buttonView.buttonAction}"
+				styleClass="ui-priority-primary" />
+		</h:form>
 
 	</ui:define>
 </ui:composition>
