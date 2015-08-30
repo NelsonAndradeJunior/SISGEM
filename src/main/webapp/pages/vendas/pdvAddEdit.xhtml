@@ -181,92 +181,31 @@
 								<p:commandButton value="Pesquisar " action="#"	widgetVar="searchButton"  />
 						    </p:column>
 						</p:row>
-
-
-
-
-					<p:row>
+						<p:row>
 						<p:column>
-							<p:outputLabel value="Razão Social" for="rs" />
+							<p:outputLabel value="Nota Fiscal :"  />
 						</p:column>
-						<p:column>
-							<p:inputText id="rs" required="true"
-								requiredMessage="Razão social obrigatório" maxlength="100"
-								size="40" value="" />
+						<p:column colspan="3">
+							<p:selectBooleanButton id="value2" value="#{selectBooleanView.value2}" onLabel="Sim" offLabel="Não" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:60px">
+           					
+       						 </p:selectBooleanButton>
+							
 						</p:column>
 
-						<p:column>
-							<p:outputLabel value="Inscrição Municipal" for="im" />
-						</p:column>
-						<p:column>
-							<p:inputMask id="im" required="true"
-								requiredMessage="Inscrição municipal obrigatório"
-								mask="99999999-99" value="" />
-						</p:column>
+					
 					</p:row>
 
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Telefone" for="telefone" />
-						</p:column>
-						<p:column>
-
-							<p:inputMask id="telefone" required="true"
-								requiredMessage="Telefone é obrigatório" value=""
-								mask="(99) 9999-9999" />
-
-						</p:column>
-
-						<p:column>
-							<p:outputLabel value="Nome do Contato" for="NomeContato" />
-						</p:column>
-						<p:column>
-							<p:inputText id="NomeContato" required="true"
-								requiredMessage="Nome do contato é obrigatório" maxlength="40"
-								size="40" value="" />
-						</p:column>
-					</p:row>
-
-					<p:row>
-						<p:column>
-							<p:outputLabel value="E-mail" for="email" />
-						</p:column>
-						<p:column>
-							<p:inputText id="email" required="true"
-								requiredMessage="Email é obrigatório" itype="email"
-								maxlength="40" size="40" value="" />
-
-						</p:column>
-						<p:column>
-							<p:outputLabel value="CEP" for="cep" />
-						</p:column>
-						<p:column>
-							<p:inputMask id="cep" rendered="true"
-								requiredMessage="CEP é obrigatório" value="" mask="99.999-999" />
-						</p:column>
-					</p:row>
-
-					<p:row>
-
-					</p:row>
-
-					<p:row>
-
-						<p:column>
-							<p:outputLabel value="Complemento" />
-						</p:column>
-						<p:column>
-							<p:inputText maxlength="40" size="40" value="" />
-						</p:column>
-					</p:row>
-
-
-					<f:facet name="footer">
+				<f:facet name="footer">
 						<p:row>
 							<p:column colspan="4">
 								<p:commandButton value="Salvar" style="margin: 130 auto"
-									ajax="false" actionListener="#{fornecedorAddEditMB.salvar}">
-									<p:confirm header="Comfirmação" message="Tem Certeza?"
+									ajax="false" actionListener="#">
+									<p:confirm header="Comfirmação" message="Salvar o Pedido ?"
+										icon="ui-icon-alert" />
+								</p:commandButton>
+								<p:commandButton value="Novo Pedido" style="margin: 130 auto"
+									ajax="false" actionListener="#">
+									<p:confirm header="Comfirmação" message="Fazer um novo Pedido ?"
 										icon="ui-icon-alert" />
 								</p:commandButton>
 							</p:column>
