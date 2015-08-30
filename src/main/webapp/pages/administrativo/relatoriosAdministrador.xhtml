@@ -57,17 +57,17 @@
 							<p:panelGrid style="margin-bottom:10px" cellpadding="5">
 								<p:row>
 									<p:column>
-										<p:outputLabel value="Data Inicial :" for="dtainicialrel4" />
+										<p:outputLabel value="Data Inicial :" for="dtainicialrel1" />
 									</p:column>
 									<p:column>
-										<p:inputMask id="dtainicialrel4" value="#" mask="99/99/9999" />										
+										<p:inputMask id="dtainicialrel1" value="#" mask="99/99/9999" required="true" requiredMessage="Data Inicial é obrigatório"/>										
 									</p:column>
 
 									<p:column>
-										<p:outputLabel value="Data Final :" for="dtafinalrel4" />
+										<p:outputLabel value="Data Final :" for="dtafinalrel1" />
 									</p:column>
 									<p:column>
-										<p:inputMask id="dtafinalrel4" value="#" mask="99/99/9999" />										
+										<p:inputMask id="dtafinalrel1" value="#" mask="99/99/9999" required="true" requiredMessage="Data Final é obrigatório"/>										
 									</p:column>
 
 								</p:row>
@@ -76,30 +76,25 @@
 									<p:column>
 										<p:outputLabel value="Vendedor :" />
 									</p:column>
-									
 									<p:column>
-										<p:inputMask id="vendedorrel4"
+										<p:inputMask id="vendedorrel1"
 											required="true" requiredMessage="Vendedor é obrigatório"
 											value="" />
 									</p:column>
-
-									</p:row>
-
+									<p:column>
+									<p:commandButton value="Pesquisar Vendedor" style="margin: 120 auto"	/>
+									</p:column>
+									
+								</p:row>
 								<f:facet name="footer">
 									<p:row>
 										<p:column colspan="4">
-											<p:commandButton value="Gerar" style="margin: 130 auto"
-												actionListener="#{AddEditMB.salvar}">
-												<p:confirm header="Comfirmação" message="Tem Certeza?"
-													icon="ui-icon-alert" />
-											</p:commandButton>
+											<p:commandButton value="Gerar" style="margin: 130 auto"	/>
 										</p:column>
 									</p:row>
 								</f:facet>
 							</p:panelGrid>
 						</h:panelGroup>
-
-
 
 					</p:dialog>
 
