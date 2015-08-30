@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<ui:composition>
+		<div id="mainMenu">
+			<h:form>
+				<p:panelMenu>
+					<p:submenu label="Home">
+						<p:menuitem value="Cliente"
+							url="/pages/cliente/clienteAddEdit.faces"
+							icon="ui-icon-home" />
+						<p:menuitem value="Fornecedor"
+							url="/pages/fornecedor/fornecedorAddEdit.faces"
+							icon="ui-icon-person" />
+						<p:menuitem value="Produtos" icon="ui-icon-person"
+							url="/pages/produtos/produtoAddEdit.faces" />
+						<p:menuitem value="Usuarios" icon="ui-icon-person"
+							url="/pages/usuario/usuarioAddEdit.faces" />
+							<p:menuitem value="Carro" icon="ui-icon-person"
+							url="/pages/carro/carroAddEdit.faces" />
+					</p:submenu>
+
+					<p:submenu label="Vendas">
+						<p:menuitem value="Caixa"
+							url="#"
+							ajax="false" icon="ui-icon-wrench" />
+							<p:menuitem value="Consultas"
+							url="#"
+							ajax="false" icon="ui-icon-wrench" />
+							<p:menuitem value="PDV"
+							url="/pages/vendas/pdv.xhtml"
+							ajax="false" icon="ui-icon-wrench" />
+							
+
+
+					</p:submenu>
+
+					<p:submenu label="Vendedor">
+						<p:menuitem value="Entrada de Produtos"
+							url="/pages/vendedor/vendedorEntrada.faces" ajax="false"
+							icon="ui-icon-wrench" />
+							<p:menuitem value="Saída de Produtos"
+							url="/pages/vendedor/vendedorSaida.faces" ajax="false"
+							icon="ui-icon-wrench" />
+
+					</p:submenu>
+
+					<p:submenu label="Administrativo">
+						<p:menuitem value="Rotas"
+							url="#" ajax="false"
+							icon="ui-icon-wrench" />
+						<p:menuitem value="Localização Vendedor"
+							url="/pages/administrativo/localizaVendedor.faces" ajax="false"
+							icon="ui-icon-wrench" />
+							<p:menuitem value="Relatorios"
+							url="/pages/administrativo/relatoriosAdministrador.faces" ajax="false"
+							icon="ui-icon-wrench" />
+					</p:submenu>
+
+				
+				</p:panelMenu>
+			</h:form>
+		</div>
+	</ui:composition>
+</body>
+</html>
