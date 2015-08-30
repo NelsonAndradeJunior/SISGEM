@@ -111,124 +111,266 @@
 							</p:column>
 
 							<p:column>
-								<p:outputLabel value="Nome Fantasia" for="nomeFantasia" />
+								<p:outputLabel value="Nome :" for="nome" />
 							</p:column>
 							<p:column>
-								<p:inputText id="nomeFantasia" required="true"
-									requiredMessage="Nome Fantasia é obrigatório" maxlength="40"
+								<p:inputText id="nome" required="true"
+									requiredMessage="Nome é obrigatório" maxlength="40"
 									size="40"
-									value="#" />
+									value="" />
 							</p:column>
 
 						</p:row>
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="CNPJ" for="cnpj" />
+								<p:outputLabel value="CPF : " for="cpf" />
 							</p:column>
 							<p:column>
-								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true"
-									requiredMessage="CNPJ é obrigatório"
-									value="#" />
+								<p:inputMask mask="999.999.999-99" id="cpf" 
+									value="" />
 							</p:column>
 
 							<p:column>
-								<p:outputLabel value="Inscrição Estadual" for="ie" />
+								<p:outputLabel value="RG : " for="rg" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="ie" required="true"
-									requiredMessage="Inscrição estadual obrigatório"
-									mask="99999999-99"
-									value="#" />
+								<p:inputMask id="rg"
+									mask="99.999.999-9"
+									value=" " />
 							</p:column>
 						</p:row>
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="Razão Social" for="rs" />
+								<p:outputLabel value="CNH : " for="cnh" />
 							</p:column>
 							<p:column>
-								<p:inputText id="rs" required="true"
-									requiredMessage="Razão social obrigatório" maxlength="100"
+								<p:inputMask id="cnh"
+									mask='99.999.999-9'
+									value=" " />
+							</p:column>
+
+							<p:column>
+								<p:outputLabel value="Data de Validade : " for="datavalidade" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="datavalidade"
+									mask="99/99/9999"
+									value="" />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Cargo : " for="cargo" />
+							</p:column>
+							<p:column>
+								<p:inputText id="cargo" required="true"
+									requiredMessage="Cargo é obrigatório" maxlength="40"
 									size="40"
-									value="#" />
+									value=" " />
 							</p:column>
 
 							<p:column>
-								<p:outputLabel value="Inscrição Municipal" for="im" />
+								<p:outputLabel value="Telefone : " for="telefone" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="im" required="true"
-									requiredMessage="Inscrição municipal obrigatório"
-									mask="99999999-99"
-									value="#" />
-							</p:column>
-						</p:row>
-
-						<p:row>
-							<p:column>
-								<p:outputLabel value="Telefone" for="telefone" />
-							</p:column>
-							<p:column>
-
 								<p:inputMask id="telefone" required="true"
-									requiredMessage="Telefone é obrigatório"
-									value="#"
-									mask="(99) 9999-9999" />
-
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Nome do Contato" for="NomeContato" />
-							</p:column>
-							<p:column>
-								<p:inputText id="NomeContato" required="true"
-									requiredMessage="Nome do contato é obrigatório" maxlength="40"
-									size="40"
-									value="#" />
+								requiredMessage="Telefone é obrigatório"
+									mask="(999) 999-9999"
+									value=" " />
 							</p:column>
 						</p:row>
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="E-mail" for="email" />
+								<p:outputLabel value="Telefone 2 : " for="telefone2" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="telefone2"
+									mask="(999) 999-9999"
+									value=" " />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Celular Particular : " for="celularparticular" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="celularparticular"
+									mask="(999) 999-9999"
+									value=" " />
+							</p:column>
+						</p:row>
+
+						<p:row>
+						
+							<p:column>
+								<p:outputLabel value="Celular da Empresa : " for="celulardaempresa" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="celulardaempresa"
+									mask="(999) 999-9999"
+									value=" " />
+							</p:column>
+							
+								<p:column>
+								<p:outputLabel value="Endereço : " for="endereço" />
+							</p:column>
+							<p:column>
+								<p:inputText id="endereço" required="true"
+									requiredMessage="Endereço é obrigatório" maxlength="100"
+									size="40"
+									value=" " />
+							</p:column>
+						</p:row>
+						
+						
+							<p:row>
+							
+							<p:column>
+								<p:outputLabel value="Número : " for="numero" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="numero" required="true"
+									requiredMessage="Número é obrigatório" maxlength="40"
+									size="40"
+									value=" " />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Complemento : " for="complemento" />
+							</p:column>
+							<p:column>
+								<p:inputText id="complemento"
+									 maxlength="40"
+									size="40"
+									value="" />
+							</p:column>
+							
+							</p:row>
+							
+							
+							<p:row>
+							<p:column>
+								<p:outputLabel value="Bairro : " for="bairro" />
+							</p:column>
+							<p:column>
+								<p:inputText id="bairro" required="true"
+									requiredMessage="Bairro é obrigatório" maxlength="40"
+									size="40"
+									value="" />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Cidade : " for="cidade" />
+							</p:column>
+							<p:column>
+								<p:inputText id="cidade" required="true"
+									requiredMessage="Cidade é obrigatório" maxlength="40"
+									size="40"
+									value=" " />
+							</p:column>
+							
+							</p:row>
+							
+							<p:row>
+							<p:column>
+								<p:outputLabel value="Estado : " for="estado" />
+							</p:column>
+							<p:column>
+								<p:inputText id="estado" required="true"
+									requiredMessage="Estado é obrigatório" maxlength="40"
+									size="40"
+									value="" />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="CEP : " for="cep" />
+							</p:column>
+							<p:column>
+								<p:inputText id="cep" required="true"
+									requiredMessage="CEP é obrigatório" maxlength="40"
+									size="40"
+									mask= "99.999-999"
+									value=" " />
+							</p:column>
+							
+							</p:row>
+							
+							<p:row>
+							
+							<p:column>
+								<p:outputLabel value="Email : " for="email" />
 							</p:column>
 							<p:column>
 								<p:inputText id="email" required="true"
-									requiredMessage="Email é obrigatório" itype="email"
-									maxlength="40" size="40"
-									value="#" />
-
+									requiredMessage="Email é obrigatório" maxlength="100"
+									size="50"
+									value=" " />
 							</p:column>
-							<p:column>
-								<p:outputLabel value="CEP" for="cep" />
-							</p:column>
-							<p:column>
-								<p:inputMask id="cep" rendered="true"
-									requiredMessage="CEP é obrigatório"
-									value="#"
-									mask="99.999-999" />
-							</p:column>
-						</p:row>
-
-						<p:row>
-						
-						</p:row>
-
-						<p:row>
 							
-
 							<p:column>
-								<p:outputLabel value="Complemento" />
+								<p:outputLabel value="Estado Civil : " for="estadocivil" />
 							</p:column>
 							<p:column>
-								<p:inputText maxlength="40" size="40"
-									value="#" />
+								<p:inputText id="estadocivil" required="true"
+									requiredMessage="Estado Civil é obrigatório" maxlength="100"
+									size="40"
+									value=" " />
 							</p:column>
-						</p:row>
-
-						
-
+							
+							</p:row>
+							
+							<p:row>
+							
+							<p:column>
+								<p:outputLabel value="Sexo : " for="sexo" />
+							</p:column>
+							<p:column>
+								<p:inputText id="sexo" required="true"
+									requiredMessage="Sexo é obrigatório" maxlength="40"
+									size="40"
+									value=" " />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Data de Admissão : " for="dataadmissão" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="dataadmissão" required="true"
+								requiredMessage="Data de Admissão é obrigatório" maxlength="40"
+									size="40"
+									mask="99/99/9999"
+									value="" />
+							</p:column>
+							
+							</p:row>
+							
+							<p:row>
+							
+							<p:column>
+								<p:outputLabel value="Data de Demissão : " for="datademissao" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="datademissao" required="true"
+								requiredMessage="Data de Demissão é obrigatório" maxlength="40"
+									size="40"
+									mask="99/99/9999"
+									value="" />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Observação : " for="observação" />
+							</p:column>
+							<p:column>
+								<p:inputText id="observação"
+								maxlength="100" size="50"	
+								value=" " />
+							</p:column>
+							
+							</p:row>
+							
 						<f:facet name="footer">
 							<p:row>
 								<p:column colspan="4">

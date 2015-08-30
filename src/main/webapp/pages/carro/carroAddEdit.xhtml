@@ -127,19 +127,19 @@
 						</f:facet>
 						<p:row>
 							<p:column>
-								<p:outputLabel value="Status carro" for="situacao" />
+								<p:outputLabel value="Status Carro" for="situacao" />
 							</p:column>
 							<p:column>
 								<p:selectOneRadio id="situacao" required="true"
 									requiredMessage="Status do carro é obrigatório"
-									value="#">
+									value=" ">
 									<f:selectItem itemLabel="Ativo" itemValue="1" />
 									<f:selectItem itemLabel="Inativo" itemValue="0" />
 								</p:selectOneRadio>
 							</p:column>
 
 							<p:column>
-								<p:outputLabel value="Placa" for="Placa" />
+								<p:outputLabel value="Placa : " for="Placa" />
 							</p:column>
 							<p:column>
 								<p:inputText id="Placa" required="true"
@@ -151,7 +151,7 @@
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="modelo" for="modelo" />
+								<p:outputLabel value="Modelo : " for="modelo" />
 							</p:column>
 							<p:column>
 								<p:inputText id="modelo" required="true"
@@ -162,7 +162,7 @@
 							</p:column>
 
 							<p:column>
-								<p:outputLabel value="marca" for="marca" />
+								<p:outputLabel value="Marca : " for="marca" />
 							</p:column>
 							<p:column>
 								<p:inputText id="marca" required="true"
@@ -173,7 +173,7 @@
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="ano" for="ano" />
+								<p:outputLabel value="Ano : " for="ano" />
 							</p:column>
 							<p:column>
 								<p:inputMask id="ano" required="true"
@@ -182,13 +182,26 @@
 							</p:column>
 
 							<p:column>
-								<p:outputLabel value="localcarro" for="localcarro" />
+								<p:outputLabel value="Local do Carro : " for="localcarro" />
 							</p:column>
 							<p:column>
 								<p:inputText id="localcarro" required="true"
-									requiredMessage=" local carro obrigatório" maxlength="100"
+									requiredMessage=" local do carro obrigatório" maxlength="100"
 									size="40"/> 
 							</p:column>
+						</p:row>
+						
+						<p:row>
+						
+						<p:column>
+								<p:outputLabel value="Cor : " for="cor" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="cor" maxlength="40"
+									size="40"
+									value=" " />
+							</p:column>
+						
 						</p:row>
 
 
