@@ -5,6 +5,7 @@
 		<class>org.springframework.data.jpa.domain.AbstractPersistable</class>
 		<class>br.com.sisgem.model.UsuarioEntity</class>
 		<class>br.com.sisgem.model.FornecedorEntity</class>
+		<class>br.com.sisgem.model.ClienteEntity</class>
 		<class>br.com.sisgem.model.ProdutoEntity</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
