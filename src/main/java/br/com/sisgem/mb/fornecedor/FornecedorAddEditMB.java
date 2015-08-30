@@ -1,5 +1,7 @@
 package br.com.sisgem.mb.fornecedor;
 
+import java.util.Date;
+
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -44,6 +46,7 @@ public class FornecedorAddEditMB extends BaseBeans{
 			if (this.fornecedorObj != null) {
 				if (this.fornecedorObj.getId() == null) {
 					// Add
+					this.fornecedorObj.setDataCadastro(new Date());
 					this.fornecedorRepository.save(this.fornecedorObj);
 				} else {
 					// Update
@@ -58,7 +61,13 @@ public class FornecedorAddEditMB extends BaseBeans{
 
 	public void update(){
 		this.fornecedorObj = mbFornecedorBean.getFornecedorSelecionado();
+		this.flagExibeConsultaFornecedor = false;
+		this.flagExibeFormularioFornecedor = true;
+		hideDialog("dialogListaFornecedores");
+		this.mbFornecedorBean.setFlagBotaoUpdate(true);
+		this.mbFornecedorBean.setFlagBotaoDelete(true);
 	}
+	
 	
 	public void fornecedorVinculado(){
 		this.update();

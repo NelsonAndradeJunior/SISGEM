@@ -2,7 +2,7 @@ package br.com.sisgem.enums;
 
 public enum EinativoAtivo {
 
-	Ativo("Ativo"), inativo("Inativo");
+	Ativo("Ativo"), Inativo("Inativo");
 	
 	private String situacaoLabel;
 

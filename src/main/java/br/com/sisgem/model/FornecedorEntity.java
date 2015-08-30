@@ -1,7 +1,6 @@
 package br.com.sisgem.model;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -16,8 +15,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.sisgem.enums.EinativoAtivo;
 import br.com.sisgem.model.utils.BaseEntities;
@@ -88,7 +85,7 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.statusForn = statusForn;
 	}
 
-	private SimpleDateFormat dataCadastro = new SimpleDateFormat("dd/MM/yyyy");
+	private java.util.Date dataCadastro;
 	
     @OneToMany(mappedBy="Fornecedor_idPessoaJuridica", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private List<ProdutoEntity> produtoEntity;
@@ -101,7 +98,7 @@ public class FornecedorEntity extends BaseEntities<Long>{
 			String razaoSocial, String telefone, String telefone2,
 			String complemento, String email, String nomeContato,
 			EinativoAtivo statusForn, String nomeFantasia, String cep,
-			int numeroEndereco, String observacao, SimpleDateFormat dataCadastro,
+			int numeroEndereco, String observacao, Date dataCadastro,
 			List<ProdutoEntity> produtoEntity) {
 		super();
 		this.cnpj = cnpj;
@@ -226,10 +223,13 @@ public class FornecedorEntity extends BaseEntities<Long>{
 		this.observacao = observacao;
 	}
 
-	public SimpleDateFormat getDataCadastro() {
+	public java.util.Date getDataCadastro() {
 		return dataCadastro;
 	}
 
+	public void setDataCadastro(java.util.Date date) {
+		this.dataCadastro = date;
+	}
 
 	public List<ProdutoEntity> getProdutoEntity() {
 		return produtoEntity;

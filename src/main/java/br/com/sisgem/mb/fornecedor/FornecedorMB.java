@@ -33,9 +33,9 @@ public class FornecedorMB extends BaseBeans{
 	
 	private String paramFornecedor;
 	
-	private Boolean flagBotaoUpdate = true;
+	private boolean flagBotaoUpdate = true;
 	
-	private Boolean flagBotaoDelete = true;
+	private boolean flagBotaoDelete = true;
 	
 	public FornecedorMB() {
 		
@@ -51,8 +51,8 @@ public class FornecedorMB extends BaseBeans{
 		try {
 			if (evt.getObject() != null) {
 				this.fornecedorSelecionado = (FornecedorEntity) evt.getObject();
-				this.flagBotaoDelete = false;
-				this.flagBotaoUpdate = false;
+				this.setFlagBotaoDelete(false);
+				this.setFlagBotaoUpdate(false);
 		
 			} else {
 				this.fornecedorSelecionado = null;
@@ -66,6 +66,8 @@ public class FornecedorMB extends BaseBeans{
 	
 	public void unselectFornecedor() {
 		this.fornecedorSelecionado = null;
+		this.setFlagBotaoUpdate(true);
+		this.setFlagBotaoDelete(true);
 	}
 	
 	public void delete() {
@@ -73,6 +75,8 @@ public class FornecedorMB extends BaseBeans{
 			this.fornecedorList.remove(this.fornecedorSelecionado);
 			this.fornecedorRepository.delete(this.fornecedorSelecionado.getId());
 			unselectFornecedor();
+			this.setFlagBotaoUpdate(true);
+			this.setFlagBotaoDelete(true);
 		}
 	}
 	
@@ -110,21 +114,23 @@ public class FornecedorMB extends BaseBeans{
 		this.fornecedorRepository = fornecedorRepository;
 	}
 
-	public Boolean getFlagBotaoUpdate() {
+	public boolean isFlagBotaoUpdate() {
 		return flagBotaoUpdate;
 	}
 
-	public void setFlagBotaoUpdate(Boolean flagBotaoUpdate) {
+	public void setFlagBotaoUpdate(boolean flagBotaoUpdate) {
 		this.flagBotaoUpdate = flagBotaoUpdate;
 	}
 
-	public Boolean getFlagBotaoDelete() {
+	public boolean isFlagBotaoDelete() {
 		return flagBotaoDelete;
 	}
 
-	public void setFlagBotaoDelete(Boolean flagBotaoDelete) {
+	public void setFlagBotaoDelete(boolean flagBotaoDelete) {
 		this.flagBotaoDelete = flagBotaoDelete;
 	}
+
+
 
 
 }

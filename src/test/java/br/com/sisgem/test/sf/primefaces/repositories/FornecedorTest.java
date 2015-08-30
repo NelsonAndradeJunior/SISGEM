@@ -30,9 +30,9 @@ public class FornecedorTest extends AbstractDatabaseTest {
 	public void testInsertFornecedor(){
 		Date d = new Date(); 
 			fornecedorEntity.setCep("83320000");
-			fornecedorEntity.setCnpj("testeCnpj");
+			fornecedorEntity.setCnpj("testeCnpj2");
 			fornecedorEntity.setComplemento("testeComplemento");
-//			fornecedorEntity.setDataCadastro(d);
+			fornecedorEntity.setDataCadastro(d);
 			fornecedorEntity.setEmail("teste@email");
 			fornecedorEntity.setIe("testeaie");
 			fornecedorEntity.setIm("testeIM");
