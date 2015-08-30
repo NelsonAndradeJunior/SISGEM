@@ -51,44 +51,55 @@
 
 
 					<p:dialog header="Relatório Vendas por Periodo" widgetVar="dlg1">
+
 						<h:panelGroup>
+							<p:messages id="messages" autoUpdate="true" closable="true" />
+							<p:panelGrid style="margin-bottom:10px" cellpadding="5">
+								<p:row>
+									<p:column>
+										<p:outputLabel value="Data Inicial :" for="dtainicialrel4" />
+									</p:column>
+									<p:column>
+										<p:inputMask id="dtainicialrel4" value="#" mask="99/99/9999" />										
+									</p:column>
 
-							<h:panelGrid columns="2" cellpadding="5">
+									<p:column>
+										<p:outputLabel value="Data Final :" for="dtafinalrel4" />
+									</p:column>
+									<p:column>
+										<p:inputMask id="dtafinalrel4" value="#" mask="99/99/9999" />										
+									</p:column>
 
-								<p:outputLabel value="Data Inicial : " />
-								<p:inputMask id="dateinicial" value="#" mask="99/99/9999" />
+								</p:row>
 
-								<p:outputLabel value="Data Final : " />
-								<p:inputMask id="datefinal" value="#" mask="99/99/9999" />
+								<p:row>
+									<p:column>
+										<p:outputLabel value="Vendedor :" />
+									</p:column>
+									
+									<p:column>
+										<p:inputMask id="vendedorrel4"
+											required="true" requiredMessage="Vendedor é obrigatório"
+											value="" />
+									</p:column>
 
+									</p:row>
 
-
-								<h:panelGrid columns="3" cellpadding="5">
-									<h:outputLabel for="menu" value="Selecione o Vendedor :" />
-									<p:selectCheckboxMenu id="menu"
-										value="#{localizaVendedor.selectedCities}" label="Vendedores"
-										filter="true" filterMatchMode="startsWith"
-										panelStyle="width:300px">
-										<f:selectItems value="#{localizaVendedor.cities}" />
-									</p:selectCheckboxMenu>
-
-									<p:commandLink value="Selecionar" update="display" />
-								</h:panelGrid>
-								<br></br>
-								<p:outputPanel id="display"
-									style="width:250px;padding-left:5px;margin-top:10px">
-									<p:dataList value="#{localizaVendedor.selectedCities}"
-										var="city" emptyMessage="Sem Vendedores selecionados !">
-            #{city}
-        </p:dataList>
-									<br></br>
-
-
-								</p:outputPanel>
-
-								<p:commandButton value="Gerar" type="reset" />
-							</h:panelGrid>
+								<f:facet name="footer">
+									<p:row>
+										<p:column colspan="4">
+											<p:commandButton value="Gerar" style="margin: 130 auto"
+												actionListener="#{AddEditMB.salvar}">
+												<p:confirm header="Comfirmação" message="Tem Certeza?"
+													icon="ui-icon-alert" />
+											</p:commandButton>
+										</p:column>
+									</p:row>
+								</f:facet>
+							</p:panelGrid>
 						</h:panelGroup>
+
+
 
 					</p:dialog>
 
@@ -96,49 +107,19 @@
 					<p:dialog header="Relatório Vendas por Região" widgetVar="dlg2"
 						position="center">
 
-						<h:panelGroup>
-
-							<h:panelGrid columns="2" cellpadding="2">
-								<p:row>
-									<p:column>
-										<p:outputLabel value="Data Inicial : " />
-									</p:column>
-									<p:column>
-										<p:inputMask id="dateinicial2" value="#" mask="99/99/9999" />
-									</p:column>
-								</p:row>
-								<br></br>
-								<p:column>
-									<p:outputLabel value="Data Final : " />
-									<p:inputMask id="datefinal2" value="#" mask="99/99/9999" />
-								</p:column>
-								<br></br>
-
-								<p:row>
-									<p:column>
-										<p:outputLabel value="Rota : " />
-										<p:inputMask id="rota2" value="" />
-										<p:commandButton actionListener="#{buttonView.buttonAction}"
-											id="iconOnly" icon="ui-icon-disk" title="Icon Only" />
-									</p:column>
-								</p:row>
-
-								<br></br>
-								<p:commandButton value="Gerar" type="reset" />
-							</h:panelGrid>
-						</h:panelGroup>
-
 
 					</p:dialog>
 
 					<p:dialog header="Relatório Vendas por Vendedor" widgetVar="dlg3"
 						height="100" position="center">
-						<h:outputText value="This is a Modal Dialog." />
+
+
+
 					</p:dialog>
 
 					<p:dialog header="Relatório Verificação do Carro" widgetVar="dlg4"
-						 position="center">
-							<h:panelGroup>
+						position="center">
+						<h:panelGroup>
 
 							<h:panelGrid columns="2" cellpadding="5">
 
@@ -148,31 +129,6 @@
 								<p:outputLabel value="Data Final : " />
 								<p:inputMask id="datefinal3" value="#" mask="99/99/9999" />
 
-
-
-								<h:panelGrid columns="3" cellpadding="5">
-									<h:outputLabel for="menu" value="Selecione o Vendedor :" />
-									<p:selectCheckboxMenu id="menu3"
-										value="#{localizaVendedor.selectedCities}" label="Vendedores"
-										filter="true" filterMatchMode="startsWith"
-										panelStyle="width:300px">
-										<f:selectItems value="#{localizaVendedor.cities}" />
-									</p:selectCheckboxMenu>
-
-									<p:commandLink value="Selecionar" update="display" />
-								</h:panelGrid>
-								<br></br>
-								<p:outputPanel id="display3"
-									style="width:250px;padding-left:5px;margin-top:10px">
-									<p:dataList value="#{localizaVendedor.selectedCities}"
-										var="city" emptyMessage="Sem Vendedores selecionados !">
-            #{city}
-        </p:dataList>
-									<br></br>
-
-
-								</p:outputPanel>
-
 								<p:commandButton value="Gerar" type="reset" />
 							</h:panelGrid>
 						</h:panelGroup>
@@ -180,8 +136,15 @@
 					</p:dialog>
 
 					<p:dialog header="Localização de Usuario" widgetVar="dlg5"
-						height="100" position="center">
-						<h:outputText value="This is a Modal Dialog." />
+						position="center">
+
+
+
+
+
+
+
+
 					</p:dialog>
 
 					<p:dialog header="Relatório Localização de Usuario"

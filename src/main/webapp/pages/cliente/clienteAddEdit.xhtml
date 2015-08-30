@@ -14,18 +14,17 @@
 				rendered="#{clienteAddEditMB.flagExibeConsultaCliente}">
 
 				<p:inputText value="#{clienteMB.paramCliente}"
-					placeholder="Pesquise por Telefone, Nome ou CPF"
-					size="55" />
+					placeholder="Pesquise por Telefone, Nome ou CPF" size="55" />
 				<br />
 				<br />
 				<p:commandButton value="Pesquisar"
 					action="#{clienteMB.findCliente(clienteMB.paramCliente)}"
 					widgetVar="searchButton" update="pesquisaClienteDataTable" />
-				
-				
-				<p:dialog id="dialogListaClientes"
-					header="Lista de Clientes" widgetVar="dialogListaResultado"
-					resizable="false" position="center">
+
+
+				<p:dialog id="dialogListaClientes" header="Lista de Clientes"
+					widgetVar="dialogListaResultado" resizable="false"
+					position="center">
 					<p:dataTable id="pesquisaClienteDataTable" widgetVar="dataTable"
 						var="cliente" loadingMessage="Carregando..."
 						value="#{clienteMB.clienteList}" paginator="true" rows="10"
@@ -33,8 +32,7 @@
 						rowsPerPageTemplate="5,10,15" rowKey="#{cliente.id}"
 						selectionMode="single">
 
-						<p:ajax event="rowSelect"
-							listener="#{clienteMB.selectCliente}"
+						<p:ajax event="rowSelect" listener="#{clienteMB.selectCliente}"
 							update=":clientePesquisaForm:panelGroupBotoes" />
 						<p:ajax event="page" listener="#{clienteMB.unselectCliente}"
 							update=":clientePesquisaForm:panelGroupBotoes"
@@ -50,13 +48,13 @@
 							<h:outputText value="#{cliente.nomeRazaoS}" />
 						</p:column>
 
-					
+
 					</p:dataTable>
 					<h:panelGroup id="panelGroupBotoes">
 
 						<p:commandButton widgetVar="addButton" value="Novo"
 							actionListener="#{clienteAddEditMB.exibeFormularioCliente}"
-							update=":clientePesquisaForm :clienteForm" ajax="false"/>
+							update=":clientePesquisaForm :clienteForm" ajax="false" />
 
 						<p:commandButton widgetVar="updateButton" value="Editar"
 							disabled="#{clienteMB.flagBotaoUpdate}"
@@ -66,8 +64,7 @@
 
 						<p:commandButton widgetVar="deleteButton"
 							disabled="#{clienteMB.flagBotaoDelete}"
-							value="#{labels.button_delete}"
-							update="pesquisaClienteDataTable"
+							value="#{labels.button_delete}" update="pesquisaClienteDataTable"
 							actionListener="#{clienteMB.delete}">
 							<p:confirm header="Comfirmação" message="Tem Certeza?"
 								icon="ui-icon-alert" />
@@ -82,12 +79,11 @@
 				</p:confirmDialog>
 			</p:panel>
 		</h:form>
-		
-		
-		
+
+
+
 		<h:form id="clienteForm">
-			<p:panel
-				rendered="#{clienteAddEditMB.flagExibeFormularioCliente}">
+			<p:panel rendered="#{clienteAddEditMB.flagExibeFormularioCliente}">
 
 				<h:inputHidden value="#{clienteAddEditMB.clienteObj.id}" />
 				<h:panelGroup>
@@ -106,8 +102,7 @@
 							</p:column>
 							<p:column>
 								<p:selectOneRadio id="situacao" required="true"
-									requiredMessage="Status cliente é obrigatório"
-									value="#">
+									requiredMessage="Status cliente é obrigatório" value="#">
 									<f:selectItem itemLabel="Ativo" itemValue="1" />
 									<f:selectItem itemLabel="Inativo" itemValue="0" />
 								</p:selectOneRadio>
@@ -119,8 +114,7 @@
 							<p:column>
 								<p:inputText id="nomeFantasia" required="true"
 									requiredMessage="Nome Fantasia é obrigatório" maxlength="40"
-									size="40"
-									value="#" />
+									size="40" value="#" />
 							</p:column>
 
 						</p:row>
@@ -131,8 +125,7 @@
 							</p:column>
 							<p:column>
 								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true"
-									requiredMessage="CNPJ é obrigatório"
-									value="#" />
+									requiredMessage="CNPJ é obrigatório" value="#" />
 							</p:column>
 
 							<p:column>
@@ -141,8 +134,7 @@
 							<p:column>
 								<p:inputMask id="ie" required="true"
 									requiredMessage="Inscrição estadual obrigatório"
-									mask="99999999-99"
-									value="#" />
+									mask="99999999-99" value="#" />
 							</p:column>
 						</p:row>
 
@@ -153,8 +145,7 @@
 							<p:column>
 								<p:inputText id="rs" required="true"
 									requiredMessage="Razão social obrigatório" maxlength="100"
-									size="40"
-									value="#" />
+									size="40" value="#" />
 							</p:column>
 
 							<p:column>
@@ -163,8 +154,7 @@
 							<p:column>
 								<p:inputMask id="im" required="true"
 									requiredMessage="Inscrição municipal obrigatório"
-									mask="99999999-99"
-									value="#" />
+									mask="99999999-99" value="#" />
 							</p:column>
 						</p:row>
 
@@ -175,8 +165,7 @@
 							<p:column>
 
 								<p:inputMask id="telefone" required="true"
-									requiredMessage="Telefone é obrigatório"
-									value="#"
+									requiredMessage="Telefone é obrigatório" value="#"
 									mask="(99) 9999-9999" />
 
 							</p:column>
@@ -187,8 +176,7 @@
 							<p:column>
 								<p:inputText id="NomeContato" required="true"
 									requiredMessage="Nome do contato é obrigatório" maxlength="40"
-									size="40"
-									value="#" />
+									size="40" value="#" />
 							</p:column>
 						</p:row>
 
@@ -199,8 +187,7 @@
 							<p:column>
 								<p:inputText id="email" required="true"
 									requiredMessage="Email é obrigatório" itype="email"
-									maxlength="40" size="40"
-									value="#" />
+									maxlength="40" size="40" value="#" />
 
 							</p:column>
 							<p:column>
@@ -208,29 +195,26 @@
 							</p:column>
 							<p:column>
 								<p:inputMask id="cep" rendered="true"
-									requiredMessage="CEP é obrigatório"
-									value="#"
-									mask="99.999-999" />
+									requiredMessage="CEP é obrigatório" value="#" mask="99.999-999" />
 							</p:column>
 						</p:row>
 
 						<p:row>
-						
+
 						</p:row>
 
 						<p:row>
-							
+
 
 							<p:column>
 								<p:outputLabel value="Complemento" />
 							</p:column>
 							<p:column>
-								<p:inputText maxlength="40" size="40"
-									value="" />
+								<p:inputText maxlength="40" size="40" value="" />
 							</p:column>
 						</p:row>
 
-						
+
 
 						<f:facet name="footer">
 							<p:row>
