@@ -9,7 +9,7 @@
 
 	<ui:define name="content">
 
-		<h:form id="vendedorEntrada">
+		<h:form id="vendedorSaida">
 
 			<p:panel>
 				<h:inputHidden value="#" />
@@ -19,7 +19,7 @@
 						<f:facet name="header">
 							<p:row>
 								<p:column colspan="4">
-									<p:outputLabel value="REMOVER Produtos do Vendedor" />
+									<p:outputLabel value="Saida de Produtos para Vendedor" />
 								</p:column>
 							</p:row>
 						</f:facet>
@@ -33,6 +33,12 @@
 									requiredMessage="Vendedor é Obrigatorio" maxlength="40"
 									size="40" value="" />
 							</p:column>
+							
+							<p:column>
+							<p:commandButton value="Pesquisa Vendedor " type="button"
+					onclick="PF('dlg1').show();" />
+							</p:column>
+							
 						</p:row>
                    		<p:row>
 							<p:column>
@@ -42,9 +48,8 @@
 								<p:inputText maxlength="40" size="40" value="" />
 							</p:column>
 								<p:column>
-								<p:outputLabel value="Quantidade :" />
-							</p:column>
-							<p:column>
+								<p:outputLabel value="Quantidade : " />
+						
 								<p:inputText maxlength="2" size="5" value="" />
 							</p:column>
 						</p:row>
@@ -59,7 +64,7 @@
 											message="Tem que deseja REMOVER esses produtos do vendedor ?"
 											icon="ui-icon-alert" />
 									</p:commandButton>
-									<p:commandButton value="REMOVER Produto" style="margin: 110 auto">
+									<p:commandButton value="Remover Produto" style="margin: 110 auto">
                                   </p:commandButton>
 									
 								</p:column>
@@ -84,14 +89,51 @@
              		<h:outputText value="Nome do Produto" />
 					<h:outputText value="Quantidade" />
 
-					<h:outputText value="Amaciante Azul Tradicional" />
+					<h:outputText value="Alvejante" />
 					<h:outputText value="1" />
 
-					<h:outputText value="Limpador Perfudado Eco Qualy" />
-					<h:outputText value="3" />
+					<h:outputText value="Limpador Perfumado Ecoville" />
+					<h:outputText value="8" />
 				</p:panelGrid>
 
 			</p:panel>
+
+
+<p:dialog header="Pesquisa Vendedor" widgetVar="dlg1">
+
+				
+				<p:dataTable id="teste" widgetVar="dataTable"
+						var="cliente" loadingMessage="Carregando..."
+						value="#" paginator="true" rows="10"
+						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						rowsPerPageTemplate="5,10,15" rowKey="#"
+						selectionMode="single">
+
+						<p:ajax event="rowSelect"
+							/>
+						<p:ajax event="page" 
+							oncomplete="dataTable.unselectAllRows()" />
+						<p:ajax event="rowUnselect"
+							
+							 />
+
+						<p:column sortBy="">
+							<f:facet name="header">
+								<h:outputText value="Nome" />
+							</f:facet>
+							<h:outputText value="" />
+						</p:column>
+
+
+					</p:dataTable>
+					
+				
+				
+				</p:dialog>
+
+
+
+
 
 
 		</h:form>
