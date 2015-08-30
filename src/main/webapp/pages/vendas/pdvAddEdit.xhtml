@@ -8,21 +8,21 @@
 	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
 
 	<ui:define name="content">
-		<h:form id="fornecedorPesquisaForm">
+		<h:form id="pdvPesquisaForm">
 			<p:panel header="Pesquisa Pedido"
 				rendered="true">
 
-				<p:inputText value="#{fornecedorMB.paramFornecedor}"
+				<p:inputText value=""
 					placeholder="Pesquise por Vendedor ou Data"
 					size="55" />
 				<br />
 				<br />
-				<p:commandButton widgetVar="addButton" value="Novo Pedido"
-							actionListener="#{fornecedorAddEditMB.exibeFormularioFornecedor}"
-							update=":fornecedorPesquisaForm :fornecedorForm" />
+				<p:commandButton value="Novo Pedido " type="button"
+					onclick="PF('dlg2').show();" />
 							
 				<p:commandButton value="Pesquisa " type="button"
 					onclick="PF('dlg1').show();" />
+					
 					
 					
 							
@@ -47,10 +47,6 @@
 					</p:dataTable>
 				</p:dialog>
 				
-				
-				
-				
-				
 				<p:confirmDialog global="true" showEffect="fade">
 					<p:commandButton value="Sim" type="button"
 						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
@@ -62,12 +58,14 @@
 			</p:panel>
 		</h:form>
 
-		<h:form id="fornecedorForm">
-			<p:panel
-				rendered="#{fornecedorAddEditMB.flagExibeFormularioFornecedor}">
+	
+		<h:form id="pdvForm">
+			<p:dialog header="Novo Pedido" widgetVar="dlg2">
+			
+	
 
 
-				<h:inputHidden value="#{fornecedorAddEditMB.fornecedorObj.id}" />
+				<h:inputHidden value="#" />
 				<h:panelGroup>
 					<p:messages id="messages" autoUpdate="true" closable="true" />
 					<p:panelGrid style="margin-bottom:10px" cellpadding="5">
@@ -85,7 +83,7 @@
 							<p:column>
 								<p:selectOneRadio id="situacao" required="true"
 									requiredMessage="Status fornecedor é obrigatório"
-									value="#{fornecedorAddEditMB.fornecedorObj.statusForn}">
+									value="">
 									<f:selectItem itemLabel="Ativo" itemValue="Ativo" />
 									<f:selectItem itemLabel="Inativo" itemValue="Inativo" />
 								</p:selectOneRadio>
@@ -98,7 +96,7 @@
 								<p:inputText id="nomeFantasia" required="true"
 									requiredMessage="Nome Fantasia é obrigatório" maxlength="40"
 									size="40"
-									value="#{fornecedorAddEditMB.fornecedorObj.nomeFantasia}" />
+									value="" />
 							</p:column>
 
 						</p:row>
@@ -110,7 +108,7 @@
 							<p:column>
 								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true"
 									requiredMessage="CNPJ é obrigatório"
-									value="#{fornecedorAddEditMB.fornecedorObj.cnpj}" />
+									value="" />
 							</p:column>
 
 							<p:column>
@@ -120,7 +118,7 @@
 								<p:inputMask id="ie" required="true"
 									requiredMessage="Inscrição estadual obrigatório"
 									mask="99999999-99"
-									value="#{fornecedorAddEditMB.fornecedorObj.ie}" />
+									value="" />
 							</p:column>
 						</p:row>
 
@@ -132,7 +130,7 @@
 								<p:inputText id="rs" required="true"
 									requiredMessage="Razão social obrigatório" maxlength="100"
 									size="40"
-									value="#{fornecedorAddEditMB.fornecedorObj.razaoSocial}" />
+									value="" />
 							</p:column>
 
 							<p:column>
@@ -142,7 +140,7 @@
 								<p:inputMask id="im" required="true"
 									requiredMessage="Inscrição municipal obrigatório"
 									mask="99999999-99"
-									value="#{fornecedorAddEditMB.fornecedorObj.nomeFantasia}" />
+									value="" />
 							</p:column>
 						</p:row>
 
@@ -154,7 +152,7 @@
 
 								<p:inputMask id="telefone" required="true"
 									requiredMessage="Telefone é obrigatório"
-									value="#{fornecedorAddEditMB.fornecedorObj.telefone}"
+									value=""
 									mask="(99) 9999-9999" />
 
 							</p:column>
@@ -166,7 +164,7 @@
 								<p:inputText id="NomeContato" required="true"
 									requiredMessage="Nome do contato é obrigatório" maxlength="40"
 									size="40"
-									value="#{fornecedorAddEditMB.fornecedorObj.nomeContato}" />
+									value="" />
 							</p:column>
 						</p:row>
 
@@ -178,7 +176,7 @@
 								<p:inputText id="email" required="true"
 									requiredMessage="Email é obrigatório" itype="email"
 									maxlength="40" size="40"
-									value="#{fornecedorAddEditMB.fornecedorObj.email}" />
+									value="" />
 
 							</p:column>
 							<p:column>
@@ -187,71 +185,27 @@
 							<p:column>
 								<p:inputMask id="cep" rendered="true"
 									requiredMessage="CEP é obrigatório"
-									value="#{fornecedorAddEditMB.fornecedorObj.cep}"
+									value=""
 									mask="99.999-999" />
 							</p:column>
 						</p:row>
 
 						<p:row>
-							<!-- 						<p:column> -->
-							<!-- 							<p:outputLabel value="Endereço" for="endereco" /> -->
-							<!-- 						</p:column> -->
-							<!-- 						<p:column> -->
-							<!-- 							<p:inputText id="endereco" required="true" -->
-							<!-- 								requiredMessage="Endereço é obrigatório" maxlength="255" -->
-							<!-- 								size="40" value="#{fornecedorAddEditMB.fornecedorObj.rua}" /> -->
-							<!-- 						</p:column> -->
-
-							<!-- 						<p:column> -->
-							<!-- 							<p:outputLabel value="Numero" /> -->
-							<!-- 						</p:column> -->
-							<!-- 						<p:column> -->
-							<!-- 							<p:inputMask value="#{fornecedorAddEditMB.fornecedorObj.numero}" -->
-							<!-- 								mask="999999" /> -->
-							<!-- 						</p:column> -->
-
+						
 						</p:row>
 
 						<p:row>
-							<!-- 						<p:column> -->
-							<!-- 							<p:outputLabel value="Estado" for="estado" /> -->
-							<!-- 						</p:column> -->
-							<!-- 						<p:column> -->
-							<!-- 							<p:inputMask id="estado" required="true" -->
-							<!-- 								requiredMessage="Estado é obrigatório" mask="aa" -->
-							<!-- 								value="#{fornecedorAddEditMB.fornecedorObj.estado}" -->
-							<!-- 								maxlength="2" /> -->
-							<!-- 						</p:column> -->
-
+				
 							<p:column>
 								<p:outputLabel value="Complemento" />
 							</p:column>
 							<p:column>
 								<p:inputText maxlength="40" size="40"
-									value="#{fornecedorAddEditMB.fornecedorObj.complemento}" />
+									value="" />
 							</p:column>
 						</p:row>
 
-						<!-- 					<p:row> -->
-						<!-- 						<p:column> -->
-						<!-- 							<p:outputLabel value="Bairro" for="bairro" /> -->
-						<!-- 						</p:column> -->
-						<!-- 						<p:column> -->
-						<!-- 							<p:inputText id="bairro" required="true" maxlength="45" size="45" -->
-						<!-- 								requiredMessage="Bairro é obrigatório" -->
-						<!-- 								value="#{fornecedorAddEditMB.fornecedorObj.bairro}" /> -->
-						<!-- 						</p:column> -->
-						<!-- 						<p:column> -->
-						<!-- 							<p:outputLabel value="Cidade" for="cidade" /> -->
-						<!-- 						</p:column> -->
-						<!-- 						<p:column> -->
-						<!-- 							<p:inputText id="cidade" required="true" maxlength="40" size="40" -->
-						<!-- 								requiredMessage="Bairro é obrigatório" -->
-						<!-- 								value="#{fornecedorAddEditMB.fornecedorObj.cidade}" /> -->
-						<!-- 						</p:column> -->
-
-						<!-- 					</p:row> -->
-
+				
 						<f:facet name="footer">
 							<p:row>
 								<p:column colspan="4">
@@ -272,8 +226,17 @@
 					<p:commandButton value="Não" type="button"
 						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 				</p:confirmDialog>
-			</p:panel>
+		
+	</p:dialog>
 		</h:form>
+		
+	
+		
+		
+		
+		
+		
+	
 	</ui:define>
 </ui:composition>
 
