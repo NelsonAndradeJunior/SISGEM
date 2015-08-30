@@ -11,15 +11,90 @@
 
 
 		<h:form>
-			<p:growl id="growl" life="2000" />
-			<p></p>
-			<p:commandButton value="Ajax Submit" id="ajaxz" update="growl"
-				actionListener="#{buttonView.buttonAction}"
-				styleClass="ui-priority-primary" />
-			<p></p>
-			<p:commandButton value="Ajax Submit" id="ajax" update="growl"
-				actionListener="#{buttonView.buttonAction}"
-				styleClass="ui-priority-primary" />
+			<p:panel>
+				<h:panelGroup>
+					<p:panelGrid columns="2">
+
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="2">
+									<p:outputLabel value="Relatórios" />
+								</p:column>
+							</p:row>
+						</f:facet>
+
+						<h:outputText value="Relatório Vendas por Periodo" />
+						<p:commandButton value="Executar" type="button"
+							onclick="PF('dlg1').show();" />
+
+						<h:outputText value="Relatório Vendas por Região" />
+						<p:commandButton value="Executar" type="button"
+							onclick="PF('dlg2').show();" />
+							
+						<h:outputText value="Relatório Vendas por Vendedor" />
+						<p:commandButton value="Executar" type="button"
+							onclick="PF('dlg3').show();" />
+							
+						<h:outputText value="Relatório Verificação do Carro" />
+						<p:commandButton value="Executar" type="button"
+							onclick="PF('dlg4').show();" />
+							
+						<h:outputText value="Localização de Usuario" />
+						<p:commandButton value="Executar" type="button"
+							onclick="PF('dlg5').show();" />
+							
+						<h:outputText value="Relatório Localização de Usuario" />
+						<p:commandButton value="Executar" type="button"
+							onclick="PF('dlg6').show();" />
+
+					</p:panelGrid>
+
+
+					<p:dialog header="Relatório Vendas por Periodo" widgetVar="dlg1"
+						height="100">
+						<h:outputText value="This is a Modal Dialog." />
+					</p:dialog>
+
+
+					<p:dialog header="Relatório Vendas por Região" widgetVar="dlg2" 
+						height="100"  position="center">
+						<h:outputText value="This is a Modal Dialog." />
+					</p:dialog>
+					
+					<p:dialog header="Relatório Vendas por Vendedor" widgetVar="dlg3" 
+						height="100"  position="center">
+						<h:outputText value="This is a Modal Dialog." />
+					</p:dialog>
+					
+					<p:dialog header="Relatório Verificação do Carro" widgetVar="dlg4" 
+						height="100"  position="center">
+						<h:outputText value="This is a Modal Dialog." />
+					</p:dialog>
+					
+					<p:dialog header="Localização de Usuario" widgetVar="dlg5" 
+						height="100"  position="center">
+						<h:outputText value="This is a Modal Dialog." />
+					</p:dialog>
+					
+					<p:dialog header="Relatório Localização de Usuario" widgetVar="dlg6" 
+						height="100"  position="center">
+						<h:outputText value="This is a Modal Dialog." />
+					</p:dialog>
+					
+
+
+				
+
+
+				</h:panelGroup>
+			</p:panel>
+
+
+
+
+
+
+
 		</h:form>
 
 	</ui:define>
