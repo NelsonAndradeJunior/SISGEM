@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
+
+	<ui:define name="content">
+
+		<h:form id="rotaPesquisaForm">
+			<p:panel header="Pesquisa Rota"
+				rendered="#{rotaAddEditMB.flagExibeConsultaRota}">
+
+				<p:inputText value="#{rotaMB.paramRota}"
+					placeholder="Pesquise por Dia da Semana, Nome da rua, Nome da Rota"
+					size="55" />
+				<br />
+				<br />
+				<p:commandButton value="Pesquisar"
+					action="#{rotaMB.findRota(rotaMB.paramRota)}"
+					widgetVar="searchButton" update="pesquisaRotaDataTable" />
+				
+				
+				<p:dialog id="dialogListaRota"
+					header="Lista de Rotas" widgetVar="dialogListaResultado"
+					resizable="false" position="center">
+					<p:dataTable id="pesquisaRotaDataTable" widgetVar="dataTable"
+						var="rota" loadingMessage="Carregando..."
+						value="#{rotaMB.rotaList}" paginator="true" rows="10"
+						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						rowsPerPageTemplate="5,10,15" rowKey="#{cliente.id}"
+						selectionMode="single">
+
+						<p:ajax event="rowSelect"
+							listener="#{rotaMB.selectRota}"
+							update=":rotaPesquisaForm:panelGroupBotoes" />
+						<p:ajax event="page" listener="#{rotaMB.unselectRota}"
+							update=":rotaPesquisaForm:panelGroupBotoes"
+							oncomplete="dataTable.unselectAllRows()" />
+						<p:ajax event="rowUnselect"
+							listener="#{rotaMB.unselectRota}"
+							update=":rotaPesquisaForm:panelGroupBotoes" />
+
+						<p:column sortBy="#{rota.nomeRegiao}">
+							<f:facet name="header">
+								<h:outputText value="Nome Regiao" />
+							</f:facet>
+							<h:outputText value="#{rota.nomeRegiao}" />
+						</p:column>
+
+					
+					</p:dataTable>
+					<h:panelGroup id="panelGroupBotoes">
+
+						<p:commandButton widgetVar="addButton" value="Novo"
+							actionListener="#{rotaAddEditMB.exibeFormularioRota}"
+							update=":rotaPesquisaForm :rotaForm" ajax="false"/>
+
+						<p:commandButton widgetVar="updateButton" value="Editar"
+							disabled="#{rotaMB.flagBotaoUpdate}"
+							action="/pages/rota/rotaAddEdit.faces"
+							update="pesquisaRotaDataTable"
+							actionListener="#{rotaAddEditMB.update}" />
+
+						<p:commandButton widgetVar="deleteButton"
+							disabled="#{rotaMB.flagBotaoDelete}"
+							value="#{labels.button_delete}"
+							update="pesquisaRotaDataTable"
+							actionListener="#{rotaMB.delete}">
+							<p:confirm header="Comfirmação" message="Tem Certeza?"
+								icon="ui-icon-alert" />
+						</p:commandButton>
+					</h:panelGroup>
+				</p:dialog>
+				<p:confirmDialog global="true" showEffect="fade">
+					<p:commandButton value="Sim" type="button"
+						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					<p:commandButton value="Não" type="button"
+						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				</p:confirmDialog>
+			</p:panel>
+		</h:form>
+		
+		
+		
+		<h:form id="rotaForm">
+			<p:panel
+				rendered="#{rotaAddEditMB.flagExibeFormularioRota}">
+
+				<h:inputHidden value="#{rotaAddEditMB.rotaObj.id}" />
+				<h:panelGroup>
+					<p:messages id="messages" autoUpdate="true" closable="true" />
+					<p:panelGrid style="margin-bottom:10px" cellpadding="5">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="4">
+									<p:outputLabel value="Cadastro de Rotas / Regiao" />
+								</p:column>
+							</p:row>
+						</f:facet>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Dia da Semana" for="situacao" />
+							</p:column>
+							<p:column>
+								<p:selectOneRadio id="situacao" required="true"
+									requiredMessage="Dia da Semana é obrigatório"
+									value="#">
+									<f:selectItem itemLabel="Ativa" itemValue="1" />
+									<f:selectItem itemLabel="Inativo" itemValue="0" />
+								</p:selectOneRadio>
+							</p:column>
+
+							<p:column>
+								<p:outputLabel value="Tipo de  Cliente" for="tipo" />
+							</p:column>
+							<p:column>
+								<p:selectOneRadio id="tipo" 
+									value="#">
+									<f:selectItem itemLabel="Pessoa Fisica" itemValue="1" />
+									<f:selectItem itemLabel="Pessoa Juridica" itemValue="0" />
+								</p:selectOneRadio>
+							</p:column>
+
+						</p:row>
+
+						<p:row>
+						
+							<p:column>
+								<p:outputLabel value="Nome : " for="nome" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nome" required="true"
+									requiredMessage="Nome é obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="CNPJ : " for="cnpj" />
+							</p:column>
+							<p:column>
+								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true"
+									requiredMessage="CNPJ é obrigatório"
+									value=" " />
+							</p:column>
+
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Razão Social : " for="rs" />
+							</p:column>
+							<p:column>
+								<p:inputText id="rs" required="true"
+									requiredMessage="Razão social obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+
+							<p:column>
+								<p:outputLabel value="Inscrição Municipal : " for="im" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="im"
+									requiredMessage="Inscrição municipal obrigatório"
+									mask="99999999-99"
+									value=" " />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Inscrição Estadual : " for="ie" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="ie"
+									requiredMessage="Inscrição estadual obrigatório"
+									mask="99999999-99"
+									value="" />
+							</p:column>
+
+							
+
+							<p:column>
+								<p:outputLabel value="Telefone : " for="telefone" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="telefone" 
+									value=""
+									mask="(99) 9999-9999" />
+
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Telefone 2 : " for="telefone2" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="telefone2" 
+									value=""
+									mask="(99) 9999-9999" />
+
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Celular : " for="celular" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="celular" 
+									value=""
+									mask="(99) 9999-9999" />
+
+							</p:column>
+						</p:row>
+
+						<p:row>
+						<p:column>
+								<p:outputLabel value="Endereço : " for="endereço" />
+							</p:column>
+							<p:column>
+								<p:inputText id="endereço" required="true"
+									requiredMessage="Endereço é obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+							
+							
+							<p:column>
+								<p:outputLabel value="Número : " for="numero" />
+							</p:column>
+							<p:column>
+								<p:inputText id="numero" required="true"
+									requiredMessage="Número é obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+						
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Complemento : " for="complemento" />
+							</p:column>
+							<p:column>
+								<p:inputText id="complemento" required="true"
+									requiredMessage="Complemento é obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="CEP : " for="cep" />
+							</p:column>
+							<p:column>
+								<p:inputText id="cep" required="true"
+									requiredMessage="CEP é obrigatório" maxlength="100"
+									size="40"
+									mask="(99) 9999-9999"
+									value="" />
+							</p:column>
+							
+							
+						</p:row>
+						
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Bairro : " for="bairro" />
+							</p:column>
+							<p:column>
+								<p:inputText id="bairro" required="true"
+									requiredMessage="Bairro é obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Cidade : " for="cidade" />
+							</p:column>
+							<p:column>
+								<p:inputText id="cidade" required="true"
+									requiredMessage="Cidade é obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+						</p:row>
+						
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Estado : " for="estado" />
+							</p:column>
+							<p:column>
+								<p:inputText id="estado" required="true"
+									requiredMessage="Estado é obrigatório" maxlength="100"
+									size="40"
+									value="" />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Data de Aniversario : " for="dataaniversario" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="dataaniversario"
+									mask="99/99/9999"
+									value="" />
+							</p:column>
+						</p:row>
+						
+						<p:row>
+						
+						<p:column>
+								<p:outputLabel value="E-mail : " for="email" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="email" rendered="true"
+									requiredMessage="E-mail é obrigatório" maxlength="100"
+									size="40"
+									value=" " />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="CPF : " for="cpf" />
+							</p:column>
+							<p:column>
+								<p:inputMask mask="999.999.999-99" id="cpf" required="true"
+									requiredMessage="cpf é obrigatório"
+									value=" " />
+							</p:column>
+							
+						</p:row>
+						
+						<p:row>
+						<p:column>
+								<p:outputLabel value="Receber SMS : " for="recebersms" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="recebersms"
+									value=" " />
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Observação : " for="observação" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="observação" rendered="true"
+									requiredMessage="E-mail é obrigatório" maxlength="100"
+									size="40"
+									value=" " />
+							</p:column>
+						
+						</p:row>
+					
+						<f:facet name="footer">
+							<p:row>
+								<p:column colspan="4">
+									<p:commandButton value="Salvar" style="margin: 130 auto"
+										actionListener="#{AddEditMB.salvar}">
+										<p:confirm header="Comfirmação" message="Tem Certeza?"
+											icon="ui-icon-alert" />
+									</p:commandButton>
+								</p:column>
+							</p:row>
+						</f:facet>
+
+					</p:panelGrid>
+				</h:panelGroup>
+				<p:confirmDialog global="true" showEffect="fade">
+					<p:commandButton value="Sim" type="button"
+						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					<p:commandButton value="Não" type="button"
+						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				</p:confirmDialog>
+			</p:panel>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

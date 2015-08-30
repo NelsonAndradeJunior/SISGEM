@@ -79,6 +79,16 @@
 							</f:facet>
 							<h:outputText value="#{carro.localCarro}" />
 						</p:column>
+						
+						
+						
+						<p:column sortBy="#{carro.vendedor}">
+							<f:facet name="header">
+								<h:outputText value="vendedor" />
+							</f:facet>
+							<h:outputText value="#{carro.vendedor}" />
+						</p:column>
+						
 					</p:dataTable>
 					<h:panelGroup id="panelGroupBotoes">
 					
@@ -200,9 +210,17 @@
 								<p:inputMask id="cor" 
 									value=" " />
 							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Vendedor : " for="vendedor" />
+							</p:column>
+							<p:column>
+								<p:inputText id="vendedor" required="true"
+									requiredMessage=" Vendedor obrigatório" maxlength="100"
+									size="40"/> 
+							</p:column>
 						
 						</p:row>
-
 
 						<f:facet name="footer">
 							<p:row>
