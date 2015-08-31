@@ -44,7 +44,7 @@ public class FornecedorMB extends BaseBeans{
 	public void findFornecedor(String paramFornecedor){
 		this.setFornecedorList(this.fornecedorRepository.findByCNPJ(paramFornecedor));
 		this.paramFornecedor = null;
-		showDialog("dialogListaResultado");
+		showDialog("dialogListaFornecedor");
 	}
 	
 	public void selectFornecedor(SelectEvent evt) {

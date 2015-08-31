@@ -8,135 +8,225 @@
 	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
 
 	<ui:define name="content">
-		<h:form id="formProduto">
-			<h:panelGroup id="panelGroupProduto">
-			 <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
-				<p:panelGrid style="margin-bottom:10px" cellpadding="5">
-					<f:facet name="header">
-						<p:row>
-							<p:column colspan="4">
-								<p:outputLabel value="Cadastro de Fornecedor" />
-							</p:column>
-						</p:row>
-					</f:facet>
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Fornecedor :" />
-						</p:column>
-						<p:column colspan="3">
+		<h:form id="produtoPesquisaForm">
+			<p:panel header="Pesquisa Produto"
+				rendered="#{produtoAddEditMB.flagExibeConsultaProduto}">
+				<p:inputText value="#{produtoMB.paramProduto}"
+					placeholder="Pesquise pelo Nome do produto" size="55" />
+				<br />
+				<br />
+				<p:commandButton value="Pesquisar"
+					action="#{produtoMB.findProduto(produtoMB.paramProduto)}"
+					widgetVar="searchButton" update="pesquisaProdutoDataTable" />
+				<p:dialog id="dialogListaProduto" header="Lista de Produtos"
+					widgetVar="dialogListaProduto" resizable="false" position="center">
+					<p:dataTable id="pesquisaProdutoDataTable" widgetVar="dataTable"
+						var="produto" loadingMessage="Carregando..."
+						value="#{produtoMB.produtoList}" paginator="true" rows="10"
+						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						rowsPerPageTemplate="5,10,15" rowKey="#{produto.id}"
+						selectionMode="single">
 
-							<p:inputText value="#{produtoAddEditMB.fornecedor.paramFornecedor}"
-								placeholder="Pesquise por CNPJ, Nome Fantasia ou Razão Social"
-								size="75" />
+						<p:ajax event="rowSelect" listener="#{produtoMB.selectProduto}"
+							update=":produtoPesquisaForm:panelGroupBotoes" />
+						<p:ajax event="page" listener="#{produtoMB.unselectProduto}"
+							update=":produtoPesquisaForm:panelGroupBotoes"
+							oncomplete="dataTable.unselectAllRows()" />
+						<p:ajax event="rowUnselect"
+							listener="#{produtoMB.unselectProduto}"
+							update=":produtoPesquisaForm:panelGroupBotoes" />
 
-							<p:commandButton value="#{labels.button_search}"
-								action="#{produtoAddEditMB.fornecedor.findFornecedor(produtoAddEditMB.fornecedor.paramFornecedor)}"
-								widgetVar="searchButton" update=":fornecedorForm" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Fornecedor selecionado : " />
-						</p:column>
-
-						<p:column>
-							<p:outputLabel value="" />
-						</p:column>
-						<p:column>
-							<p:outputLabel value="Nome Produto : " />
-
-						</p:column>
-						<p:column>
-							<p:inputText value="#{produtoAddEditMB.produtoObj.nome}" />
+						<p:column sortBy="#{produto.nome}">
+							<f:facet name="header">
+								<h:outputText value="Nome" />
+							</f:facet>
+							<h:outputText value="#{produto.nome}" />
 						</p:column>
 
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Unidade Medida: " />
-
-						</p:column>
-						<p:column>
-							<p:inputText
-								value="" />
+						<p:column sortBy="#{produto.unidade}">
+							<f:facet name="header">
+								<h:outputText value="Unidade de Medida" />
+							</f:facet>
+							<h:outputText value="#{produto.unidade}" />
 						</p:column>
 
-						<p:column>
-							<p:outputLabel value="Conteudo : " />
-
-						</p:column>
-						<p:column>
-							<p:inputText value="}"/>
-						</p:column>
-
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Valor Compra: " />
-
-						</p:column>
-						<p:column>
-							<p:inputText value=""/>
-							
+						<p:column sortBy="#{produto.valorVenda}">
+							<f:facet name="header">
+								<h:outputText value="Valor de Venda" />
+							</f:facet>
+							<h:outputText value="#{produto.valorVenda}" />
 						</p:column>
 
-						<p:column>
-							<p:outputLabel value="Valor Venda " />
-
+						<p:column sortBy="#{produto.epi}">
+							<f:facet name="header">
+								<h:outputText value="EPI" />
+							</f:facet>
+							<h:outputText value="#{produto.epi}" />
 						</p:column>
-						<p:column>
-							<p:inputText value=""/>
-							
+
+						<p:column sortBy="#{produto.valorCompra}">
+							<f:facet name="header">
+								<h:outputText value="Valor de Compra" />
+							</f:facet>
+							<h:outputText value="#{produto.valorCompra}" />
 						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel value="EPI" />
 
+						<p:column sortBy="#{produto.statusProduto}">
+							<f:facet name="header">
+								<h:outputText value="Status do Produto" />
+							</f:facet>
+							<h:outputText value="#{produto.statusProduto}" />
 						</p:column>
-						<p:column>
-							<p:inputText value=""/>
-							
-						</p:column>
-					</p:row>
 
-					<p:row>
-						<p:column colspan="4">
-							<p:commandButton value="Salvar"
-								actionListener="#{produtoAddEditMB.salvar}"
-								style="margin: 130 auto" />
+					</p:dataTable>
+					<h:panelGroup id="panelGroupBotoes">
 
-						</p:column>
-					</p:row>
+						<p:commandButton widgetVar="addButton" value="Novo"
+							actionListener="#{produtoAddEditMB.exibeFormularioProduto}"
+							update=":produtoPesquisaForm :produtoForm" />
 
-				</p:panelGrid>
+						<p:commandButton widgetVar="updateButton" value="Editar"
+							disabled="#{produtoMB.flagBotaoUpdate}"
+							action="/pages/produto/produto.faces"
+							update="pesquisaProdutoDataTable"
+							actionListener="#{produtoAddEditMB.update}" />
 
-			</h:panelGroup>
+						<p:commandButton widgetVar="deleteButton"
+							disabled="#{produtoMB.flagBotaoDelete}"
+							value="#{labels.button_delete}" update="pesquisaProdutoDataTable"
+							actionListener="#{produtoMB.delete}" />
+					</h:panelGroup>
+				</p:dialog>
+			</p:panel>
 		</h:form>
 
-		<h:form id="fornecedorForm">
-			<p:dialog widgetVar="dialogListaResultado" header="Fornecedor"
+		<h:form id="produtoForm">
+			<p:panel rendered="#{produtoAddEditMB.flagExibeFormularioProduto}">
+				<h:inputHidden value="#{produtoAddEditMB.produtoObj.id}" />
+				<h:panelGroup id="panelGroupProduto">
+					<p:messages id="messages" showDetail="true" autoUpdate="true"
+						closable="true" />
+					<p:panelGrid style="margin-bottom:10px" cellpadding="5">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="4">
+									<p:outputLabel value="Cadastro de Produtos" />
+								</p:column>
+							</p:row>
+						</f:facet>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Fornecedor :" />
+							</p:column>
+							<p:column colspan="3">
+
+								<p:inputText
+									value="#{produtoAddEditMB.fornecedor.paramFornecedor}"
+									placeholder="Pesquise por CNPJ, Nome Fantasia ou Razão Social"
+									size="75" />
+
+								<p:commandButton value="#{labels.button_search}"
+									action="#{produtoAddEditMB.fornecedor.findFornecedor(produtoAddEditMB.fornecedor.paramFornecedor)}"
+									widgetVar="searchButton" update=":produtofornecedorForm" />
+									
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Fornecedor selecionado : " />
+							</p:column>
+
+							<p:column>
+								<p:outputLabel value="" />
+							</p:column>
+							<p:column>
+								<p:outputLabel value="Nome Produto : " />
+
+							</p:column>
+							<p:column>
+								<p:inputText value="#{produtoAddEditMB.produtoObj.nome}" />
+							</p:column>
+
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Unidade Medida: " />
+
+							</p:column>
+							<p:column>
+								<p:inputText />
+							</p:column>
+
+							<p:column>
+								<p:inputText />
+							</p:column>
+
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Valor Compra: " />
+
+							</p:column>
+							<p:column>
+								<p:inputText />
+
+							</p:column>
+
+							<p:column>
+								<p:outputLabel value="Valor Venda " />
+
+							</p:column>
+							<p:column>
+								<p:inputText />
+
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="EPI" />
+
+							</p:column>
+							<p:column>
+								<p:inputText />
+
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column colspan="4">
+								<p:commandButton value="Salvar"
+									actionListener="#{produtoAddEditMB.salvar}"
+									style="margin: 130 auto" />
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+				</h:panelGroup>
+			</p:panel>
+		</h:form>
+
+		<h:form id="produtofornecedorForm">
+			<p:dialog widgetVar="dialogListaFornecedor" header="Fornecedor"
 				resizable="false" position="center">
-
-
 
 				<p:dataTable id="PessoaJuridicaClienteFornecedorDataTable2"
 					widgetVar="dataTableAdd" var="fornecedor"
 					loadingMessage="#{labels.legal_entity_load}"
-					value="#{produtoAddEditMB.fornecedor.fornecedorList}" paginator="true" rows="10"
+					value="#{produtoAddEditMB.fornecedor.fornecedorList}"
+					paginator="true" rows="10"
 					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15" rowKey="#{fornecedor.id}"
 					selectionMode="single">
 
 					<p:ajax event="rowSelect"
 						listener="#{produtoAddEditMB.fornecedor.selectFornecedor}"
-						update=":fornecedorForm:panelBotoesInModalConsult" />
-					<p:ajax event="page" listener="#{produtoAddEditMB.fornecedor.unselectFornecedor}"
-						update=":fornecedorForm:panelBotoesInModalConsult"
+						update=":produtofornecedorForm:panelBotoesInModalConsult" />
+					<p:ajax event="page"
+						listener="#{produtoAddEditMB.fornecedor.unselectFornecedor}"
+						update=":produtofornecedorForm:panelBotoesInModalConsult"
 						oncomplete="dataTableAdd.unselectAllRows()" />
 					<p:ajax event="rowUnselect"
 						listener="#{produtoAddEditMB.fornecedor.unselectFornecedor}"
-						update=":fornecedorForm:panelBotoesInModalConsult"
+						update=":produtofornecedorForm:panelBotoesInModalConsult"
 						oncomplete="dataTableAdd.unselectAllRows()" />
 
 					<p:column sortBy="#{fornecedor.id}">
@@ -157,7 +247,7 @@
 						<f:facet name="header">
 							<h:outputText value="#{labels.legal_entity_name_fancy}" />
 						</f:facet>
-						<h:outputText value="#{fornecedor.nome}" />
+						<h:outputText value="#{fornecedor.nomeFantasia}" />
 					</p:column>
 
 					<p:column sortBy="#{fornecedor.razaoSocial}">
@@ -170,8 +260,8 @@
 				</p:dataTable>
 				<h:panelGroup id="panelBotoesInModalConsult">
 					<p:commandButton value="Selecionar Fornecedor"
-						update=":formProduto:panelGroupProduto"
-						actionListener="#{produtoMB.fornecedorAddEdit.fornecedorVinculado}"
+						update=":produtoForm:panelGroupProduto"
+						actionListener="#{fornecedorMB.fornecedorAddEdit.fornecedorVinculado}"
 						oncomplete="dataTableAdd.unselectAllRows()" />
 				</h:panelGroup>
 

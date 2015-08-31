@@ -21,7 +21,7 @@
 					action="#{fornecedorMB.findFornecedor(fornecedorMB.paramFornecedor)}"
 					widgetVar="searchButton" update="pesquisaFornecedorDataTable" />
 				<p:dialog id="dialogListaFornecedores"
-					header="Lista de Fornecedores" widgetVar="dialogListaResultado"
+					header="Lista de Fornecedores" widgetVar="dialogListaFornecedor"
 					resizable="false" position="center">
 					<p:dataTable id="pesquisaFornecedorDataTable" widgetVar="dataTable"
 						var="fornecedor" loadingMessage="Carregando..."
@@ -110,8 +110,6 @@
 		<h:form id="fornecedorForm">
 			<p:panel
 				rendered="#{fornecedorAddEditMB.flagExibeFormularioFornecedor}">
-
-
 				<h:inputHidden value="#{fornecedorAddEditMB.fornecedorObj.id}" />
 				<h:panelGroup>
 					<p:messages id="messages" autoUpdate="true" closable="true" />
