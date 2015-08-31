@@ -23,19 +23,19 @@
 							url="/pages/produtos/produtoAddEdit.faces" />
 						<p:menuitem value="Usuarios" icon="ui-icon-person"
 							url="/pages/usuario/usuarioAddEdit.faces" />
-							<p:menuitem value="Carro" icon="ui-icon-person"
+						<p:menuitem value="Carro" icon="ui-icon-person"
 							url="/pages/carro/carroAddEdit.faces" />
+						<p:menuitem value="Forma de Pagamento" icon="ui-icon-person"
+							url="/pages/formadepagamento/formadepagamentoAddEdit.faces" />
+						
 					</p:submenu>
 
 					<p:submenu label="Vendas">
 						<p:menuitem value="Caixa"
-							url="#"
+							url="/pages/vendas/caixaAddEdit.faces"
 							ajax="false" icon="ui-icon-wrench" />
-							<p:menuitem value="Consultas"
-							url="#"
-							ajax="false" icon="ui-icon-wrench" />
-							<p:menuitem value="PDV"
-							url="/pages/vendas/pdv.xhtml"
+							<p:menuitem value="Pedido"
+							url="/pages/vendas/pdvAddEdit.faces"
 							ajax="false" icon="ui-icon-wrench" />
 							
 
@@ -54,7 +54,7 @@
 
 					<p:submenu label="Administrativo">
 						<p:menuitem value="Rotas"
-							url="#" ajax="false"
+							url="/pages/administrativo/rotaAddEdit.faces" ajax="false"
 							icon="ui-icon-wrench" />
 						<p:menuitem value="Localização Vendedor"
 							url="/pages/administrativo/localizaVendedor.faces" ajax="false"
