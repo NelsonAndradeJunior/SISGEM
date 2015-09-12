@@ -12,6 +12,7 @@ import br.com.sisgem.mb.fornecedor.FornecedorMB;
 import br.com.sisgem.model.ProdutoEntity;
 import br.com.sisgem.model.repository.IProdutoRepository;
 import br.com.sisgem.model.utils.BaseBeans;
+import br.com.sisgem.model.utils.Utilidades;
 
 @Component
 @Scope ("view")
@@ -45,16 +46,46 @@ public class ProdutoAddEditMB extends BaseBeans{
 
 	private ProdutoEntity produtoObj;
 	
+	private Boolean flagExibeConsultaProduto = true;
+	
+	private Boolean flagExibeFormularioProduto;
+	
 	public ProdutoAddEditMB() {
 		this.produtoObj = new ProdutoEntity();
 	}
 	
-	public void salvar(){
-		this.produtoRepository.save(this.produtoObj);
+	
+	public void salvar() {
+		try {
+			if (this.produtoObj != null) {
+				if (this.produtoObj.getId() == null) {
+					// Add
+					this.produtoRepository.save(this.produtoObj);
+				} else {
+					// Update
+					this.produtoRepository.save(this.produtoObj);
+				}
+				Utilidades.showFacesMessage("Salvo com Sucesso", 2);
+			}
+		} catch (Exception e) {
+			Utilidades.showFacesMessage(e.getMessage(), 1);
+		}
 	}
+	
 	
 	public void update(){
 		this.produtoObj = mbProdutoBean.getProdutoSelecionado();
+		this.setFlagExibeConsultaProduto(false);
+		this.setFlagExibeFormularioProduto(true);
+		hideDialog("dialogListaProduto");
+		this.mbProdutoBean.setFlagBotaoUpdate(true);
+		this.mbProdutoBean.setFlagBotaoDelete(true);
+	}
+	
+	public void exibeFormularioProduto() {
+		flagExibeFormularioProduto = true;
+		flagExibeConsultaProduto = false;
+		hideDialog("dialogListaFornecedores");
 	}
 	
 //	teste commit
@@ -82,6 +113,22 @@ public class ProdutoAddEditMB extends BaseBeans{
 
 	public void setProdutoObj(ProdutoEntity produtoObj) {
 		this.produtoObj = produtoObj;
+	}
+
+	public Boolean getFlagExibeConsultaProduto() {
+		return flagExibeConsultaProduto;
+	}
+
+	public void setFlagExibeConsultaProduto(Boolean flagExibeConsultaProduto) {
+		this.flagExibeConsultaProduto = flagExibeConsultaProduto;
+	}
+
+	public Boolean getFlagExibeFormularioProduto() {
+		return flagExibeFormularioProduto;
+	}
+
+	public void setFlagExibeFormularioProduto(Boolean flagExibeFormularioProduto) {
+		this.flagExibeFormularioProduto = flagExibeFormularioProduto;
 	}
 
 	public FornecedorMB getFornecedor() {

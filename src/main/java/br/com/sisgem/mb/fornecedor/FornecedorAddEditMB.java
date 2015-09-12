@@ -72,7 +72,7 @@ public class FornecedorAddEditMB extends BaseBeans{
 	public void fornecedorVinculado(){
 		this.update();
 		
-		hideDialog("dialogListaResultado");
+		hideDialog("dialogListaFornecedores");
 	}
 	
 	public void exibeFormularioFornecedor() {

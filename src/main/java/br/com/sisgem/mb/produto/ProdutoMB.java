@@ -45,7 +45,7 @@ public class ProdutoMB extends BaseBeans{
 	public void findProduto(String paramProduto){
 		this.setProdutoList(this.produtoRepository.findByNome(paramProduto));
 		this.paramProduto = null;
-		showDialog("dialogListaResultado");
+		showDialog("dialogListaProduto");
 	}
 	
 	public void selectProduto(SelectEvent evt) {
