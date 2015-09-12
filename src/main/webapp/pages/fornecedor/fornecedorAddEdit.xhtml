@@ -15,11 +15,18 @@
 				<p:inputText value="#{fornecedorMB.paramFornecedor}"
 					placeholder="Pesquise por CNPJ, Nome Fantasia ou Razão Social"
 					size="55" />
+
 				<br />
 				<br />
 				<p:commandButton value="Pesquisar"
 					action="#{fornecedorMB.findFornecedor(fornecedorMB.paramFornecedor)}"
 					widgetVar="searchButton" update="pesquisaFornecedorDataTable" />
+
+				<p:commandButton widgetVar="addButton" value="Novo"
+					actionListener="#{fornecedorAddEditMB.exibeFormularioFornecedor}"
+					update=":fornecedorPesquisaForm :fornecedorForm" />
+
+
 				<p:dialog id="dialogListaFornecedores"
 					header="Lista de Fornecedores" widgetVar="dialogListaResultado"
 					resizable="false" position="center">
@@ -84,7 +91,7 @@
 						<p:commandButton widgetVar="updateButton" value="Editar"
 							disabled="#{fornecedorMB.flagBotaoUpdate}"
 							actionListener="#{fornecedorAddEditMB.update}"
-							update=":fornecedorPesquisaForm :fornecedorForm"/>
+							update=":fornecedorPesquisaForm :fornecedorForm" />
 
 						<p:commandButton widgetVar="deleteButton"
 							disabled="#{fornecedorMB.flagBotaoDelete}"

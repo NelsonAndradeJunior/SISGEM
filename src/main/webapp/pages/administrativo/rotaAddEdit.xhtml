@@ -19,6 +19,10 @@
 				<br />
 				<p:commandButton value="Pesquisar" widgetVar="searchButton" update="pesquisaCarroDataTable" 
 				action="#{carroMB.findCarro}"/>
+				
+				<p:commandButton widgetVar="addButton" value="Novo" ajax="false"
+							actionListener="#{carroAddEditMB.exibeFormularioCarro}"
+							update=":carroPesquisaForm :carroForm" />
 					
 				<p:dialog id="dialogSelect" header="Lista de Rotas"
 					widgetVar="dialogListaResultado" resizable="false"
