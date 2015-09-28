@@ -63,10 +63,14 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	
 	@Size(max=40)
 	private String Complemento;
-
+	
+	@Size(max=10)
+	@NotNull
+	private Integer RuasCorreio_idRuasCorreio;
+		
 	public UsuarioEntity(Ecargo cargo, String celular, String senha, String nome, Integer numeroEnd, String cEP,
 			String telefone, String celularParticular, String email, String cMotorista, Date dtaValiCM,
-			String complemento) {
+			String complemento, Integer ruasCorreio_idRuasCorreio) {
 		super();
 		Cargo = cargo;
 		Celular = celular;
@@ -80,15 +84,13 @@ public class UsuarioEntity extends BaseEntities<Long> {
 		CMotorista = cMotorista;
 		DtaValiCM = dtaValiCM;
 		Complemento = complemento;
+		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
 	}
 
-		
 	public UsuarioEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public Ecargo getCargo() {
 		return Cargo;
@@ -186,10 +188,12 @@ public class UsuarioEntity extends BaseEntities<Long> {
 		Complemento = complemento;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public Integer getRuasCorreio_idRuasCorreio() {
+		return RuasCorreio_idRuasCorreio;
 	}
-	
-	
+
+	public void setRuasCorreio_idRuasCorreio(Integer ruasCorreio_idRuasCorreio) {
+		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
+	}
 	
 }

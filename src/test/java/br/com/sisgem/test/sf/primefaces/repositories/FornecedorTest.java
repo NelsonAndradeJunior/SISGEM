@@ -36,7 +36,7 @@ public class FornecedorTest extends AbstractDatabaseTest {
 			fornecedorEntity.setEmail("teste@email");
 			fornecedorEntity.setIe("testeaie");
 			fornecedorEntity.setIm("testeIM");
-			fornecedorEntity.setNomeContato("testeNomeContato");
+			fornecedorEntity.setNomeContato("glaci");
 			fornecedorEntity.setNomeFantasia("testeNomeFantasia");
 			fornecedorEntity.setNumeroEndereco(10);
 			fornecedorEntity.setObservacao("testblob");

@@ -67,17 +67,26 @@ public class ClienteEntity extends BaseEntities<Long>{
 	@NotNull
 	private String ReceberSMS;
 	
+	@Size(max=10)
+	private Integer RuasCorreio_idRuasCorreio;
+	
 	@Enumerated(EnumType.STRING)
 	@NotNull
 	private EinativoAtivo StatusCliente;
+	
+	
 	
 	public ClienteEntity() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+		
+	
+
 	public ClienteEntity(String nomeRazaoS, Integer numeroEnd, String complemento, String telefone, String celular,
 			String cNPJCPF, String email, Date dtaAniversario, String iE, String iM, Integer flagPFPJ,
-			String receberSMS, EinativoAtivo statusCliente) {
+			String receberSMS, Integer ruasCorreio_idRuasCorreio, EinativoAtivo statusCliente) {
 		super();
 		NomeRazaoS = nomeRazaoS;
 		NumeroEnd = numeroEnd;
@@ -91,17 +100,16 @@ public class ClienteEntity extends BaseEntities<Long>{
 		IM = iM;
 		FlagPFPJ = flagPFPJ;
 		ReceberSMS = receberSMS;
+		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
 		StatusCliente = statusCliente;
 	}
 
 	public String getNomeRazaoS() {
 		return NomeRazaoS;
 	}
-
 	public void setNomeRazaoS(String nomeRazaoS) {
 		NomeRazaoS = nomeRazaoS;
 	}
-
 	public Integer getNumeroEnd() {
 		return NumeroEnd;
 	}
@@ -190,20 +198,21 @@ public class ClienteEntity extends BaseEntities<Long>{
 		ReceberSMS = receberSMS;
 	}
 
+	public Integer getRuasCorreio_idRuasCorreio() {
+		return RuasCorreio_idRuasCorreio;
+	}
+
+	public void setRuasCorreio_idRuasCorreio(Integer ruasCorreio_idRuasCorreio) {
+		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
+	}
+
 	public EinativoAtivo getStatusCliente() {
 		return StatusCliente;
 	}
 
+
 	public void setStatusCliente(EinativoAtivo statusCliente) {
 		StatusCliente = statusCliente;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
-
-
 
 }
