@@ -10,88 +10,64 @@
 	<ui:define name="content">
 
 		<h:form id="carroPesquisaForm">
-			<p:panel header="Pesquisa Carro" rendered="#{carroAddEditMB.flagExibeConsultaCarro}">
+			<p:panel header="Pesquisa Rota" rendered="#{carroAddEditMB.flagExibeConsultaCarro}">
 
 				<p:inputText
-					placeholder="Pesquise por Ano, Marca, Placa, Modelo, status"
+					placeholder="Pesquise Rota"
 					size="55" />
 				<br />
 				<br />
 				<p:commandButton value="Pesquisar" widgetVar="searchButton" update="pesquisaCarroDataTable" 
 				action="#{carroMB.findCarro}"/>
 				
-				
 				<p:commandButton widgetVar="addButton" value="Novo" ajax="false"
 							actionListener="#{carroAddEditMB.exibeFormularioCarro}"
 							update=":carroPesquisaForm :carroForm" />
 					
-				<p:dialog id="dialogSelect" header="Lista de Carros"
+				<p:dialog id="dialogSelect" header="Lista de Rotas"
 					widgetVar="dialogListaResultado" resizable="false"
 					position="center">
 					<p:dataTable id="pesquisaCarroDataTable" widgetVar="dataTable"
 						var="carro" loadingMessage="Carregando..."
 						paginator="true" rows="10"
 						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-						rowsPerPageTemplate="5,10,15" rowKey="#{carro.id}"
+						rowsPerPageTemplate="5,10,15" rowKey=""
 						selectionMode="single">
 
-						<p:ajax event="rowSelect" listener="#{carroMB.selectCarro}"
+						<p:ajax event="rowSelect" 
 							update=":carroPesquisaForm:panelGroupBotoes" />
-						<p:ajax event="page" listener="#{carroMB.unselectCarro}"
+						<p:ajax event="page" 
 							update=":carroPesquisaForm:panelGroupBotoes"
 							oncomplete="dataTable.unselectAllRows()" />
-						<p:ajax event="rowUnselect" listener="#{carroMB.unselectCarro}"
+						<p:ajax event="rowUnselect"
 							update=":carroPesquisaForm:panelGroupBotoes" />
 
-						<p:column sortBy="#{carro.id}">
+						<p:column sortBy="">
 							<f:facet name="header">
 								<h:outputText value="ID" />
 							</f:facet>
-							<h:outputText value="#{carro.id}" />
+							<h:outputText value="" />
 						</p:column>
 
-						<p:column sortBy="#{carro.Placa}">
+						<p:column sortBy="">
 							<f:facet name="header">
-								<h:outputText value="Placa" />
+								<h:outputText value="Nome" />
 							</f:facet>
-							<h:outputText value="#{carro.Placa}" />
+							<h:outputText value="" />
 						</p:column>
 
-						<p:column sortBy="#{carro.Modelo}">
+						<p:column sortBy="">
 							<f:facet name="header">
-								<h:outputText value="Modelo" />
+								<h:outputText value="Dia" />
 							</f:facet>
-							<h:outputText value="#{carro.Modelo}" />
+							<h:outputText value="" />
 						</p:column>
 
-						<p:column sortBy="#{carro.marca}">
+						<p:column sortBy="">
 							<f:facet name="header">
-								<h:outputText value="marca" />
+								<h:outputText value="Bairro" />
 							</f:facet>
-							<h:outputText value="#{carro.marca}" />
-						</p:column>
-
-						<p:column sortBy="#{carro.Ano}">
-							<f:facet name="header">
-								<h:outputText value="Ano" />
-							</f:facet>
-							<h:outputText value="#{carro.Ano}" />
-						</p:column>
-
-						<p:column sortBy="#{carro.localcarro}">
-							<f:facet name="header">
-								<h:outputText value="LocalCarro" />
-							</f:facet>
-							<h:outputText value="#{carro.localCarro}" />
-						</p:column>
-						
-						
-						
-						<p:column sortBy="#{carro.vendedor}">
-							<f:facet name="header">
-								<h:outputText value="vendedor" />
-							</f:facet>
-							<h:outputText value="#{carro.vendedor}" />
+							<h:outputText value="" />
 						</p:column>
 						
 					</p:dataTable>
@@ -100,17 +76,16 @@
 						<p:commandButton widgetVar="addButton" value="Novo" ajax="false"
 							actionListener="#{carroAddEditMB.exibeFormularioCarro}"
 							update=":carroPesquisaForm :carroForm" />
-
+							
 						<p:commandButton widgetVar="updateButton" value="Editar"
-							disabled="#{carroMB.flagBotaoUpdate}"
-							action="/pages/carro/carroAddEdit.faces"
-							update="pesquisaCarroDataTable"
-							actionListener="#{carroAddEditMB.update}" />
+							disabled="true"
+							
+							 />
 
 						<p:commandButton widgetVar="deleteButton"
-							disabled="#{carroMB.flagBotaoDelete}"
-							value="#{labels.button_delete}" update="pesquisaCarroDataTable"
-							actionListener="#{carroMB.delete}">
+							disabled="true"
+							value="#{labels.button_delete}" 
+							>
 							<p:confirm header="Comfirmação" message="Tem Certeza?"
 								icon="ui-icon-alert" />
 						</p:commandButton>
@@ -129,109 +104,88 @@
 		<p:panel
 				rendered="#{carroAddEditMB.flagExibeFormularioCarro}"> 
 
-				<h:inputHidden value="#" />
+				<h:inputHidden value="" />
 				<h:panelGroup>
 					<p:messages id="messages" autoUpdate="true" closable="true" />
 					<p:panelGrid style="margin-bottom:10px" cellpadding="5">
 						<f:facet name="header">
 							<p:row>
 								<p:column colspan="4">
-									<p:outputLabel value="Cadastro de carro" />
+									<p:outputLabel value="Cadastro de Rota" />
 								</p:column>
 							</p:row>
 						</f:facet>
 						<p:row>
-							<p:column>
-								<p:outputLabel value="Status Carro" for="situacao" />
-							</p:column>
-							<p:column>
-								<p:selectOneRadio id="situacao" required="true"
-									requiredMessage="Status do carro é obrigatório"
-									value=" ">
-									<f:selectItem itemLabel="Ativo" itemValue="1" />
-									<f:selectItem itemLabel="Inativo" itemValue="0" />
-								</p:selectOneRadio>
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Placa : " for="Placa" />
-							</p:column>
-							<p:column>
-								<p:inputText id="Placa" required="true"
-									requiredMessage="placa é obrigatório" maxlength="40" size="40"/>
-									
-							</p:column>
-
-						</p:row>
-
-						<p:row>
-							<p:column>
-								<p:outputLabel value="Modelo : " for="modelo" />
-							</p:column>
-							<p:column>
-								<p:inputText id="modelo" required="true"
-									requiredMessage="modelo social obrigatório" maxlength="100"
-									size="40"/>
-									
-									 
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Marca : " for="marca" />
-							</p:column>
-							<p:column>
-								<p:inputText id="marca" required="true"
-									requiredMessage="marca social obrigatório" maxlength="100"
-									size="40" />
-							</p:column>
-						</p:row>
-
-						<p:row>
-							<p:column>
-								<p:outputLabel value="Ano : " for="ano" />
-							</p:column>
-							<p:column>
-								<p:inputMask id="ano" required="true"
-									requiredMessage="o Ano obrigatório" mask="99/99/9999"/>
-									
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Local do Carro : " for="localcarro" />
-							</p:column>
-							<p:column>
-								<p:inputText id="localcarro" required="true"
-									requiredMessage=" local do carro obrigatório" maxlength="100"
-									size="40"/> 
-							</p:column>
-						</p:row>
 						
-						<p:row>
-						
-						<p:column>
-								<p:outputLabel value="Cor : " for="cor" />
+							<p:column>
+								<p:outputLabel value="Nome da Rota : " for="rota" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="cor" 
-									value=" " />
+								<p:inputText id="rota" required="true"
+									requiredMessage="Nome da Rota é obrigatório" maxlength="40" size="40"/>
+									
+							</p:column>
+							
+
+							<p:column>
+								<p:outputLabel value="Bairro : " for="bairro" />
+							</p:column>
+							<p:column>
+								<p:inputText id="bairro" required="true"
+									requiredMessage="Bairro é obrigatório" maxlength="40" size="40"/>
+									
+							</p:column>
+
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Cidade : " for="cidade" />
+							</p:column>
+							<p:column>
+								<p:inputText id="cidade" required="true"
+									requiredMessage="Cidade é obrigatório" maxlength="40" size="40"/>
+									
 							</p:column>
 							
 							<p:column>
-								<p:outputLabel value="Vendedor : " for="vendedor" />
+								<p:outputLabel value="Estado : " for="estado" />
 							</p:column>
 							<p:column>
-								<p:inputText id="vendedor" required="true"
-									requiredMessage=" Vendedor obrigatório" maxlength="100"
-									size="40"/> 
+								<p:inputText id="estado" required="true"
+									requiredMessage="Estado é obrigatório" maxlength="40" size="40"/>
+									
 							</p:column>
-						
 						</p:row>
-
+						
+						
+						
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Nome da Rua : " for="nomerua" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nomerua" required="true"
+									requiredMessage="Nome da Rua é obrigatório" maxlength="40" size="40"/>
+									
+							</p:column>
+							
+							<p:column>
+								<p:outputLabel value="Numero Inicial : " for="numeroinicial" />
+							</p:column>
+							<p:column>
+								<p:inputText id="numeroinicial" required="true"
+									requiredMessage="Número Inicial é obrigatório" maxlength="40" size="40"/>
+									
+							</p:column>
+						</p:row>
+						
+						
 						<f:facet name="footer">
 							<p:row>
 								<p:column colspan="4">
 									<p:commandButton value="Salvar" style="margin: 130 auto"
-										actionListener="#{carroAddEditMB.salvar}">
+										actionListener="#">
 										<p:confirm header="Comfirmação" message="Tem Certeza?"
 											icon="ui-icon-alert" />
 									</p:commandButton>

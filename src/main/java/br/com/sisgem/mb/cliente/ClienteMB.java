@@ -44,7 +44,7 @@ public class ClienteMB extends BaseBeans{
 	}
 	
 	public void findCliente(String paramCliente){
-		this.setClienteList(this.clienteRepository.findByNome(paramCliente));
+	//	this.setClienteList(this.clienteRepository.findByNome(paramCliente));
 		this.paramCliente = null;
 		showDialog("dialogListaResultado");
 		

@@ -38,7 +38,7 @@ public class UsuarioTest extends AbstractDatabaseTest {
 		usuarioEntity.setCargo(Ecargo.Administrador);
 		usuarioEntity.setCelular("9999-9999");
 		usuarioEntity.setSenha("123456");
-		usuarioEntity.setNome("Rodrigo");
+		usuarioEntity.setNome("glaci");
 		usuarioEntity.setNumeroEnd(82);
 		usuarioEntity.setTelefone("999-99999");
 		usuarioEntity.setCMotorista("546231854113");

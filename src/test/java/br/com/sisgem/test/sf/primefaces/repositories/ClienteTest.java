@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.omg.PortableInterceptor.ClientRequestInterceptor;
 
 import br.com.sisgem.enums.EinativoAtivo;
 import br.com.sisgem.model.ClienteEntity;
@@ -27,22 +28,25 @@ public class ClienteTest extends AbstractDatabaseTest {
 		LOGGER.info(clienteList);
 	}
 	
+	//teste de inserção no banco
 	@Test
 	public void testInsertCliente(){
-		Date d = new Date(); 
+		Date d = new Date();
+	
+		clienteEntity.setCelular("99816487");
+		clienteEntity.setCNPJCPF("7253426500");
+		clienteEntity.setComplemento("casa");
+		clienteEntity.setEmail("maria.torres@gmail.com");
+		clienteEntity.setFlagPFPJ(1);
+		clienteEntity.setIE("1234");
+		clienteEntity.setIM("898878");
+		clienteEntity.setNomeRazaoS("condor");
+		clienteEntity.setNumeroEnd(500);
+		clienteEntity.setReceberSMS("1");
+		clienteEntity.setTelefone("34250809");
+		clienteEntity.setDtaAniversario(d);
+		clienteEntity.setRuasCorreio_idRuasCorreio(1);
 		
-		clienteEntity.setNomeRazaoS("João");
-		clienteEntity.setNumeroEnd(11);
-		clienteEntity.setComplemento("apt 34");
-		clienteEntity.setTelefone("8546-5224");
-		clienteEntity.setCelular("5468-6541");
-		clienteEntity.setCNPJCPF("316.1561/00001-35");
-		clienteEntity.setEmail("joao@terra.com.br");
-		clienteEntity.setIE("testeaie");
-		clienteEntity.setIE("testeIM");
-		clienteEntity.setStatusCliente(EinativoAtivo.Ativo);
-
-			
 			this.clienteRepository.save(clienteEntity);
 			Long id = clienteEntity.getId();
 			

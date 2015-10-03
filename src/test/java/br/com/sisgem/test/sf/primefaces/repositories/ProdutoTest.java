@@ -35,14 +35,13 @@ public class ProdutoTest extends AbstractDatabaseTest {
 		
 		produtoEntity.setEpi("Mascara");
 		produtoEntity.setFornecedor_idPessoaJuridica(fornecedor);
-		produtoEntity.setNome("Alvejante");
+		produtoEntity.setNome("Sabao em po");
 		produtoEntity.setStatusProduto(EinativoAtivo.Ativo);
 		produtoEntity.setUnidade("Litro");
 		produtoEntity.setValorCompra(100.00);
 		produtoEntity.setValorVenda(100.00);
 		
 		this.produtoRepository.save(produtoEntity);
-
 	}
 
 	ProdutoEntity produtoEntity = new ProdutoEntity();
