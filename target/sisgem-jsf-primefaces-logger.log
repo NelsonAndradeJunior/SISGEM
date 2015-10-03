@@ -1,316 +1,229 @@
-26-09-2015 11:34:42,526; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 11:34:46,015; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - [br.com.sisgem.model.FornecedorEntity@50d3bf39[
-  cnpj=11.111.111/1111-11
-  im=testeIM
-  ie=11111111-11
-  razaoSocial=testeRazaoSocial
-  telefone=(11) 1111-1111
-  telefone2=testeTelefone2
-  complemento=testeComplemento
-  email=teste@email
-  nomeContato=testeNomeContato
-  statusForn=Ativo
-  nomeFantasia=11111111-11
-  cep=83.320-000
-  numeroEndereco=10
-  observacao=testblob
-  dataCadastro=2015-08-22 00:00:00.0
-  produtoEntity=[br.com.sisgem.model.ProdutoEntity@796065aa[
-  nome=Alvejante
-  unidade=Litro
-  valorVenda=100.0
-  valorCompra=100.0
-  epi=Mascara
-  statusProduto=Ativo
-  Fornecedor_idPessoaJuridica=br.com.sisgem.model.FornecedorEntity@50d3bf39
-  id=6
-], br.com.sisgem.model.ProdutoEntity@336365bc[
-  nome=12312
-  unidade=12313
-  valorVenda=123.12
-  valorCompra=123.12
-  epi=
-  statusProduto=Ativo
-  Fornecedor_idPessoaJuridica=br.com.sisgem.model.FornecedorEntity@50d3bf39
-  id=8
-], br.com.sisgem.model.ProdutoEntity@38eb2fb0[
-  nome=WQWE
-  unidade=qweqwe
-  valorVenda=111.11
-  valorCompra=111.11
-  epi=
-  statusProduto=Inativo
-  Fornecedor_idPessoaJuridica=br.com.sisgem.model.FornecedorEntity@50d3bf39
-  id=10
-]]
-  id=2
-], br.com.sisgem.model.FornecedorEntity@7bb004b8[
-  cnpj=22.222.222/2222-22
-  im=testeIM
-  ie=22222222-22
-  razaoSocial=testeRazaoSocial
-  telefone=(33) 3333-3333
-  telefone2=testeTelefone2
-  complemento=testeComplemento
-  email=teste@email
-  nomeContato=testeNomeContato
-  statusForn=Ativo
-  nomeFantasia=44444444-44
-  cep=83.320-000
-  numeroEndereco=10
-  observacao=testblob
-  dataCadastro=2015-08-30 00:00:00.0
-  produtoEntity=[]
-  id=3
-], br.com.sisgem.model.FornecedorEntity@78e89bfe[
-  cnpj=12.121.212/1212-12
-  im=<null>
-  ie=12121212-12
-  razaoSocial=1212121212112
-  telefone=(12) 1212-1211
-  telefone2=<null>
-  complemento=kk
-  email=12121212121
-  nomeContato=121212121
-  statusForn=Ativo
-  nomeFantasia=12121212-11
-  cep=
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-30 00:00:00.0
-  produtoEntity=[]
-  id=10
-], br.com.sisgem.model.FornecedorEntity@652ce654[
-  cnpj=11.111.111/1111-11
-  im=<null>
-  ie=11111111-11
-  razaoSocial=111111111111
-  telefone=(11) 1111-1111
-  telefone2=<null>
-  complemento=
-  email=1111111111
-  nomeContato=1111111111
-  statusForn=Ativo
-  nomeFantasia=11111111-11
-  cep=
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=12
-], br.com.sisgem.model.FornecedorEntity@522ba524[
-  cnpj=12.312.312/3123-12
-  im=<null>
-  ie=12312312-31
-  razaoSocial=123123123
-  telefone=(12) 3123-1231
-  telefone2=<null>
-  complemento=
-  email=123123123
-  nomeContato=13123132
-  statusForn=Ativo
-  nomeFantasia=12312312-31
-  cep=
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=13
-], br.com.sisgem.model.FornecedorEntity@29c5ee1d[
-  cnpj=33.333.333/0001-33
-  im=<null>
-  ie=33333333-33
-  razaoSocial=3333333
-  telefone=(33) 3333-3333
-  telefone2=<null>
-  complemento=3
-  email=33333333
-  nomeContato=333333
-  statusForn=Ativo
-  nomeFantasia=33333333-33
-  cep=33.333-333
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=17
-], br.com.sisgem.model.FornecedorEntity@15cea7b0[
-  cnpj=00.000.000/0001-94
-  im=<null>
-  ie=00000000-00
-  razaoSocial=0000
-  telefone=(00) 0000-0000
-  telefone2=<null>
-  complemento=0000000000
-  email=000000000
-  nomeContato=00000000
-  statusForn=Inativo
-  nomeFantasia=00000000-00
-  cep=00.000-000
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=18
-]]
-26-09-2015 11:35:25,275; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 11:35:27,547; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - [br.com.sisgem.model.FornecedorEntity@50d3bf39[
-  cnpj=11.111.111/1111-11
-  im=testeIM
-  ie=11111111-11
-  razaoSocial=testeRazaoSocial
-  telefone=(11) 1111-1111
-  telefone2=testeTelefone2
-  complemento=testeComplemento
-  email=teste@email
-  nomeContato=testeNomeContato
-  statusForn=Ativo
-  nomeFantasia=11111111-11
-  cep=83.320-000
-  numeroEndereco=10
-  observacao=testblob
-  dataCadastro=2015-08-22 00:00:00.0
-  produtoEntity=[br.com.sisgem.model.ProdutoEntity@796065aa[
-  nome=Alvejante
-  unidade=Litro
-  valorVenda=100.0
-  valorCompra=100.0
-  epi=Mascara
-  statusProduto=Ativo
-  Fornecedor_idPessoaJuridica=br.com.sisgem.model.FornecedorEntity@50d3bf39
-  id=6
-], br.com.sisgem.model.ProdutoEntity@336365bc[
-  nome=12312
-  unidade=12313
-  valorVenda=123.12
-  valorCompra=123.12
-  epi=
-  statusProduto=Ativo
-  Fornecedor_idPessoaJuridica=br.com.sisgem.model.FornecedorEntity@50d3bf39
-  id=8
-], br.com.sisgem.model.ProdutoEntity@38eb2fb0[
-  nome=WQWE
-  unidade=qweqwe
-  valorVenda=111.11
-  valorCompra=111.11
-  epi=
-  statusProduto=Inativo
-  Fornecedor_idPessoaJuridica=br.com.sisgem.model.FornecedorEntity@50d3bf39
-  id=10
-]]
-  id=2
-], br.com.sisgem.model.FornecedorEntity@7bb004b8[
-  cnpj=22.222.222/2222-22
-  im=testeIM
-  ie=22222222-22
-  razaoSocial=testeRazaoSocial
-  telefone=(33) 3333-3333
-  telefone2=testeTelefone2
-  complemento=testeComplemento
-  email=teste@email
-  nomeContato=testeNomeContato
-  statusForn=Ativo
-  nomeFantasia=44444444-44
-  cep=83.320-000
-  numeroEndereco=10
-  observacao=testblob
-  dataCadastro=2015-08-30 00:00:00.0
-  produtoEntity=[]
-  id=3
-], br.com.sisgem.model.FornecedorEntity@78e89bfe[
-  cnpj=12.121.212/1212-12
-  im=<null>
-  ie=12121212-12
-  razaoSocial=1212121212112
-  telefone=(12) 1212-1211
-  telefone2=<null>
-  complemento=kk
-  email=12121212121
-  nomeContato=121212121
-  statusForn=Ativo
-  nomeFantasia=12121212-11
-  cep=
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-30 00:00:00.0
-  produtoEntity=[]
-  id=10
-], br.com.sisgem.model.FornecedorEntity@652ce654[
-  cnpj=11.111.111/1111-11
-  im=<null>
-  ie=11111111-11
-  razaoSocial=111111111111
-  telefone=(11) 1111-1111
-  telefone2=<null>
-  complemento=
-  email=1111111111
-  nomeContato=1111111111
-  statusForn=Ativo
-  nomeFantasia=11111111-11
-  cep=
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=12
-], br.com.sisgem.model.FornecedorEntity@522ba524[
-  cnpj=12.312.312/3123-12
-  im=<null>
-  ie=12312312-31
-  razaoSocial=123123123
-  telefone=(12) 3123-1231
-  telefone2=<null>
-  complemento=
-  email=123123123
-  nomeContato=13123132
-  statusForn=Ativo
-  nomeFantasia=12312312-31
-  cep=
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=13
-], br.com.sisgem.model.FornecedorEntity@29c5ee1d[
-  cnpj=33.333.333/0001-33
-  im=<null>
-  ie=33333333-33
-  razaoSocial=3333333
-  telefone=(33) 3333-3333
-  telefone2=<null>
-  complemento=3
-  email=33333333
-  nomeContato=333333
-  statusForn=Ativo
-  nomeFantasia=33333333-33
-  cep=33.333-333
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=17
-], br.com.sisgem.model.FornecedorEntity@15cea7b0[
-  cnpj=00.000.000/0001-94
-  im=<null>
-  ie=00000000-00
-  razaoSocial=0000
-  telefone=(00) 0000-0000
-  telefone2=<null>
-  complemento=0000000000
-  email=000000000
-  nomeContato=00000000
-  statusForn=Inativo
-  nomeFantasia=00000000-00
-  cep=00.000-000
-  numeroEndereco=0
-  observacao=<null>
-  dataCadastro=2015-08-31 00:00:00.0
-  produtoEntity=[]
-  id=18
-]]
-26-09-2015 11:36:34,007; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 11:36:36,261; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - [br.com.sisgem.model.CarroEntity@51dbd6e4[
-  Usuario_idUsuario=1
+28-09-2015 20:53:59,740; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 20:54:01,974; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
+28-09-2015 20:54:01,974; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'carroentit0_.idUsuario' in 'field list'
+28-09-2015 21:22:39,348; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:22:41,574; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
+28-09-2015 21:22:41,575; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'carroentit0_.idUsuario' in 'field list'
+28-09-2015 21:22:41,624; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
+28-09-2015 21:22:41,624; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'idUsuario' in 'field list'
+28-09-2015 21:23:10,931; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:23:13,139; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
+28-09-2015 21:23:13,139; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'carroentit0_.idUsuario' in 'field list'
+28-09-2015 21:25:54,075; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:25:55,126; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4a11eb84] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.CarroTest@4e858e0a]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [sisgem-jsf-primefaces.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:750)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1225)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:853)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:290)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 40 more
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: br.com.sisgem.model.CarroEntity.usuario in br.com.sisgem.model.UsuarioEntity.carro
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:768)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:728)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:70)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1695)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1424)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1844)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	... 49 more
+28-09-2015 21:26:19,095; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:26:20,135; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4a11eb84] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.CarroTest@4e858e0a]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [sisgem-jsf-primefaces.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:750)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1225)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:853)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:290)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 40 more
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: br.com.sisgem.model.CarroEntity.usuario in br.com.sisgem.model.UsuarioEntity.carro
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:768)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:728)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:70)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1695)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1424)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1844)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	... 49 more
+28-09-2015 21:31:07,983; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:31:09,019; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4a11eb84] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.CarroTest@4e858e0a]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [sisgem-jsf-primefaces.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:750)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1225)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:853)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:290)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 40 more
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: br.com.sisgem.model.CarroEntity.usuario in br.com.sisgem.model.UsuarioEntity.carro
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:768)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:728)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:70)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1695)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1424)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1844)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	... 49 more
+28-09-2015 21:32:21,393; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:32:23,530; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
+28-09-2015 21:32:23,530; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'carroentit0_.idUsuario' in 'field list'
+28-09-2015 21:33:02,632; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:33:04,938; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - [br.com.sisgem.model.CarroEntity@25a73de1[
   Modelo=corsa
   Ano=2000
   Aluguel=true
@@ -318,11 +231,21 @@
   Placa=wer1234
   LocalCarro=curitiba
   StatusCarro=usado
-  id=1
-]]
-26-09-2015 12:13:24,379; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 12:13:26,577; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - [br.com.sisgem.model.CarroEntity@51e0301d[
-  Usuario_idUsuario=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37[
+  Cargo=Administrador
+  Celular=999999999999999999
+  Senha=1234
+  Nome=A
+  NumeroEnd=34
+  CEP=33333333333333333
+  Telefone=5555555555555555555
+  CelularParticular=66666666666666666
+  Email=33333333333333333
+  CMotorista=yyyyyyyyyyyy
+  DtaValiCM=2015-07-07 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  carro=[br.com.sisgem.model.CarroEntity@25a73de1[
   Modelo=corsa
   Ano=2000
   Aluguel=true
@@ -330,38 +253,9 @@
   Placa=wer1234
   LocalCarro=curitiba
   StatusCarro=usado
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
   id=1
-]]
-26-09-2015 12:13:42,453; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 13:26:19,066; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 13:26:21,387; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 13:26:21,388; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 13:26:21,517; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.ClienteTest;  - []
-26-09-2015 13:35:35,712; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 13:35:37,931; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 13:35:37,931; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 14:15:41,274; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 14:15:43,481; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 14:15:43,482; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 14:31:40,579; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 14:31:42,757; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 14:31:42,758; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 15:16:13,253; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 15:16:15,650; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 15:16:15,650; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 15:17:21,144; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 15:17:23,398; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - [br.com.sisgem.model.CarroEntity@5754de72[
-  Usuario_idUsuario=1
-  Modelo=corsa
-  Ano=2000
-  Aluguel=true
-  Cor=azul
-  Placa=wer1234
-  LocalCarro=curitiba
-  StatusCarro=usado
-  id=1
-], br.com.sisgem.model.CarroEntity@51dbd6e4[
-  Usuario_idUsuario=1
+], br.com.sisgem.model.CarroEntity@5c645b43[
   Modelo=corsa
   Ano=20150708
   Aluguel=true
@@ -369,9 +263,9 @@
   Placa=12345
   LocalCarro=curitiba
   StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
   id=2
-], br.com.sisgem.model.CarroEntity@2b8bd14b[
-  Usuario_idUsuario=1
+], br.com.sisgem.model.CarroEntity@6bd16207[
   Modelo=corsa
   Ano=20150708
   Aluguel=true
@@ -379,36 +273,276 @@
   Placa=12345
   LocalCarro=curitiba
   StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
   id=3
+], br.com.sisgem.model.CarroEntity@298d9a05[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=4
 ]]
-26-09-2015 15:19:09,034; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 15:19:11,263; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 15:19:11,263; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 15:21:33,358; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 15:21:35,597; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 15:21:35,598; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 15:30:25,984; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 15:30:28,204; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1366, SQLState: HY000
-26-09-2015 15:30:28,204; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Incorrect integer value: 'Ativo' for column 'StatusCliente' at row 1
-26-09-2015 15:32:06,781; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 15:47:29,547; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 15:47:31,733; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1366, SQLState: HY000
-26-09-2015 15:47:31,733; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Incorrect integer value: 'Ativo' for column 'StatusCliente' at row 1
-26-09-2015 15:48:35,616; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:11:58,664; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:18:23,389; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:20:32,702; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:25:48,085; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:28:08,220; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:28:55,014; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:28:57,382; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
-26-09-2015 16:28:57,382; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'Cargo' in 'field list'
-26-09-2015 16:29:36,856; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:29:39,032; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
-26-09-2015 16:29:39,032; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'Cargo' in 'field list'
-26-09-2015 16:53:26,236; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:53:28,581; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1364, SQLState: HY000
-26-09-2015 16:53:28,581; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Field 'RuasCorreio_idRuasCorreio' doesn't have a default value
-26-09-2015 16:59:37,559; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-26-09-2015 16:59:39,866; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1048, SQLState: 23000
-26-09-2015 16:59:39,866; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Column 'RuasCorreio_idRuasCorreio' cannot be null
+  id=1
+]
+  id=1
+], br.com.sisgem.model.CarroEntity@5c645b43[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37[
+  Cargo=Administrador
+  Celular=999999999999999999
+  Senha=1234
+  Nome=A
+  NumeroEnd=34
+  CEP=33333333333333333
+  Telefone=5555555555555555555
+  CelularParticular=66666666666666666
+  Email=33333333333333333
+  CMotorista=yyyyyyyyyyyy
+  DtaValiCM=2015-07-07 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  carro=[br.com.sisgem.model.CarroEntity@25a73de1[
+  Modelo=corsa
+  Ano=2000
+  Aluguel=true
+  Cor=azul
+  Placa=wer1234
+  LocalCarro=curitiba
+  StatusCarro=usado
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=1
+], br.com.sisgem.model.CarroEntity@5c645b43[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=2
+], br.com.sisgem.model.CarroEntity@6bd16207[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=3
+], br.com.sisgem.model.CarroEntity@298d9a05[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=4
+]]
+  id=1
+]
+  id=2
+], br.com.sisgem.model.CarroEntity@6bd16207[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37[
+  Cargo=Administrador
+  Celular=999999999999999999
+  Senha=1234
+  Nome=A
+  NumeroEnd=34
+  CEP=33333333333333333
+  Telefone=5555555555555555555
+  CelularParticular=66666666666666666
+  Email=33333333333333333
+  CMotorista=yyyyyyyyyyyy
+  DtaValiCM=2015-07-07 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  carro=[br.com.sisgem.model.CarroEntity@25a73de1[
+  Modelo=corsa
+  Ano=2000
+  Aluguel=true
+  Cor=azul
+  Placa=wer1234
+  LocalCarro=curitiba
+  StatusCarro=usado
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=1
+], br.com.sisgem.model.CarroEntity@5c645b43[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=2
+], br.com.sisgem.model.CarroEntity@6bd16207[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=3
+], br.com.sisgem.model.CarroEntity@298d9a05[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=4
+]]
+  id=1
+]
+  id=3
+], br.com.sisgem.model.CarroEntity@298d9a05[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37[
+  Cargo=Administrador
+  Celular=999999999999999999
+  Senha=1234
+  Nome=A
+  NumeroEnd=34
+  CEP=33333333333333333
+  Telefone=5555555555555555555
+  CelularParticular=66666666666666666
+  Email=33333333333333333
+  CMotorista=yyyyyyyyyyyy
+  DtaValiCM=2015-07-07 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  carro=[br.com.sisgem.model.CarroEntity@25a73de1[
+  Modelo=corsa
+  Ano=2000
+  Aluguel=true
+  Cor=azul
+  Placa=wer1234
+  LocalCarro=curitiba
+  StatusCarro=usado
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=1
+], br.com.sisgem.model.CarroEntity@5c645b43[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=2
+], br.com.sisgem.model.CarroEntity@6bd16207[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=3
+], br.com.sisgem.model.CarroEntity@298d9a05[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@4c03a37
+  id=4
+]]
+  id=1
+]
+  id=4
+]]
+28-09-2015 21:35:46,364; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+28-09-2015 21:35:48,631; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest;  - [br.com.sisgem.model.UsuarioEntity@25a73de1[
+  Cargo=Administrador
+  Celular=999999999999999999
+  Senha=1234
+  Nome=A
+  NumeroEnd=34
+  CEP=33333333333333333
+  Telefone=5555555555555555555
+  CelularParticular=66666666666666666
+  Email=33333333333333333
+  CMotorista=yyyyyyyyyyyy
+  DtaValiCM=2015-07-07 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  carro=[br.com.sisgem.model.CarroEntity@5af97169[
+  Modelo=corsa
+  Ano=2000
+  Aluguel=true
+  Cor=azul
+  Placa=wer1234
+  LocalCarro=curitiba
+  StatusCarro=usado
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@25a73de1
+  id=1
+], br.com.sisgem.model.CarroEntity@5dbf5634[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@25a73de1
+  id=2
+], br.com.sisgem.model.CarroEntity@1948ea69[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@25a73de1
+  id=3
+], br.com.sisgem.model.CarroEntity@47e4d9d0[
+  Modelo=corsa
+  Ano=20150708
+  Aluguel=true
+  Cor=azul
+  Placa=12345
+  LocalCarro=curitiba
+  StatusCarro=1
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@25a73de1
+  id=4
+]]
+  id=1
+]]

@@ -37,7 +37,7 @@ public class CarroTest extends AbstractDatabaseTest {
 			carroEntity.setModelo("corsa");
 			carroEntity.setPlaca("12345");
 			carroEntity.setStatusCarro("1");
-			carroEntity.setUsuario_idUsuario(1);
+			
 			
 			this.carroRepository.save(carroEntity);
 			Long id = carroEntity.getId();

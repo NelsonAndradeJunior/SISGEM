@@ -1,8 +1,13 @@
 package br.com.sisgem.model;
 
+import java.awt.List;
+
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,9 +21,7 @@ public class CarroEntity extends BaseEntities<Long>{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Size(max=10)
-	@NotNull
-	private Integer Usuario_idUsuario;
+
 	
 	@Size(max=40)
 	private String Modelo;
@@ -44,7 +47,13 @@ public class CarroEntity extends BaseEntities<Long>{
 	private String LocalCarro;
 	
 	@Size(max=40)
-	private String StatusCarro;
+	private String StatusCarro;	
+	
+	//relacionamento muitos para um "@ManyToOne = Esta classe só pode ter uma dessa variável, mas a variavel pode ter várias dessa classe; "
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="Usuario_idUsuario")//
+	private UsuarioEntity Usuario_idUsuario; 
 	
 	
 	public CarroEntity() {
@@ -52,10 +61,10 @@ public class CarroEntity extends BaseEntities<Long>{
 	}
 
 
-	public CarroEntity(Integer usuario_idUsuario, String modelo, Integer ano, boolean aluguel, String cor, String placa,
+	public CarroEntity( String modelo, Integer ano, boolean aluguel, String cor, String placa,
 			String localCarro, String statusCarro) {
 		super();
-		Usuario_idUsuario = usuario_idUsuario;
+		
 		Modelo = modelo;
 		Ano = ano;
 		Aluguel = aluguel;
@@ -66,14 +75,10 @@ public class CarroEntity extends BaseEntities<Long>{
 	}
 
 
-	public Integer getUsuario_idUsuario() {
-		return Usuario_idUsuario;
-	}
+	
 
 
-	public void setUsuario_idUsuario(Integer usuario_idUsuario) {
-		Usuario_idUsuario = usuario_idUsuario;
-	}
+	
 
 
 	public String getModelo() {
@@ -144,9 +149,6 @@ public class CarroEntity extends BaseEntities<Long>{
 	public void setStatusCarro(String statusCarro) {
 		StatusCarro = statusCarro;
 	}
-	
-	
 
-	
 	
 }

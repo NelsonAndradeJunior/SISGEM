@@ -1,13 +1,18 @@
 package br.com.sisgem.model;
 
+
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -66,8 +71,14 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	
 	@Size(max=10)
 	@NotNull
-	private Integer RuasCorreio_idRuasCorreio;
-		
+	private Integer RuasCorreio_idRuasCorreio;	
+	
+	//um para muitos
+	
+	@OneToMany(mappedBy="Usuario_idUsuario",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<CarroEntity> carro;
+	
+
 	public UsuarioEntity(Ecargo cargo, String celular, String senha, String nome, Integer numeroEnd, String cEP,
 			String telefone, String celularParticular, String email, String cMotorista, Date dtaValiCM,
 			String complemento, Integer ruasCorreio_idRuasCorreio) {
@@ -195,5 +206,7 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	public void setRuasCorreio_idRuasCorreio(Integer ruasCorreio_idRuasCorreio) {
 		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
 	}
+
+	
 	
 }
