@@ -9,14 +9,13 @@ import org.apache.log4j.Logger;
 import org.primefaces.event.SelectEvent;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
 import br.com.sisgem.model.ProdutoEntity;
 import br.com.sisgem.model.repository.IProdutoRepository;
 import br.com.sisgem.model.utils.BaseBeans;
 
 @Component
-@Scope(value = WebApplicationContext.SCOPE_SESSION)
+@Scope("view")
 @Named(value= "produtoMB")
 public class ProdutoMB extends BaseBeans{
 

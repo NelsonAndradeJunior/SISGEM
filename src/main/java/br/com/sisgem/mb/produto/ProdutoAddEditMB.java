@@ -50,6 +50,8 @@ public class ProdutoAddEditMB extends BaseBeans{
 	
 	private Boolean flagExibeFormularioProduto;
 	
+	private Boolean flagPesquisaFornecedor;
+	
 	public ProdutoAddEditMB() {
 		this.produtoObj = new ProdutoEntity();
 	}
@@ -73,18 +75,27 @@ public class ProdutoAddEditMB extends BaseBeans{
 	}
 	
 	
-	public void update(){
+	public void update(){		
 		this.produtoObj = mbProdutoBean.getProdutoSelecionado();
+		this.produtoObj.setFornecedor_idPessoaJuridica(this.fornecedor.getFornecedorSelecionado());
 		this.setFlagExibeConsultaProduto(false);
 		this.setFlagExibeFormularioProduto(true);
 		hideDialog("dialogListaProduto");
 		this.mbProdutoBean.setFlagBotaoUpdate(true);
 		this.mbProdutoBean.setFlagBotaoDelete(true);
 	}
-	
+
 	public void exibeFormularioProduto() {
-		flagExibeFormularioProduto = true;
+//		flagExibeFormularioProduto = true;
 		flagExibeConsultaProduto = false;
+		flagPesquisaFornecedor = true;
+		hideDialog("dialogListaFornecedores");
+	}
+	
+	public void vincularFornecedor(){
+		this.produtoObj.setFornecedor_idPessoaJuridica(this.fornecedor.getFornecedorSelecionado());
+		flagPesquisaFornecedor = false;
+		flagExibeFormularioProduto = true;
 		hideDialog("dialogListaFornecedores");
 	}
 	
@@ -137,6 +148,14 @@ public class ProdutoAddEditMB extends BaseBeans{
 
 	public void setFornecedor(FornecedorMB fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+
+	public Boolean getFlagPesquisaFornecedor() {
+		return flagPesquisaFornecedor;
+	}
+
+	public void setFlagPesquisaFornecedor(Boolean flagPesquisaFornecedor) {
+		this.flagPesquisaFornecedor = flagPesquisaFornecedor;
 	}
 
 }

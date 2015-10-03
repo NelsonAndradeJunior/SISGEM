@@ -63,7 +63,7 @@ public class FornecedorAddEditMB extends BaseBeans{
 		this.fornecedorObj = mbFornecedorBean.getFornecedorSelecionado();
 		this.flagExibeConsultaFornecedor = false;
 		this.flagExibeFormularioFornecedor = true;
-		hideDialog("dialogListaFornecedores");
+		//hideDialog("dialogListaFornecedores");
 		this.mbFornecedorBean.setFlagBotaoUpdate(true);
 		this.mbFornecedorBean.setFlagBotaoDelete(true);
 	}

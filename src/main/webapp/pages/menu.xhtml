@@ -9,7 +9,6 @@
 
 
 <body>
-	
 	<ui:composition>
 	
 	<link type="text/css" rel="stylesheet"
@@ -20,8 +19,7 @@
 				<p:panelMenu>
 					<p:submenu label="Home">
 						<p:menuitem value="Cliente"
-							url="/pages/cliente/clienteAddEdit.faces"
-							icon="ui-icon-home" />
+							url="/pages/cliente/clienteAddEdit.faces" icon="ui-icon-home" />
 						<p:menuitem value="Fornecedor"
 							url="/pages/fornecedor/fornecedorAddEdit.faces"
 							icon="ui-icon-person" />
@@ -33,39 +31,37 @@
 							url="/pages/carro/carroAddEdit.faces" />
 						<p:menuitem value="Forma de Pagamento" icon="ui-icon-person"
 							url="/pages/formadepagamento/formadepagamentoAddEdit.faces" />
-						
+
 					</p:submenu>
 
 					<p:submenu label="Vendas">
-						<p:menuitem value="Caixa"
-							url="/pages/vendas/caixaAddEdit.faces"
+						<p:menuitem value="Caixa" url="/pages/vendas/caixaAddEdit.faces"
 							ajax="false" icon="ui-icon-wrench" />
-							<p:menuitem value="Pedido"
-							url="/pages/vendas/pdvAddEdit.faces"
+						<p:menuitem value="Pedido" url="/pages/vendas/pdvAddEdit.faces"
 							ajax="false" icon="ui-icon-wrench" />
-							
+
 
 					</p:submenu>
 
 					<p:submenu label="Vendedor">
 						<p:menuitem value="Entrada de Produtos"
-							url="/pages/vendedor/vendedorEntrada.faces" ajax="false"
+							url="/pages/vendedor/vendedorEntrada.faces"
 							icon="ui-icon-wrench" />
-							<p:menuitem value="Saída de Produtos"
-							url="/pages/vendedor/vendedorSaida.faces" ajax="false"
+						<p:menuitem value="Saída de Produtos"
+							url="/pages/vendedor/vendedorSaida.faces"
 							icon="ui-icon-wrench" />
 
 					</p:submenu>
 
 					<p:submenu label="Administrativo">
 						<p:menuitem value="Rotas"
-							url="/pages/administrativo/rotaAddEdit.faces" ajax="false"
+							url="/pages/administrativo/rotaAddEdit.faces"
 							icon="ui-icon-wrench" />
 						<p:menuitem value="Localização Vendedor"
-							url="/pages/administrativo/localizaVendedor.faces" ajax="false"
+							url="/pages/administrativo/localizaVendedor.faces"
 							icon="ui-icon-wrench" />
-							<p:menuitem value="Relatorios"
-							url="/pages/administrativo/relatoriosAdministrador.faces" ajax="false"
+						<p:menuitem value="Relatorios"
+							url="/pages/administrativo/relatoriosAdministrador.faces"
 							icon="ui-icon-wrench" />
 					</p:submenu>
 				</p:panelMenu>

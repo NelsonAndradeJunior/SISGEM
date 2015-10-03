@@ -9,14 +9,13 @@ import org.apache.log4j.Logger;
 import org.primefaces.event.SelectEvent;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
 import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.repository.IFornecedorRepository;
 import br.com.sisgem.model.utils.BaseBeans;
 
 @Component
-@Scope(value = WebApplicationContext.SCOPE_SESSION)
+@Scope("view")
 @Named(value= "fornecedorMB")
 public class FornecedorMB extends BaseBeans{
 
@@ -37,6 +36,8 @@ public class FornecedorMB extends BaseBeans{
 	
 	private boolean flagBotaoDelete = true;
 	
+	private boolean flagBotaoSelecionarFornecedor = true;
+	
 	public FornecedorMB() {
 		
 	}
@@ -44,7 +45,7 @@ public class FornecedorMB extends BaseBeans{
 	public void findFornecedor(String paramFornecedor){
 		this.setFornecedorList(this.fornecedorRepository.findByCNPJ(paramFornecedor));
 		this.paramFornecedor = null;
-		showDialog("dialogListaFornecedor");
+		showDialog("dialogListaFornecedores");
 	}
 	
 	public void selectFornecedor(SelectEvent evt) {
@@ -53,6 +54,7 @@ public class FornecedorMB extends BaseBeans{
 				this.fornecedorSelecionado = (FornecedorEntity) evt.getObject();
 				this.setFlagBotaoDelete(false);
 				this.setFlagBotaoUpdate(false);
+				this.setFlagBotaoSelecionarFornecedor(false);
 		
 			} else {
 				this.fornecedorSelecionado = null;
@@ -68,6 +70,7 @@ public class FornecedorMB extends BaseBeans{
 		this.fornecedorSelecionado = null;
 		this.setFlagBotaoUpdate(true);
 		this.setFlagBotaoDelete(true);
+		this.setFlagBotaoSelecionarFornecedor(true);
 	}
 	
 	public void delete() {
@@ -128,6 +131,14 @@ public class FornecedorMB extends BaseBeans{
 
 	public void setFlagBotaoDelete(boolean flagBotaoDelete) {
 		this.flagBotaoDelete = flagBotaoDelete;
+	}
+
+	public boolean isFlagBotaoSelecionarFornecedor() {
+		return flagBotaoSelecionarFornecedor;
+	}
+
+	public void setFlagBotaoSelecionarFornecedor(boolean flagBotaoSelecionarFornecedor) {
+		this.flagBotaoSelecionarFornecedor = flagBotaoSelecionarFornecedor;
 	}
 
 
