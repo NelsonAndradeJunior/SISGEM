@@ -1,6 +1,7 @@
 package br.com.sisgem.model;
 
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.security.core.GrantedAuthority;
 
 import br.com.sisgem.enums.Ecargo;
 import br.com.sisgem.enums.EinativoAtivo;
@@ -36,12 +39,14 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	private String Celular;
 	
 	@Size(max=40)
+	@Column(name = "Senha")
 	@NotNull
-	private String Senha;
+	private String password;
 	
 	@Size(max=40)
 	@NotNull
-	private String Nome;
+	@Column(name = "Nome")
+	private String name;
 	
 	@Size(max=10)
 	@NotNull
@@ -85,8 +90,8 @@ public class UsuarioEntity extends BaseEntities<Long> {
 		super();
 		Cargo = cargo;
 		Celular = celular;
-		Senha = senha;
-		Nome = nome;
+		password = senha;
+		name = nome;
 		NumeroEnd = numeroEnd;
 		CEP = cEP;
 		Telefone = telefone;
@@ -103,8 +108,9 @@ public class UsuarioEntity extends BaseEntities<Long> {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Ecargo getCargo() {
-		return Cargo;
+	public String getCargo() {
+		String cargo = Cargo.toString() ;
+		return cargo;
 	}
 
 	public void setCargo(Ecargo cargo) {
@@ -120,19 +126,19 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	}
 
 	public String getSenha() {
-		return Senha;
+		return password;
 	}
 
 	public void setSenha(String senha) {
-		Senha = senha;
+		password = senha;
 	}
 
 	public String getNome() {
-		return Nome;
+		return name;
 	}
 
 	public void setNome(String nome) {
-		Nome = nome;
+		name = nome;
 	}
 
 	public Integer getNumeroEnd() {
@@ -206,7 +212,5 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	public void setRuasCorreio_idRuasCorreio(Integer ruasCorreio_idRuasCorreio) {
 		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
 	}
-
-	
 	
 }

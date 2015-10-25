@@ -36,6 +36,8 @@ public class FornecedorAddEditMB extends BaseBeans{
 	
 	private Boolean flagExibeFormularioFornecedor;
 	
+	private String validaCnpj = null;
+	
 	public FornecedorAddEditMB() {
 		this.fornecedorObj = new FornecedorEntity();
 	}
@@ -43,7 +45,8 @@ public class FornecedorAddEditMB extends BaseBeans{
 	
 	public void salvar() {
 		try {
-			if (this.fornecedorObj != null) {
+			if (this.fornecedorObj != null && validaCnpj(this.validaCnpj)) {
+				this.fornecedorObj.setCnpj(getValidaCnpj());
 				if (this.fornecedorObj.getId() == null) {
 					// Add
 					this.fornecedorObj.setDataCadastro(new Date());
@@ -61,6 +64,7 @@ public class FornecedorAddEditMB extends BaseBeans{
 
 	public void update(){
 		this.fornecedorObj = mbFornecedorBean.getFornecedorSelecionado();
+		this.validaCnpj = this.fornecedorObj.getCnpj();
 		this.flagExibeConsultaFornecedor = false;
 		this.flagExibeFormularioFornecedor = true;
 		//hideDialog("dialogListaFornecedores");
@@ -79,6 +83,26 @@ public class FornecedorAddEditMB extends BaseBeans{
 		flagExibeFormularioFornecedor = true;
 		flagExibeConsultaFornecedor = false;
 		hideDialog("dialogListaFornecedores");
+	}
+	
+	public boolean validaCnpj(String cnpj) {
+		if (cnpj.isEmpty() || cnpj.equals("__.___.___/____-__")) {
+			return true;
+		} else if (!cnpj.contains("_")
+				&& Utilidades.cpfCnpjisValid(cnpj) == true) {
+			if (!fornecedorRepository
+					.findByCNPJ(cnpj).isEmpty()) {
+				Utilidades.showFacesMessage("CNPJ já Cadastrado", 1);
+				return false;
+			} else {
+				return true;
+			}
+		} else if (!cnpj.contains("_") && !cnpj.contains("_")
+				&& Utilidades.cpfCnpjisValid(cnpj) == false) {
+			Utilidades.showFacesMessage("CNPJ Invalido", 1);
+			return false;
+		}
+		return false;
 	}
 	
 	////Getters and Setters////
@@ -126,6 +150,16 @@ public class FornecedorAddEditMB extends BaseBeans{
 	public void setFlagExibeConsultaFornecedor(
 			Boolean flagExibeConsultaFornecedor) {
 		this.flagExibeConsultaFornecedor = flagExibeConsultaFornecedor;
+	}
+
+
+	public String getValidaCnpj() {
+		return validaCnpj;
+	}
+
+
+	public void setValidaCnpj(String validaCnpj) {
+		this.validaCnpj = validaCnpj;
 	}
 
 }

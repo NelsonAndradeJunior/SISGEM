@@ -10,31 +10,34 @@
 
 <body>
 	<ui:composition>
-	
-	<link type="text/css" rel="stylesheet"
-			href="resources/css/main.css" />
-					
+
 		<div id="mainMenu">
 			<h:form>
 				<p:panelMenu>
 					<p:submenu label="Home">
 						<p:menuitem value="Cliente"
+							rendered="#{usuarioMB.flagAdminVendedor}"
 							url="/pages/cliente/clienteAddEdit.faces" icon="ui-icon-home" />
 						<p:menuitem value="Fornecedor"
+							rendered="#{usuarioMB.flagAdminEstoque}"
 							url="/pages/fornecedor/fornecedorAddEdit.faces"
 							icon="ui-icon-person" />
-						<p:menuitem value="Produtos" icon="ui-icon-person"
+						<p:menuitem value="Produtos"
+							rendered="#{usuarioMB.flagAdminEstoque}" icon="ui-icon-person"
 							url="/pages/produtos/produtoAddEdit.faces" />
 						<p:menuitem value="Usuarios" icon="ui-icon-person"
+							rendered="#{usuarioMB.flagAdministrador}"
 							url="/pages/usuario/usuarioAddEdit.faces" />
 						<p:menuitem value="Carro" icon="ui-icon-person"
+							rendered="#{usuarioMB.flagAdministrador}"
 							url="/pages/carro/carroAddEdit.faces" />
 						<p:menuitem value="Forma de Pagamento" icon="ui-icon-person"
+							rendered="#{usuarioMB.flagAdministrador}"
 							url="/pages/formadepagamento/formadepagamentoAddEdit.faces" />
 
 					</p:submenu>
 
-					<p:submenu label="Vendas">
+					<p:submenu label="Vendas" rendered="#{usuarioMB.flagAdminVendedor}">
 						<p:menuitem value="Caixa" url="/pages/vendas/caixaAddEdit.faces"
 							ajax="false" icon="ui-icon-wrench" />
 						<p:menuitem value="Pedido" url="/pages/vendas/pdvAddEdit.faces"
@@ -43,17 +46,17 @@
 
 					</p:submenu>
 
-					<p:submenu label="Vendedor">
+					<p:submenu label="Vendedor"
+						rendered="#{usuarioMB.flagAdminEstoque}">
 						<p:menuitem value="Entrada de Produtos"
-							url="/pages/vendedor/vendedorEntrada.faces"
-							icon="ui-icon-wrench" />
+							url="/pages/vendedor/vendedorEntrada.faces" icon="ui-icon-wrench" />
 						<p:menuitem value="Saída de Produtos"
-							url="/pages/vendedor/vendedorSaida.faces"
-							icon="ui-icon-wrench" />
+							url="/pages/vendedor/vendedorSaida.faces" icon="ui-icon-wrench" />
 
 					</p:submenu>
 
-					<p:submenu label="Administrativo">
+					<p:submenu label="Administrativo"
+						rendered="#{usuarioMB.flagAdministrador}">
 						<p:menuitem value="Rotas"
 							url="/pages/administrativo/rotaAddEdit.faces"
 							icon="ui-icon-wrench" />
@@ -63,7 +66,11 @@
 						<p:menuitem value="Relatorios"
 							url="/pages/administrativo/relatoriosAdministrador.faces"
 							icon="ui-icon-wrench" />
+						<p:menuitem value="#{labels.logout}"
+							url="/j_spring_security_logout" ajax="false"
+							icon="ui-icon-wrench" />
 					</p:submenu>
+
 				</p:panelMenu>
 			</h:form>
 		</div>

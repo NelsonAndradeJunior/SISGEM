@@ -14,8 +14,11 @@
 		<intercept-url pattern="/index.jsp" access="permitAll" />
 		<intercept-url pattern="/login.faces" access="permitAll" />
 		<intercept-url pattern="/public/**" access="permitAll" />
-		<intercept-url pattern="/resources/**" access="hasAuthority('ROLE_USER')" />
-		<intercept-url pattern="/pages/**" access="hasAuthority('ROLE_USER')" />
+		<intercept-url pattern="/resources/**" access="hasAnyRole('Administrador','Vendedor','Estoque')" />
+		<intercept-url pattern="/pages/**" access="hasAnyRole('Administrador','Vendedor','Estoque')" />
+		<intercept-url pattern="/pages/usuario/usuarioAddEdit.faces" access="hasRole('Administrador')" />
+		
+		
 
 		<form-login login-page="/login.faces"
 			authentication-failure-url="/login.faces?erro=true"
@@ -27,4 +30,6 @@
 	<authentication-manager>
 		<authentication-provider ref="customAuthenticationProvider" />
 	</authentication-manager>
+
+	
 </beans:beans>

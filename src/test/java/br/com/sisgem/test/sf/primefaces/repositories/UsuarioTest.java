@@ -24,6 +24,12 @@ public class UsuarioTest extends AbstractDatabaseTest {
 	private IUsuarioRepository usuarioRepository;
 	
 	@Test
+	public void findParametro(){
+		UsuarioEntity usuarioList = this.usuarioRepository.findByNameAndPassword("1","1");
+		LOGGER.info(usuarioList);
+	}
+	
+	@Test
 	public void testFindAll(){
 		List<UsuarioEntity> usuarioList = this.usuarioRepository.findAll();
 		LOGGER.info(usuarioList);

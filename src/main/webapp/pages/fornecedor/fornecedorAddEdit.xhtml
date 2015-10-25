@@ -28,7 +28,7 @@
 
 
 				<p:dialog id="dialogListaFornecedores"
-					header="Lista de Fornecedores" widgetVar="dialogListaFornecedor"
+					header="Lista de Fornecedores" widgetVar="dialogListaFornecedores"
 					resizable="false" position="center">
 					<p:dataTable id="pesquisaFornecedorDataTable" widgetVar="dataTable"
 						var="fornecedor" loadingMessage="Carregando..."
@@ -158,9 +158,14 @@
 								<p:outputLabel value="CNPJ" for="cnpj" />
 							</p:column>
 							<p:column>
-								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true"
-									requiredMessage="CNPJ é obrigatório"
-									value="#{fornecedorAddEditMB.fornecedorObj.cnpj}" />
+							<p:inputMask id="cnpj" value="#{fornecedorAddEditMB.validaCnpj}"
+								mask="99.999.999/9999-99">
+								<p:ajax event="keyup"
+									listener="#{fornecedorAddEditMB.validaCnpj(fornecedorAddEditMB.validaCnpj)}"/>
+							</p:inputMask>
+<!-- 								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true" -->
+<!-- 									requiredMessage="CNPJ é obrigatório" -->
+<!-- 									value="#{fornecedorAddEditMB.fornecedorObj.cnpj}" /> -->
 							</p:column>
 
 							<p:column>

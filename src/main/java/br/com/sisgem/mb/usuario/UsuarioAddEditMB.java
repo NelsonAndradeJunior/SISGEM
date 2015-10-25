@@ -1,10 +1,13 @@
 package br.com.sisgem.mb.usuario;
 
+import java.util.Collection;
+
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import br.com.sisgem.model.UsuarioEntity;
@@ -33,6 +36,10 @@ public class UsuarioAddEditMB extends BaseBeans{
 	private Boolean flagExibeConsultaUsuario = true;
 	
 	private Boolean flagExibeFormularioUsuario;
+	
+	private Collection<GrantedAuthority> cargoLogado;	
+
+	private String bemvindoAddEdit;
 	
 	public UsuarioAddEditMB() {
 		this.usuarioObj = new UsuarioEntity();
@@ -117,6 +124,25 @@ public class UsuarioAddEditMB extends BaseBeans{
 	public void setFlagExibeConsultaUsuario(
 			Boolean flagExibeConsultaUsuario) {
 		this.flagExibeConsultaUsuario = flagExibeConsultaUsuario;
+	}
+
+
+	public Collection<GrantedAuthority> getCargoLogado() {
+		return cargoLogado;
+	}
+
+
+	public void setCargoLogado(Collection<GrantedAuthority> cargoLogado) {
+		this.cargoLogado = cargoLogado;
+	}
+
+
+	public String getBemvindoAddEdit() {
+		return bemvindoAddEdit;
+	}
+
+	public void setBemvindoAddEdit(String bemvindoAddEdit) {
+		this.bemvindoAddEdit = bemvindoAddEdit;
 	}
 
 }
