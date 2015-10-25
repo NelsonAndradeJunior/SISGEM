@@ -9,7 +9,9 @@ import javax.inject.Named;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import br.com.sisgem.mb.usuario.UsuarioMB;
 import br.com.sisgem.model.LocalizacaoLogEntity;
+import br.com.sisgem.model.UsuarioEntity;
 import br.com.sisgem.model.repository.ILocalizacaoLogRepository;
 import br.com.sisgem.model.utils.BaseBeans;
 import br.com.sisgem.model.utils.Utilidades;
@@ -30,7 +32,11 @@ public class LocalizacaoLogAddEditMB extends BaseBeans{
 	@Inject
 	private LocalizacaoLogMB mbLocalizacaoLogBean;
 	
+	private UsuarioMB mbUsuarioBean;
+	
 	private LocalizacaoLogEntity localizacaologObj;
+	
+	private UsuarioEntity usuarioObj;
 	
 	private Boolean flagExibeConsultaLocalizacaoLog = true;
 	
@@ -60,12 +66,12 @@ public class LocalizacaoLogAddEditMB extends BaseBeans{
 	}
 
 	public void update(){
-		//this.localizacaologObj = mbLocalizacaoLogBean.getLocalizacaoLogSelecionado();
-		this.flagExibeConsultaLocalizacaoLog = false;
-		this.flagExibeFormularioLocalizacaoLog = true;
-		hideDialog("dialogListaLocalizacaoLoges");
-		this.mbLocalizacaoLogBean.setFlagBotaoUpdate(true);
-		this.mbLocalizacaoLogBean.setFlagBotaoDelete(true);
+		
+		this.usuarioObj = mbUsuarioBean.getUsuarioSelecionado();
+		hideDialog("dialogListaUsuarios");
+		
+		//this.mbLocalizacaoLogBean.setFlagBotaoUpdate(true);
+		//this.mbLocalizacaoLogBean.setFlagBotaoDelete(true);
 	}
 	
 	

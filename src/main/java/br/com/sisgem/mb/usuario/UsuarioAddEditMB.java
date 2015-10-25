@@ -57,8 +57,31 @@ public class UsuarioAddEditMB extends BaseBeans{
 		}
 	}
 
+	public UsuarioMB getMbUsuarioBean() {
+		return mbUsuarioBean;
+	}
+
+
+	public void setMbUsuarioBean(UsuarioMB mbUsuarioBean) {
+		this.mbUsuarioBean = mbUsuarioBean;
+	}
+
+
+	public Boolean getFlagExibeMapa() {
+		return flagExibeMapa;
+	}
+
+
+	public void setFlagExibeMapa(Boolean flagExibeMapa) {
+		this.flagExibeMapa = flagExibeMapa;
+	}
+
+
 	public void update(){
 		this.usuarioObj = mbUsuarioBean.getUsuarioSelecionado();
+		flagExibeMapa = true;
+		hideDialog("dialogListaResultado");
+		
 	
 	}
 	

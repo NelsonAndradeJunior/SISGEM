@@ -12,9 +12,11 @@
 	 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
  
 	 <script type="text/javascript" language="javascript">
- 
-		var map = null; 
-		function chamaMapa(latitude,longitude,vendedor)
+
+		var map = null;
+		var terra = "Vazio";
+		 
+		function chamaMapa(latitude,longitude)
 		{
 			//DEFINE AS COORDENADAS DA RUA OU AVENIDA
 			var latlng = new google.maps.LatLng(latitude, longitude); //DEFINE A LOCALIZAÇÃO EXATA DO MAPA
@@ -42,14 +44,10 @@
 				marcadorPraca = new google.maps.Marker({
 				    position: praca,
 				   map: map,
-				   title:vendedor
-				});
-				
-			
- 
-		}
- 
-	 </script>
+				   title:terra
+				 });
+				}
+ 	 </script>
 
 
 <h:form id="usuarioPesquisaForm">
@@ -118,10 +116,14 @@
 					</p:dataTable>
 				<h:panelGroup id="panelGroupBotoes">
 
-				<p:commandButton widgetVar="updateButton" value="Buscar no Mapa"
-							actionListener="#{usuarioAddEditMB.seleciona}"
-							 />
 
+							<p:commandButton widgetVar="updateButton" value="Buscar no Mapa"
+							action="#{usuarioAddEditMB.update}"
+							update=":mapaForm"
+							onclick="chamaMapa('-25.4771375','-49.2580232');" 
+							/>
+							
+							 
 				</h:panelGroup>
 						</p:dialog>
 				
@@ -130,23 +132,25 @@
        
        
  <br></br>
-  
-  
-  
-<!--    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230483.05208082148!2d-49.2897982!3d-25.4951166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1440873404264" width="800" height="600" frameborder="0" style="border:0" ></iframe>      -->
-  
-  
-
-				
-				<body onload="chamaMapa('-25.4771375','-49.2580232','Rodrigo');">
- 				<div id="map_canvas" style="width: 200%; height: 400px ;text-align:center"></div>
- 				</body>
-				
+  				<h:outputLabel value="#{usuarioAddEditMB.usuarioObj.nome}"/>
+   				<body>
+				<div id="map_canvas" style="width: 200%; height: 400px ;text-align:center"></div>
+				</body>
 	
 
     </p:outputPanel>
 </h:form>
+<h:form id="mapaForm">
+  
+    <p:outputPanel id="display" style="width:550px;padding-left:7px;margin-top:10px">
+    <p:panel rendered="#{usuarioAddEditMB.flagExibeMapa}">
+	<h:outputLabel value="#{usuarioAddEditMB.usuarioObj.nome}"/>
 	
+
+</p:panel>
+</p:outputPanel>
+</h:form>
+				
 
 
 	</ui:define>

@@ -1,7 +1,125 @@
-24-10-2015 11:37:08,517; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-24-10-2015 11:39:35,172; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-24-10-2015 11:39:39,711; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
-24-10-2015 11:39:39,711; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'localizaÃ§Ã£0_.idLocalizaÃ§Ã£oLog' in 'field list'
-24-10-2015 14:34:12,779; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-24-10-2015 14:34:16,998; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1054, SQLState: 42S22
-24-10-2015 14:34:16,999; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Unknown column 'localizaÃ§Ã£0_.idLocalizaÃ§Ã£oLog' in 'field list'
+25-10-2015 12:45:10,975; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+25-10-2015 12:45:15,139; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.LocalizacaoLogTest;  - [br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654000
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0[
+  Cargo=Administrador
+  Celular=9999-9999
+  Senha=123456
+  Nome=Rodrigo
+  NumeroEnd=82
+  CEP=<null>
+  Telefone=999-99999
+  CelularParticular=<null>
+  Email=teste@email
+  CMotorista=546231854113
+  DtaValiCM=2015-08-22 00:00:00.0
+  Complemento=<null>
+  RuasCorreio_idRuasCorreio=<null>
+  carro=[]
+  LocalizacaologEntity=[br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654000
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=1
+], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654001
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=2
+], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
+  Latitude=-25.4771375
+  Longitude=-49.2580232
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=3
+]]
+  id=1
+]
+  id=1
+], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654001
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0[
+  Cargo=Administrador
+  Celular=9999-9999
+  Senha=123456
+  Nome=Rodrigo
+  NumeroEnd=82
+  CEP=<null>
+  Telefone=999-99999
+  CelularParticular=<null>
+  Email=teste@email
+  CMotorista=546231854113
+  DtaValiCM=2015-08-22 00:00:00.0
+  Complemento=<null>
+  RuasCorreio_idRuasCorreio=<null>
+  carro=[]
+  LocalizacaologEntity=[br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654000
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=1
+], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654001
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=2
+], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
+  Latitude=-25.4771375
+  Longitude=-49.2580232
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=3
+]]
+  id=1
+]
+  id=2
+], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
+  Latitude=-25.4771375
+  Longitude=-49.2580232
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0[
+  Cargo=Administrador
+  Celular=9999-9999
+  Senha=123456
+  Nome=Rodrigo
+  NumeroEnd=82
+  CEP=<null>
+  Telefone=999-99999
+  CelularParticular=<null>
+  Email=teste@email
+  CMotorista=546231854113
+  DtaValiCM=2015-08-22 00:00:00.0
+  Complemento=<null>
+  RuasCorreio_idRuasCorreio=<null>
+  carro=[]
+  LocalizacaologEntity=[br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654000
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=1
+], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
+  Latitude=46.1564654654000
+  Longitude=46.1564654654001
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=2
+], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
+  Latitude=-25.4771375
+  Longitude=-49.2580232
+  DataHora=<null>
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  id=3
+]]
+  id=1
+]
+  id=3
+]]

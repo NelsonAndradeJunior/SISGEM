@@ -33,8 +33,8 @@ public class LocalizacaoLogTest extends AbstractDatabaseTest {
 		usuario.setId((long) 1);
 			
 		localizacaologEntity.setUsuario_idUsuario(usuario);
-		localizacaologEntity.setLatitude("46.1564654654000");
-		localizacaologEntity.setLongitude("46.1564654654001");
+		localizacaologEntity.setLatitude("-25.4771375");
+		localizacaologEntity.setLongitude("-49.2580232");
 					
 		this.localizacaologRepository.save(localizacaologEntity);
 	}
