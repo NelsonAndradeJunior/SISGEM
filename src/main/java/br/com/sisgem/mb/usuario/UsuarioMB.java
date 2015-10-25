@@ -69,7 +69,7 @@ public class UsuarioMB extends BaseBeans {
 	}
 	
 	public void findUsuario(String paramUsuario){
-		this.setUsuarioList(this.usuarioRepository.findByUsuario(paramUsuario));
+//		this.setUsuarioList(this.usuarioRepository.findByUsuario(paramUsuario));
 		this.paramUsuario = null;
 		showDialog("dialogListaResultado");
 	}
