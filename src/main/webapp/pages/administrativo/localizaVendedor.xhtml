@@ -14,10 +14,10 @@
 	 <script type="text/javascript" language="javascript">
  
 		var map = null; 
-		function chamaMapa()
+		function chamaMapa(latitude,longitude,vendedor)
 		{
 			//DEFINE AS COORDENADAS DA RUA OU AVENIDA
-			var latlng = new google.maps.LatLng(-25.4287314, -49.279190716); //DEFINE A LOCALIZAÇÃO EXATA DO MAPA
+			var latlng = new google.maps.LatLng(latitude, longitude); //DEFINE A LOCALIZAÇÃO EXATA DO MAPA
  
 			    var myOptions = {
 					zoom: 12,
@@ -29,7 +29,7 @@
 				map = new google.maps.Map( document.getElementById("map_canvas") , myOptions );
  
 				//DEFINE AS COORDENADAS DA RUA OU AVENIDA - CENTRALIZAÇÃO DO MAPA
-				map.setCenter( new google.maps.LatLng(-25.4287314, -49.279190716) );
+				map.setCenter( new google.maps.LatLng(latitude, longitude) );
  
 				//MUDANDO O ZOOM DO MAPA
 				map.setZoom(17);
@@ -38,11 +38,11 @@
 				map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
 
  				//MARCADOR
-				var praca = new google.maps.LatLng(-25.4287314, -49.279190716);
+				var praca = new google.maps.LatLng(latitude, longitude);
 				marcadorPraca = new google.maps.Marker({
 				    position: praca,
 				   map: map,
-				   title:"Vendedor X"
+				   title:vendedor
 				});
 				
 			
@@ -65,7 +65,7 @@
 				<br />
 				<br />
 				<p:commandButton value="Pesquisar"
-					action="#{UsuarioMB.findByUsuario(UsuarioMB.paramUsuario)}"
+					action="#{usuarioMB.findUsuario(usuarioMB.paramUsuario)}"
 					widgetVar="searchButton" update="pesquisaUsuarioDataTable" />
 
 		
@@ -94,37 +94,38 @@
 							</f:facet>
 							<h:outputText value="#{usuario.nome}" />
 						</p:column>
-						<p:column sortBy="#{usuario.nome}">
-							<f:facet name="header">
-								<h:outputText value="Sobrenome" />
-							</f:facet>
-							<h:outputText value="#{usuario.nome}" />
-						</p:column>
-						<p:column sortBy="#{usuario.nome}">
+						<p:column sortBy="#{usuario.celular}">
 							<f:facet name="header">
 								<h:outputText value="Telefone" />
 							</f:facet>
-							<h:outputText value="#{usuario.nome}" />
+							<h:outputText value="#{usuario.celular}" />
 						</p:column>
-						<p:column sortBy="#{usuario.nome}">
+						<p:column sortBy="#{usuario.cargo}">
 							<f:facet name="header">
-								<h:outputText value="Carro" />
+								<h:outputText value="Cargo" />
 							</f:facet>
-							<h:outputText value="#{usuario.nome}" />
+							<h:outputText value="#{usuario.cargo}" />
+						</p:column>
+						<p:column sortBy="#{usuario.email}">
+							<f:facet name="header">
+								<h:outputText value="Email" />
+							</f:facet>
+							<h:outputText value="#{usuario.email}" />
 						</p:column>
 						
 
 
 					</p:dataTable>
-					<h:panelGroup id="panelGroupBotoes">
-			  </h:panelGroup>
-				</p:dialog>
-				<p:confirmDialog global="true" showEffect="fade">
-					<p:commandButton value="Sim" type="button"
-						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-					<p:commandButton value="Não" type="button"
-						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
-				</p:confirmDialog>
+				<h:panelGroup id="panelGroupBotoes">
+
+				<p:commandButton widgetVar="updateButton" value="Buscar no Mapa"
+							actionListener="#{usuarioAddEditMB.seleciona}"
+							 />
+
+				</h:panelGroup>
+						</p:dialog>
+				
+		
 			</p:panel>
        
        
@@ -134,15 +135,18 @@
   
 <!--    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230483.05208082148!2d-49.2897982!3d-25.4951166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1440873404264" width="800" height="600" frameborder="0" style="border:0" ></iframe>      -->
   
-  <body onload="chamaMapa();">
- 
-<div id="map_canvas" style="width: 200%; height: 400px ;text-align:center"></div>
- 
-</body>
   
+
+				
+				<body onload="chamaMapa('-25.4771375','-49.2580232','Rodrigo');">
+ 				<div id="map_canvas" style="width: 200%; height: 400px ;text-align:center"></div>
+ 				</body>
+				
+	
 
     </p:outputPanel>
 </h:form>
+	
 
 
 	</ui:define>

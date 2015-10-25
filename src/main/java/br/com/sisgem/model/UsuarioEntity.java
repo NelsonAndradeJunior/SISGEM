@@ -79,15 +79,16 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	private List<CarroEntity> carro;
 	
 	@OneToMany(mappedBy="Usuario_idUsuario", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    private List<LocalizaçãoLogEntity> LocalizaçãologEntity;
+    private List<LocalizacaoLogEntity> LocalizacaologEntity;
 	
 
 	
+
 
 	public UsuarioEntity(Ecargo cargo, String celular, String senha, String nome, Integer numeroEnd, String cEP,
 			String telefone, String celularParticular, String email, String cMotorista, Date dtaValiCM,
 			String complemento, Integer ruasCorreio_idRuasCorreio, List<CarroEntity> carro,
-			List<LocalizaçãoLogEntity> localizaçãologEntity) {
+			List<LocalizacaoLogEntity> localizacaologEntity) {
 		super();
 		Cargo = cargo;
 		Celular = celular;
@@ -103,7 +104,7 @@ public class UsuarioEntity extends BaseEntities<Long> {
 		Complemento = complemento;
 		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
 		this.carro = carro;
-		LocalizaçãologEntity = localizaçãologEntity;
+		LocalizacaologEntity = localizacaologEntity;
 	}
 
 	public UsuarioEntity() {
@@ -124,12 +125,21 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	}
 
 		
-	public List<LocalizaçãoLogEntity> getLocalizaçãologEntity() {
-		return LocalizaçãologEntity;
+
+	public List<CarroEntity> getCarro() {
+		return carro;
 	}
 
-	public void setLocalizaçãologEntity(List<LocalizaçãoLogEntity> localizaçãologEntity) {
-		LocalizaçãologEntity = localizaçãologEntity;
+	public void setCarro(List<CarroEntity> carro) {
+		this.carro = carro;
+	}
+
+	public List<LocalizacaoLogEntity> getLocalizacaologEntity() {
+		return LocalizacaologEntity;
+	}
+
+	public void setLocalizacaologEntity(List<LocalizacaoLogEntity> localizacaologEntity) {
+		LocalizacaologEntity = localizacaologEntity;
 	}
 
 	public void setCelular(String celular) {

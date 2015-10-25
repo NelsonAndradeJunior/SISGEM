@@ -31,6 +31,7 @@ public class UsuarioAddEditMB extends BaseBeans{
 	private UsuarioEntity usuarioObj;
 	
 	private Boolean flagExibeConsultaUsuario = true;
+	private Boolean flagExibeMapa = false;
 	
 	private Boolean flagExibeFormularioUsuario;
 	
@@ -58,8 +59,17 @@ public class UsuarioAddEditMB extends BaseBeans{
 
 	public void update(){
 		this.usuarioObj = mbUsuarioBean.getUsuarioSelecionado();
+	
 	}
 	
+	public void seleciona(){
+		this.usuarioObj = mbUsuarioBean.getUsuarioSelecionado();
+		flagExibeMapa = true;
+		hideDialog("dialogListaResultado");
+	
+	}
+	
+	//dialogListaUsuarios
 	public void usuarioVinculado(){
 		this.update();
 		
@@ -71,6 +81,7 @@ public class UsuarioAddEditMB extends BaseBeans{
 		flagExibeConsultaUsuario = false;
 		hideDialog("dialogListaUsuarios");
 	}
+	
 	
 	////Getters and Setters////
 	public IUsuarioRepository getUsuarioRepository() {
