@@ -17,12 +17,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import br.com.sisgem.model.UsuarioEntity;
 import br.com.sisgem.model.repository.IUsuarioRepository;
+import br.com.sisgem.model.repository.IUsuarioRepository2;
 
 @Named
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	@Inject
-	private IUsuarioRepository userRepository;
+	private IUsuarioRepository2 userRepository;
 
 	public CustomAuthenticationProvider() {
 		super();
