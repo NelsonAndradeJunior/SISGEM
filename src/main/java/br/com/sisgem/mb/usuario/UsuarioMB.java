@@ -67,9 +67,9 @@ public class UsuarioMB extends BaseBeans {
 			this.flagAdminVendedor = true;
 		}
 	}
-
-	public void findUsuario(String paramUsuario) {
-		// this.setUsuarioList(this.usuarioRepository.findByNome(paramUsuario));
+	
+	public void findUsuario(String paramUsuario){
+		this.setUsuarioList(this.usuarioRepository.findByUsuario(paramUsuario));
 		this.paramUsuario = null;
 		showDialog("dialogListaResultado");
 	}

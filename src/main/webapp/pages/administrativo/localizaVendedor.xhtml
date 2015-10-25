@@ -9,27 +9,148 @@
 
 	<ui:define name="content">
 
-<h:form>
-    <h:panelGrid columns="3" cellpadding="5">
-        <h:outputLabel for="menu" value="Selecione o Vendedor :" />
-        <p:selectCheckboxMenu id="menu" value="#{localizaVendedor.selectedCities}" label="Vendedores"
-                              filter="true" filterMatchMode="startsWith" panelStyle="width:300px">
-            <f:selectItems value="#{localizaVendedor.cities}" />
-        </p:selectCheckboxMenu>
-       
-        <p:commandLink value="Selecionar" update="display" />
-    </h:panelGrid>
+	 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
  
-    <p:outputPanel id="display" style="width:250px;padding-left:5px;margin-top:10px">
-        <p:dataList value="#{localizaVendedor.selectedCities}" var="city" emptyMessage="Sem Vendedores selecionados !">
-            #{city}
-        </p:dataList>
-          <br></br>
-   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230483.05208082148!2d-49.2897982!3d-25.4951166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1440873404264" width="800" height="600" frameborder="0" style="border:0" ></iframe>     
-        
-        
+	 <script type="text/javascript" language="javascript">
+
+		var map = null;
+		var terra = "Vazio";
+		 
+		function chamaMapa(latitude,longitude)
+		{
+			//DEFINE AS COORDENADAS DA RUA OU AVENIDA
+			var latlng = new google.maps.LatLng(latitude, longitude); //DEFINE A LOCALIZAÇÃO EXATA DO MAPA
+ 
+			    var myOptions = {
+					zoom: 12,
+					center: latlng,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+ 
+				//CRIANDO O MAPA
+				map = new google.maps.Map( document.getElementById("map_canvas") , myOptions );
+ 
+				//DEFINE AS COORDENADAS DA RUA OU AVENIDA - CENTRALIZAÇÃO DO MAPA
+				map.setCenter( new google.maps.LatLng(latitude, longitude) );
+ 
+				//MUDANDO O ZOOM DO MAPA
+				map.setZoom(17);
+ 
+				//MUDANDO O TIPO DO MAPA - NESSA FORMA, ESTÁ DEFINIDO O FORMATO MAPA
+				map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+
+ 				//MARCADOR
+				var praca = new google.maps.LatLng(latitude, longitude);
+				marcadorPraca = new google.maps.Marker({
+				    position: praca,
+				   map: map,
+				   title:terra
+				 });
+				}
+ 	 </script>
+
+
+<h:form id="usuarioPesquisaForm">
+  
+ 
+    <p:outputPanel id="display" style="width:550px;padding-left:7px;margin-top:10px">
+       
+       <p:panel header="Pesquisa Usuario"
+				rendered="#{usuarioAddEditMB.flagExibeConsultaUsuario}">
+
+				<p:inputText value="#{usuarioMB.paramUsuario}"
+					placeholder="Pesquise por Telefone, Nome ou CPF" size="55" />
+				<br />
+				<br />
+				<p:commandButton value="Pesquisar"
+					action="#{usuarioMB.findUsuario(usuarioMB.paramUsuario)}"
+					widgetVar="searchButton" update="pesquisaUsuarioDataTable" />
+
+		
+				<p:dialog id="dialogListaUsuarios" header="Lista de Usuarios"
+					widgetVar="dialogListaResultado" resizable="false"
+					position="center">
+					<p:dataTable id="pesquisaUsuarioDataTable" widgetVar="dataTable"
+						var="usuario" loadingMessage="Carregando..."
+						value="#{usuarioMB.usuarioList}" paginator="true" rows="10"
+						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						rowsPerPageTemplate="5,10,15" rowKey="#{usuario.id}"
+						selectionMode="single">
+
+						<p:ajax event="rowSelect" listener="#{usuarioMB.selectUsuario}"
+							update=":usuarioPesquisaForm:panelGroupBotoes" />
+						<p:ajax event="page" listener="#{usuarioMB.unselectUsuario}"
+							update=":usuarioPesquisaForm:panelGroupBotoes"
+							oncomplete="dataTable.unselectAllRows()" />
+						<p:ajax event="rowUnselect"
+							listener="#{usuarioMB.unselectUsuario}"
+							update=":usuarioPesquisaForm:panelGroupBotoes" />
+
+						<p:column sortBy="#{usuario.nome}">
+							<f:facet name="header">
+								<h:outputText value="Nome" />
+							</f:facet>
+							<h:outputText value="#{usuario.nome}" />
+						</p:column>
+						<p:column sortBy="#{usuario.celular}">
+							<f:facet name="header">
+								<h:outputText value="Telefone" />
+							</f:facet>
+							<h:outputText value="#{usuario.celular}" />
+						</p:column>
+						<p:column sortBy="#{usuario.cargo}">
+							<f:facet name="header">
+								<h:outputText value="Cargo" />
+							</f:facet>
+							<h:outputText value="#{usuario.cargo}" />
+						</p:column>
+						<p:column sortBy="#{usuario.email}">
+							<f:facet name="header">
+								<h:outputText value="Email" />
+							</f:facet>
+							<h:outputText value="#{usuario.email}" />
+						</p:column>
+						
+
+
+					</p:dataTable>
+				<h:panelGroup id="panelGroupBotoes">
+
+
+							<p:commandButton widgetVar="updateButton" value="Buscar no Mapa"
+							action="#{usuarioAddEditMB.update}"
+							update=":mapaForm"
+							onclick="chamaMapa('-25.4771375','-49.2580232');" 
+							/>
+							
+							 
+				</h:panelGroup>
+						</p:dialog>
+				
+		
+			</p:panel>
+       
+       
+ <br></br>
+  				<h:outputLabel value="#{usuarioAddEditMB.usuarioObj.nome}"/>
+   				<body>
+				<div id="map_canvas" style="width: 200%; height: 400px ;text-align:center"></div>
+				</body>
+	
+
     </p:outputPanel>
 </h:form>
+<h:form id="mapaForm">
+  
+    <p:outputPanel id="display" style="width:550px;padding-left:7px;margin-top:10px">
+    <p:panel rendered="#{usuarioAddEditMB.flagExibeMapa}">
+	<h:outputLabel value="#{usuarioAddEditMB.usuarioObj.nome}"/>
+	
+
+</p:panel>
+</p:outputPanel>
+</h:form>
+				
 
 
 	</ui:define>
