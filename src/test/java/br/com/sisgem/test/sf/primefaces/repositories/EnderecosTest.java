@@ -1,7 +1,9 @@
 package br.com.sisgem.test.sf.primefaces.repositories;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -37,16 +39,18 @@ public class EnderecosTest extends AbstractDatabaseTest {
 	public void testFindTeste(){
 		List<UfEntity> ufList = this.ufRepository.findByUf("PR");
 		
-		UfEntity id = new UfEntity();
+	
 		
-		LOGGER.info(UfEntity.getSerialversionuid());
+		System.out.println(ufEntity.getId());
+		LOGGER.info(ufEntity.getId());
+
+		
+		
+		
 		LOGGER.info(ufList);
 		
-	   // For(UfEntity id : ufList){  
-	   //       System.out.print(id.getNome());  
-	   // }  
+
 	}
-	
 	
 	UfEntity ufEntity = new UfEntity();
 }
