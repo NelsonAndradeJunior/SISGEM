@@ -9,6 +9,10 @@
 		<class>br.com.sisgem.model.ProdutoEntity</class>
 		<class>br.com.sisgem.model.CarroEntity</class>
 		<class>br.com.sisgem.model.LocalizacaoLogEntity</class>
+		<class>br.com.sisgem.model.BairrosEntity</class>
+		<class>br.com.sisgem.model.CidadesEntity</class>
+		<class>br.com.sisgem.model.FormapagamentoEntity</class>
+		<class>br.com.sisgem.model.UfEntity</class>
 		
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
