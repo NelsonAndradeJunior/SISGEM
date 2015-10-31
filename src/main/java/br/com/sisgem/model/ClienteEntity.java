@@ -28,7 +28,7 @@ public class ClienteEntity extends BaseEntities<Long>{
 	
 	@Size(max=40)
 	@NotNull
-	private String NomeRazaoS;
+	private String NomeRazaoS ;
 	
 	@Size(max=10)
 	private Integer NumeroEnd;

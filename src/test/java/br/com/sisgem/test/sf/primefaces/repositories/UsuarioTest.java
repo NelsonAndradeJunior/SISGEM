@@ -6,6 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.junit.Test;
 
 import br.com.sisgem.enums.Ecargo;
@@ -43,11 +44,16 @@ public class UsuarioTest extends AbstractDatabaseTest {
 		usuarioEntity.setEmail("teste@email");
 		usuarioEntity.setCargo(Ecargo.Administrador);
 		usuarioEntity.setCelular("9999-9999");
-		usuarioEntity.setSenha("123456");
-		usuarioEntity.setNome("glaci");
+		usuarioEntity.setPassword("123456");
+		usuarioEntity.setCEP("13125123");
+		usuarioEntity.setCelularParticular("9999-9999");
+		usuarioEntity.setName("glaci");
+		usuarioEntity.setEmail("glaci@sisgem.com.br");		
 		usuarioEntity.setNumeroEnd(82);
+		usuarioEntity.setComplemento("Casa");
 		usuarioEntity.setTelefone("999-99999");
-		usuarioEntity.setCMotorista("546231854113");
+		usuarioEntity.setCMotorista("546231854");
+		usuarioEntity.setRuasCorreio_idRuasCorreio(1);
 
 			
 			this.usuarioRepository.save(usuarioEntity);

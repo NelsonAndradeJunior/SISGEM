@@ -8,9 +8,10 @@ import org.springframework.data.jpa.repository.Query;
 import br.com.sisgem.model.UsuarioEntity;
 
 public interface IUsuarioRepository extends JpaRepository<UsuarioEntity, Long>{
-	
-	@Query("select p from UsuarioEntity p where p.name like %?1% or p.Telefone like %?1% or p.Cargo like %?1%")
+
+	@Query("select p from UsuarioEntity p where p.name like %?1%")
 	public List<UsuarioEntity> findByUsuario(String paramUsuario);
 
 	public UsuarioEntity findByNameAndPassword(String username, String password);
+
 }

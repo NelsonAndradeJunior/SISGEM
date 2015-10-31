@@ -1,16 +1,875 @@
-<<<<<<< HEAD
-24-10-2015 11:47:03,358; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-24-10-2015 11:47:05,357; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest;  - br.com.sisgem.model.UsuarioEntity@7f9161[
-=======
-25-10-2015 12:45:10,975; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-25-10-2015 12:45:15,139; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.LocalizacaoLogTest;  - [br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654000
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0[
->>>>>>> branch 'master' of https://github.com/NelsonAndradeJunior/SISGEM
-  Cargo=Administrador
-<<<<<<< HEAD
+31-10-2015 11:54:47,629; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 11:54:51,729; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3013909b] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest@2a49fe]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customAuthenticationProvider': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 41 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:960)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 43 more
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:80)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:54)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:65)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:48)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:115)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:160)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:69)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:304)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:161)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:84)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 53 more
+Caused by: java.lang.IllegalArgumentException: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.Nome like ?1]
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1750)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1677)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1683)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:331)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy35.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:74)
+	... 66 more
+Caused by: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.Nome like ?1]
+	at org.hibernate.QueryException.generateQueryException(QueryException.java:137)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:120)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:234)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:328)
+	... 73 more
+Caused by: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:83)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toType(AbstractEntityPersister.java:1978)
+	at org.hibernate.hql.internal.ast.tree.FromElementType.getPropertyType(FromElementType.java:367)
+	at org.hibernate.hql.internal.ast.tree.FromElement.getPropertyType(FromElement.java:500)
+	at org.hibernate.hql.internal.ast.tree.DotNode.getDataType(DotNode.java:652)
+	at org.hibernate.hql.internal.ast.tree.DotNode.prepareLhs(DotNode.java:275)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:219)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:126)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:121)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolve(HqlSqlWalker.java:945)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.expr(HqlSqlBaseWalker.java:1264)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4639)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4255)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2096)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:794)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:595)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+	... 81 more
+31-10-2015 11:54:52,282; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 11:54:52,994; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3013909b] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest@3db64bd4]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customAuthenticationProvider': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 41 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:960)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 43 more
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:80)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:54)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:65)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:48)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:115)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:160)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:69)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:304)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:161)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:84)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 53 more
+Caused by: java.lang.IllegalArgumentException: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.Nome like ?1]
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1750)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1677)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1683)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:331)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy35.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:74)
+	... 66 more
+Caused by: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.Nome like ?1]
+	at org.hibernate.QueryException.generateQueryException(QueryException.java:137)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:120)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:234)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:328)
+	... 73 more
+Caused by: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:83)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toType(AbstractEntityPersister.java:1978)
+	at org.hibernate.hql.internal.ast.tree.FromElementType.getPropertyType(FromElementType.java:367)
+	at org.hibernate.hql.internal.ast.tree.FromElement.getPropertyType(FromElement.java:500)
+	at org.hibernate.hql.internal.ast.tree.DotNode.getDataType(DotNode.java:652)
+	at org.hibernate.hql.internal.ast.tree.DotNode.prepareLhs(DotNode.java:275)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:219)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:126)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:121)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolve(HqlSqlWalker.java:945)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.expr(HqlSqlBaseWalker.java:1264)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4639)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4255)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2096)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:794)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:595)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+	... 81 more
+31-10-2015 11:54:53,620; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 11:54:53,881; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3013909b] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest@2dddc1b9]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customAuthenticationProvider': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 41 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:960)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 43 more
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:80)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:54)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:65)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:48)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:115)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:160)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:69)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:304)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:161)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:84)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 53 more
+Caused by: java.lang.IllegalArgumentException: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.Nome like ?1]
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1750)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1677)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1683)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:331)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy35.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:74)
+	... 66 more
+Caused by: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.Nome like ?1]
+	at org.hibernate.QueryException.generateQueryException(QueryException.java:137)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:120)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:234)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:328)
+	... 73 more
+Caused by: org.hibernate.QueryException: could not resolve property: Nome of: br.com.sisgem.model.UsuarioEntity
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:83)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toType(AbstractEntityPersister.java:1978)
+	at org.hibernate.hql.internal.ast.tree.FromElementType.getPropertyType(FromElementType.java:367)
+	at org.hibernate.hql.internal.ast.tree.FromElement.getPropertyType(FromElement.java:500)
+	at org.hibernate.hql.internal.ast.tree.DotNode.getDataType(DotNode.java:652)
+	at org.hibernate.hql.internal.ast.tree.DotNode.prepareLhs(DotNode.java:275)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:219)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:126)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:121)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolve(HqlSqlWalker.java:945)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.expr(HqlSqlBaseWalker.java:1264)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4639)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4255)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2096)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:794)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:595)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+	... 81 more
+31-10-2015 11:56:22,868; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 11:56:26,183; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3013909b] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest@2a49fe]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customAuthenticationProvider': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 41 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:960)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 43 more
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:80)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:54)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:65)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:48)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:115)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:160)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:69)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:304)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:161)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:84)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 53 more
+Caused by: java.lang.IllegalArgumentException: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.nome like ?1]
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1750)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1677)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1683)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:331)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy35.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:74)
+	... 66 more
+Caused by: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.nome like ?1]
+	at org.hibernate.QueryException.generateQueryException(QueryException.java:137)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:120)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:234)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:328)
+	... 73 more
+Caused by: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:83)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toType(AbstractEntityPersister.java:1978)
+	at org.hibernate.hql.internal.ast.tree.FromElementType.getPropertyType(FromElementType.java:367)
+	at org.hibernate.hql.internal.ast.tree.FromElement.getPropertyType(FromElement.java:500)
+	at org.hibernate.hql.internal.ast.tree.DotNode.getDataType(DotNode.java:652)
+	at org.hibernate.hql.internal.ast.tree.DotNode.prepareLhs(DotNode.java:275)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:219)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:126)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:121)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolve(HqlSqlWalker.java:945)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.expr(HqlSqlBaseWalker.java:1264)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4639)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4255)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2096)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:794)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:595)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+	... 81 more
+31-10-2015 11:56:26,609; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 11:56:26,905; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3013909b] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest@3db64bd4]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customAuthenticationProvider': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 41 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:960)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 43 more
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:80)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:54)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:65)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:48)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:115)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:160)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:69)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:304)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:161)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:84)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 53 more
+Caused by: java.lang.IllegalArgumentException: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.nome like ?1]
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1750)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1677)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1683)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:331)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy35.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:74)
+	... 66 more
+Caused by: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.nome like ?1]
+	at org.hibernate.QueryException.generateQueryException(QueryException.java:137)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:120)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:234)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:328)
+	... 73 more
+Caused by: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:83)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toType(AbstractEntityPersister.java:1978)
+	at org.hibernate.hql.internal.ast.tree.FromElementType.getPropertyType(FromElementType.java:367)
+	at org.hibernate.hql.internal.ast.tree.FromElement.getPropertyType(FromElement.java:500)
+	at org.hibernate.hql.internal.ast.tree.DotNode.getDataType(DotNode.java:652)
+	at org.hibernate.hql.internal.ast.tree.DotNode.prepareLhs(DotNode.java:275)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:219)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:126)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:121)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolve(HqlSqlWalker.java:945)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.expr(HqlSqlBaseWalker.java:1264)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4639)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4255)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2096)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:794)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:595)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+	... 81 more
+31-10-2015 11:56:27,257; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 11:56:27,552; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3013909b] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest@2dddc1b9]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customAuthenticationProvider': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private br.com.sisgem.model.repository.IUsuarioRepository br.com.sisgem.support.settings.CustomAuthenticationProvider.userRepository; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 41 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUsuarioRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:960)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 43 more
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List br.com.sisgem.model.repository.IUsuarioRepository.findByUsuario(java.lang.String)!
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:80)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:54)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:65)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:48)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:115)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:160)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:69)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:304)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:161)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:84)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 53 more
+Caused by: java.lang.IllegalArgumentException: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.nome like ?1]
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1750)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1677)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1683)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:331)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy35.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:74)
+	... 66 more
+Caused by: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity [select p from br.com.sisgem.model.UsuarioEntity p where p.nome like ?1]
+	at org.hibernate.QueryException.generateQueryException(QueryException.java:137)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:120)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:234)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:328)
+	... 73 more
+Caused by: org.hibernate.QueryException: could not resolve property: nome of: br.com.sisgem.model.UsuarioEntity
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:83)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toType(AbstractEntityPersister.java:1978)
+	at org.hibernate.hql.internal.ast.tree.FromElementType.getPropertyType(FromElementType.java:367)
+	at org.hibernate.hql.internal.ast.tree.FromElement.getPropertyType(FromElement.java:500)
+	at org.hibernate.hql.internal.ast.tree.DotNode.getDataType(DotNode.java:652)
+	at org.hibernate.hql.internal.ast.tree.DotNode.prepareLhs(DotNode.java:275)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:219)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:126)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:121)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolve(HqlSqlWalker.java:945)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.expr(HqlSqlBaseWalker.java:1264)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4639)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4255)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2096)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:794)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:595)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+	... 81 more
+31-10-2015 11:59:29,502; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 11:59:33,302; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 11:59:33,302; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 11:59:33,404; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 11:59:33,404; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 11:59:33,540; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 11:59:33,540; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 12:01:33,499; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:01:37,436; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:01:37,437; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:01:37,540; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:01:37,541; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:01:37,636; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 12:01:37,636; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 12:05:14,962; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:05:18,772; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:05:18,772; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:05:18,879; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:05:18,880; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:05:18,974; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 12:05:18,974; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 12:07:41,626; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:07:46,046; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:07:46,046; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:07:46,136; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:07:46,137; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:09:00,609; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 12:09:00,609; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 12:10:18,374; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:10:23,000; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:10:23,001; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:10:23,105; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:10:23,105; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:13:21,659; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:13:25,617; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:13:25,618; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:13:25,730; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:13:25,731; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:13:25,815; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 12:13:25,816; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 12:13:35,442; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:13:40,057; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:13:40,058; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:13:40,133; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:13:40,133; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:13:56,753; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 12:13:56,754; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 12:14:07,383; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:14:12,213; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:14:12,214; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:14:12,312; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:14:12,313; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:17:37,738; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:17:42,401; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:17:42,402; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:17:42,487; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:17:42,487; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:26:31,735; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:26:36,482; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:26:36,483; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:26:36,564; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:26:36,564; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:27:08,632; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 12:27:08,632; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 12:30:43,592; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 12:30:47,486; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:30:47,486; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:30:47,573; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 12:30:47,573; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 12:30:47,672; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 12:30:47,672; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 13:44:19,533; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 13:45:03,158; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 13:45:07,783; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 13:45:07,784; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 13:45:07,926; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 13:45:07,927; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 13:50:20,058; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 13:50:24,719; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 13:50:24,720; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 13:50:24,831; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 0, SQLState: S1009
+31-10-2015 13:50:24,845; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Invalid value for getInt() - 'Administrador'
+31-10-2015 13:51:58,116; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 13:51:58,117; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Cargo' at row 1
+31-10-2015 14:01:48,495; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:01:53,111; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest;  - br.com.sisgem.model.UsuarioEntity@4214ae8f[
   Celular=1
   password=1
   name=1
@@ -23,127 +882,710 @@
   DtaValiCM=2015-05-05 00:00:00.0
   Complemento=1
   RuasCorreio_idRuasCorreio=1
-  carro=[]
-=======
-  Celular=9999-9999
-  Senha=123456
-  Nome=Rodrigo
-  NumeroEnd=82
-  CEP=<null>
-  Telefone=999-99999
-  CelularParticular=<null>
-  Email=teste@email
-  CMotorista=546231854113
-  DtaValiCM=2015-08-22 00:00:00.0
-  Complemento=<null>
-  RuasCorreio_idRuasCorreio=<null>
-  carro=[]
-  LocalizacaologEntity=[br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654000
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
-  id=1
-], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654001
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
-  id=2
-], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
-  Latitude=-25.4771375
-  Longitude=-49.2580232
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
-  id=3
-]]
->>>>>>> branch 'master' of https://github.com/NelsonAndradeJunior/SISGEM
-  id=1
-]
-<<<<<<< HEAD
-=======
-  id=1
-], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654001
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0[
   Cargo=Administrador
-  Celular=9999-9999
-  Senha=123456
-  Nome=Rodrigo
-  NumeroEnd=82
-  CEP=<null>
-  Telefone=999-99999
-  CelularParticular=<null>
-  Email=teste@email
-  CMotorista=546231854113
-  DtaValiCM=2015-08-22 00:00:00.0
-  Complemento=<null>
-  RuasCorreio_idRuasCorreio=<null>
-  carro=[]
-  LocalizacaologEntity=[br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654000
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
-  id=1
-], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654001
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
-  id=2
-], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
-  Latitude=-25.4771375
-  Longitude=-49.2580232
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
-  id=3
-]]
+  carroEntity=[]
+  LocalizacaologEntity=[]
   id=1
 ]
-  id=2
-], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
-  Latitude=-25.4771375
-  Longitude=-49.2580232
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0[
+31-10-2015 14:01:53,238; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest;  - [br.com.sisgem.model.UsuarioEntity@3a00b15d[
+  Celular=1
+  password=1
+  name=1
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
   Cargo=Administrador
-  Celular=9999-9999
-  Senha=123456
-  Nome=Rodrigo
-  NumeroEnd=82
-  CEP=<null>
-  Telefone=999-99999
-  CelularParticular=<null>
-  Email=teste@email
-  CMotorista=546231854113
-  DtaValiCM=2015-08-22 00:00:00.0
-  Complemento=<null>
-  RuasCorreio_idRuasCorreio=<null>
-  carro=[]
-  LocalizacaologEntity=[br.com.sisgem.model.LocalizacaoLogEntity@4a6c18ad[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654000
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+  carroEntity=[]
+  LocalizacaologEntity=[]
   id=1
-], br.com.sisgem.model.LocalizacaoLogEntity@ae7950d[
-  Latitude=46.1564654654000
-  Longitude=46.1564654654001
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+], br.com.sisgem.model.UsuarioEntity@36ef1d65[
+  Celular=1
+  password=2
+  name=2
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  Cargo=Vendedor
+  carroEntity=[]
+  LocalizacaologEntity=[]
   id=2
-], br.com.sisgem.model.LocalizacaoLogEntity@60d1b21f[
-  Latitude=-25.4771375
-  Longitude=-49.2580232
-  DataHora=<null>
-  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@232cce0
+], br.com.sisgem.model.UsuarioEntity@4be0a27d[
+  Celular=1
+  password=3
+  name=3
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  Cargo=Estoque
+  carroEntity=[]
+  LocalizacaologEntity=[]
   id=3
 ]]
+31-10-2015 14:01:56,968; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1048, SQLState: 23000
+31-10-2015 14:01:56,969; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Column 'RuasCorreio_idRuasCorreio' cannot be null
+31-10-2015 14:03:12,461; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:03:17,014; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest;  - br.com.sisgem.model.UsuarioEntity@49f3ff41[
+  Celular=1
+  password=1
+  name=1
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  Cargo=Administrador
+  carroEntity=[]
+  LocalizacaologEntity=[]
   id=1
 ]
+31-10-2015 14:03:17,142; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.UsuarioTest;  - [br.com.sisgem.model.UsuarioEntity@574059d5[
+  Celular=1
+  password=1
+  name=1
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  Cargo=Administrador
+  carroEntity=[]
+  LocalizacaologEntity=[]
+  id=1
+], br.com.sisgem.model.UsuarioEntity@6d672bd4[
+  Celular=1
+  password=2
+  name=2
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  Cargo=Vendedor
+  carroEntity=[]
+  LocalizacaologEntity=[]
+  id=2
+], br.com.sisgem.model.UsuarioEntity@67770b37[
+  Celular=1
+  password=3
+  name=3
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  Cargo=Estoque
+  carroEntity=[]
+  LocalizacaologEntity=[]
   id=3
 ]]
->>>>>>> branch 'master' of https://github.com/NelsonAndradeJunior/SISGEM
+31-10-2015 14:04:59,671; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:05:04,420; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - []
+31-10-2015 14:05:04,555; [main]; WARN ; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - SQL Error: 1265, SQLState: 01000
+31-10-2015 14:05:04,555; [main]; ERROR; org.hibernate.engine.jdbc.spi.SqlExceptionHelper;  - Data truncated for column 'Ano' at row 1
+31-10-2015 14:07:06,566; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:07:10,559; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - []
+31-10-2015 14:09:12,022; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:09:15,928; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.CarroTest;  - [br.com.sisgem.model.CarroEntity@6892cc6f[
+  Modelo=Ferrari
+  Ano=2015
+  Aluguel=true
+  Cor=Cor de Rosa
+  Placa=PLA0969
+  LocalCarro=Curitiba
+  StatusCarro=Ativo
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@3cbcd8f3[
+  Celular=1
+  password=2
+  name=2
+  NumeroEnd=1
+  CEP=1
+  Telefone=1
+  CelularParticular=1
+  Email=1
+  CMotorista=1
+  DtaValiCM=2015-05-05 00:00:00.0
+  Complemento=1
+  RuasCorreio_idRuasCorreio=1
+  Cargo=Vendedor
+  carroEntity=[br.com.sisgem.model.CarroEntity@6892cc6f[
+  Modelo=Ferrari
+  Ano=2015
+  Aluguel=true
+  Cor=Cor de Rosa
+  Placa=PLA0969
+  LocalCarro=Curitiba
+  StatusCarro=Ativo
+  Usuario_idUsuario=br.com.sisgem.model.UsuarioEntity@3cbcd8f3
+  id=1
+]]
+  LocalizacaologEntity=[]
+  id=2
+]
+  id=1
+]]
+31-10-2015 14:13:11,330; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:13:13,047; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@55342f40] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.FormapagamentoTest@a4ca3f6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [sisgem-jsf-primefaces.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:750)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1225)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:853)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:290)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 40 more
+Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: br.com.sisgem.model.FormapagamentoEntity column: idFormaPagamento (should be mapped with insert="false" update="false")
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:709)
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:731)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:753)
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:506)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1358)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1849)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	... 49 more
+31-10-2015 14:13:13,424; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:13:13,579; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@55342f40] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.FormapagamentoTest@3f053c80]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [sisgem-jsf-primefaces.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:750)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1225)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:853)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:290)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 40 more
+Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: br.com.sisgem.model.FormapagamentoEntity column: idFormaPagamento (should be mapped with insert="false" update="false")
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:709)
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:731)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:753)
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:506)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1358)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1849)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	... 49 more
+31-10-2015 14:21:51,133; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:21:52,933; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@55342f40] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.FormapagamentoTest@a4ca3f6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [sisgem-jsf-primefaces.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:750)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1225)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:853)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:290)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 40 more
+Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: br.com.sisgem.model.FormapagamentoEntity column: idFormaPagamento (should be mapped with insert="false" update="false")
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:709)
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:731)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:753)
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:506)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1358)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1849)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	... 49 more
+31-10-2015 14:21:53,402; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:21:53,557; [main]; ERROR; org.springframework.test.context.TestContextManager;  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@55342f40] to prepare test instance [br.com.sisgem.test.sf.primefaces.repositories.FormapagamentoTest@3f053c80]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [sisgem-jsf-primefaces.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:750)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: persistenceUnitName] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1225)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:853)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:290)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 40 more
+Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: br.com.sisgem.model.FormapagamentoEntity column: idFormaPagamento (should be mapped with insert="false" update="false")
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:709)
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:731)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:753)
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:506)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1358)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1849)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	... 49 more
+31-10-2015 14:25:55,016; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:25:59,145; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.FormapagamentoTest;  - []
+31-10-2015 14:42:01,385; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 14:42:05,260; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - [br.com.sisgem.model.UfEntity@3051e0b2[
+  ds_uf_sigla=AC
+  ds_uf_nome=Acre
+  id=1
+], br.com.sisgem.model.UfEntity@6fc3e1a4[
+  ds_uf_sigla=AL
+  ds_uf_nome=Alagoas
+  id=2
+], br.com.sisgem.model.UfEntity@3fa76c61[
+  ds_uf_sigla=AM
+  ds_uf_nome=Amazonas
+  id=3
+], br.com.sisgem.model.UfEntity@2d5f7182[
+  ds_uf_sigla=AP
+  ds_uf_nome=Amapá
+  id=4
+], br.com.sisgem.model.UfEntity@59546cfe[
+  ds_uf_sigla=BA
+  ds_uf_nome=Bahia
+  id=5
+], br.com.sisgem.model.UfEntity@29ea78b1[
+  ds_uf_sigla=CE
+  ds_uf_nome=Ceará
+  id=6
+], br.com.sisgem.model.UfEntity@2d2acd89[
+  ds_uf_sigla=DF
+  ds_uf_nome=Distrito Federal
+  id=7
+], br.com.sisgem.model.UfEntity@7baf6acf[
+  ds_uf_sigla=ES
+  ds_uf_nome=Espírito Santo
+  id=8
+], br.com.sisgem.model.UfEntity@1e6dad8[
+  ds_uf_sigla=GO
+  ds_uf_nome=Goiás
+  id=9
+], br.com.sisgem.model.UfEntity@7b3315a5[
+  ds_uf_sigla=MA
+  ds_uf_nome=Maranhão
+  id=10
+], br.com.sisgem.model.UfEntity@8ed9cf[
+  ds_uf_sigla=MG
+  ds_uf_nome=Minas Gerais
+  id=11
+], br.com.sisgem.model.UfEntity@f72203[
+  ds_uf_sigla=MS
+  ds_uf_nome=Mato Grosso do Sul
+  id=12
+], br.com.sisgem.model.UfEntity@377008df[
+  ds_uf_sigla=MT
+  ds_uf_nome=Mato Grosso
+  id=13
+], br.com.sisgem.model.UfEntity@540dbda9[
+  ds_uf_sigla=PA
+  ds_uf_nome=Pará
+  id=14
+], br.com.sisgem.model.UfEntity@1be59f28[
+  ds_uf_sigla=PB
+  ds_uf_nome=Paraíba
+  id=15
+], br.com.sisgem.model.UfEntity@2ce45a7b[
+  ds_uf_sigla=PE
+  ds_uf_nome=Pernambuco
+  id=16
+], br.com.sisgem.model.UfEntity@153d4abb[
+  ds_uf_sigla=PI
+  ds_uf_nome=Piauí
+  id=17
+], br.com.sisgem.model.UfEntity@6d4c273c[
+  ds_uf_sigla=PR
+  ds_uf_nome=Paraná
+  id=18
+], br.com.sisgem.model.UfEntity@5a67e962[
+  ds_uf_sigla=RJ
+  ds_uf_nome=Rio de Janeiro
+  id=19
+], br.com.sisgem.model.UfEntity@545e57d7[
+  ds_uf_sigla=RN
+  ds_uf_nome=Rio Grande do Norte
+  id=20
+], br.com.sisgem.model.UfEntity@2bc9a775[
+  ds_uf_sigla=RO
+  ds_uf_nome=Rondônia
+  id=21
+], br.com.sisgem.model.UfEntity@27b000f7[
+  ds_uf_sigla=RR
+  ds_uf_nome=Roraima
+  id=22
+], br.com.sisgem.model.UfEntity@42f9c19a[
+  ds_uf_sigla=RS
+  ds_uf_nome=Rio Grande do Sul
+  id=23
+], br.com.sisgem.model.UfEntity@64bfd6fd[
+  ds_uf_sigla=SC
+  ds_uf_nome=Santa Catarina
+  id=24
+], br.com.sisgem.model.UfEntity@2ab2710[
+  ds_uf_sigla=SE
+  ds_uf_nome=Sergipe
+  id=25
+], br.com.sisgem.model.UfEntity@253b380a[
+  ds_uf_sigla=SP
+  ds_uf_nome=São Paulo
+  id=26
+], br.com.sisgem.model.UfEntity@29c2c826[
+  ds_uf_sigla=TO
+  ds_uf_nome=Tocantins
+  id=27
+]]
+31-10-2015 15:01:19,079; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 15:01:23,074; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - [br.com.sisgem.model.UfEntity@5fad41be[
+  ds_uf_sigla=AC
+  ds_uf_nome=Acre
+  id=1
+], br.com.sisgem.model.UfEntity@1d25c1c[
+  ds_uf_sigla=AL
+  ds_uf_nome=Alagoas
+  id=2
+], br.com.sisgem.model.UfEntity@de88ac6[
+  ds_uf_sigla=AM
+  ds_uf_nome=Amazonas
+  id=3
+], br.com.sisgem.model.UfEntity@5bca7664[
+  ds_uf_sigla=AP
+  ds_uf_nome=Amapá
+  id=4
+], br.com.sisgem.model.UfEntity@105b693d[
+  ds_uf_sigla=BA
+  ds_uf_nome=Bahia
+  id=5
+], br.com.sisgem.model.UfEntity@3fae596[
+  ds_uf_sigla=CE
+  ds_uf_nome=Ceará
+  id=6
+], br.com.sisgem.model.UfEntity@4a0df195[
+  ds_uf_sigla=DF
+  ds_uf_nome=Distrito Federal
+  id=7
+], br.com.sisgem.model.UfEntity@42fcc7e6[
+  ds_uf_sigla=ES
+  ds_uf_nome=Espírito Santo
+  id=8
+], br.com.sisgem.model.UfEntity@9255c05[
+  ds_uf_sigla=GO
+  ds_uf_nome=Goiás
+  id=9
+], br.com.sisgem.model.UfEntity@5da7cee2[
+  ds_uf_sigla=MA
+  ds_uf_nome=Maranhão
+  id=10
+], br.com.sisgem.model.UfEntity@78830d9a[
+  ds_uf_sigla=MG
+  ds_uf_nome=Minas Gerais
+  id=11
+], br.com.sisgem.model.UfEntity@5ce4369b[
+  ds_uf_sigla=MS
+  ds_uf_nome=Mato Grosso do Sul
+  id=12
+], br.com.sisgem.model.UfEntity@7f829c76[
+  ds_uf_sigla=MT
+  ds_uf_nome=Mato Grosso
+  id=13
+], br.com.sisgem.model.UfEntity@1cb19dba[
+  ds_uf_sigla=PA
+  ds_uf_nome=Pará
+  id=14
+], br.com.sisgem.model.UfEntity@1931d99[
+  ds_uf_sigla=PB
+  ds_uf_nome=Paraíba
+  id=15
+], br.com.sisgem.model.UfEntity@6a9950f1[
+  ds_uf_sigla=PE
+  ds_uf_nome=Pernambuco
+  id=16
+], br.com.sisgem.model.UfEntity@7ad54c55[
+  ds_uf_sigla=PI
+  ds_uf_nome=Piauí
+  id=17
+], br.com.sisgem.model.UfEntity@73017a80[
+  ds_uf_sigla=PR
+  ds_uf_nome=Paraná
+  id=18
+], br.com.sisgem.model.UfEntity@6ae7deac[
+  ds_uf_sigla=RJ
+  ds_uf_nome=Rio de Janeiro
+  id=19
+], br.com.sisgem.model.UfEntity@4a5905d9[
+  ds_uf_sigla=RN
+  ds_uf_nome=Rio Grande do Norte
+  id=20
+], br.com.sisgem.model.UfEntity@1a3e5f23[
+  ds_uf_sigla=RO
+  ds_uf_nome=Rondônia
+  id=21
+], br.com.sisgem.model.UfEntity@6293e39e[
+  ds_uf_sigla=RR
+  ds_uf_nome=Roraima
+  id=22
+], br.com.sisgem.model.UfEntity@365553de[
+  ds_uf_sigla=RS
+  ds_uf_nome=Rio Grande do Sul
+  id=23
+], br.com.sisgem.model.UfEntity@34a0ef00[
+  ds_uf_sigla=SC
+  ds_uf_nome=Santa Catarina
+  id=24
+], br.com.sisgem.model.UfEntity@5c0f79f0[
+  ds_uf_sigla=SE
+  ds_uf_nome=Sergipe
+  id=25
+], br.com.sisgem.model.UfEntity@21fdfefc[
+  ds_uf_sigla=SP
+  ds_uf_nome=São Paulo
+  id=26
+], br.com.sisgem.model.UfEntity@3daa82be[
+  ds_uf_sigla=TO
+  ds_uf_nome=Tocantins
+  id=27
+]]
+31-10-2015 15:01:48,200; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 15:01:52,232; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - [br.com.sisgem.model.UfEntity@3bb8aabc[
+  ds_uf_sigla=PR
+  ds_uf_nome=Paraná
+  id=18
+]]
+31-10-2015 15:06:42,171; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 15:06:46,375; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - 201404140102
+31-10-2015 15:11:05,164; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 15:11:09,502; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - 201404140102
+31-10-2015 15:11:41,492; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 15:11:45,796; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - 201404140102
+31-10-2015 15:11:45,797; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - [br.com.sisgem.model.UfEntity@6d171ce0[
+  ds_uf_sigla=PR
+  ds_uf_nome=Paraná
+  id=18
+]]
+31-10-2015 15:13:26,974; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 15:13:31,612; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - 201404140102
+31-10-2015 15:16:01,806; [main]; WARN ; org.hibernate.ejb.HibernatePersistence;  - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+31-10-2015 15:16:06,621; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - 201404140102
+31-10-2015 15:16:10,994; [main]; INFO ; br.com.sisgem.test.sf.primefaces.repositories.EnderecosTest;  - [br.com.sisgem.model.UfEntity@2091833[
+  ds_uf_sigla=PR
+  ds_uf_nome=Paraná
+  id=18
+]]

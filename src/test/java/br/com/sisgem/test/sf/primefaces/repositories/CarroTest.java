@@ -10,7 +10,10 @@ import org.junit.Test;
 
 import br.com.sisgem.enums.EinativoAtivo;
 import br.com.sisgem.model.CarroEntity;
+import br.com.sisgem.model.FornecedorEntity;
+import br.com.sisgem.model.UsuarioEntity;
 import br.com.sisgem.model.repository.ICarroRepository;
+import br.com.sisgem.model.repository.IUsuarioRepository;
 import br.com.sisgem.test.jsf.primefaces.AbstractDatabaseTest;
 
 public class CarroTest extends AbstractDatabaseTest {
@@ -26,27 +29,31 @@ public class CarroTest extends AbstractDatabaseTest {
 		LOGGER.info(carroList);
 	}
 	
-	// inserção na tabela esta funcionando 
 	@Test
 	public void testInsertCarro(){
-			carroEntity.setAluguel(true);
-			carroEntity.setAno(20150708);
-			carroEntity.setCor("azul");
-			//carroEntity.setId(2);
-			carroEntity.setLocalCarro("curitiba");
-			carroEntity.setModelo("corsa");
-			carroEntity.setPlaca("12345");
-			carroEntity.setStatusCarro("1");
+		Date d = new Date(); 
 			
-			
-			this.carroRepository.save(carroEntity);
-			Long id = carroEntity.getId();
-//			PessoaJuridicaFornecedorEntity fornecedorInserido = this.fornecedorRepository.findOne(id);
-			
-//			LOGGER.info(fornecedorInserido);
+		UsuarioEntity usuario = new UsuarioEntity();
+		usuario.setId((long) 1);
+		
+		carroEntity.setAluguel(true);
+		carroEntity.setUsuario_idUsuario(usuario);
+		carroEntity.setAno(2015);
+		carroEntity.setCor("Preto");
+		carroEntity.setLocalCarro("Curitiba");
+		carroEntity.setModelo("Fusca");
+		carroEntity.setPlaca("PLA0969");
+		carroEntity.setStatusCarro(EinativoAtivo.Ativo);
+		
+		//carroEntity.setUsuario_idUsuario(2);
+		
+	
+		this.carroRepository.save(carroEntity);
+		Long id = carroEntity.getId();
+
 	}
 	
-	
-	
 	CarroEntity carroEntity = new CarroEntity();
+
 }
+
