@@ -1,7 +1,9 @@
 package br.com.sisgem.test.sf.primefaces.repositories;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -11,9 +13,13 @@ import org.junit.Test;
 
 import br.com.sisgem.enums.Ecargo;
 import br.com.sisgem.enums.EinativoAtivo;
+import br.com.sisgem.model.BairrosEntity;
+import br.com.sisgem.model.CidadesEntity;
 import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.UfEntity;
 import br.com.sisgem.model.UsuarioEntity;
+import br.com.sisgem.model.repository.IBairrosRepository;
+import br.com.sisgem.model.repository.ICidadesRepository;
 import br.com.sisgem.model.repository.IFornecedorRepository;
 import br.com.sisgem.model.repository.IUfRepository;
 import br.com.sisgem.model.repository.IUsuarioRepository;
@@ -25,28 +31,38 @@ public class EnderecosTest extends AbstractDatabaseTest {
 	
 	@Inject
 	private IUfRepository ufRepository;
+	private ICidadesRepository cidadesRepository;
+	private IBairrosRepository bairrosRepository;
 	
 	
-//	@Test
-//	public void testFindAll(){
-//		List<UfEntity> ufList = this.ufRepository.findAll();
-//		LOGGER.info(ufList);
-//}
 	
 	@Test
 	public void testFindTeste(){
-		List<UfEntity> ufList = this.ufRepository.findByUf("PR");
+	//	List<UfEntity> ufList = this.ufRepository.findByUf("PR");
+	//	LOGGER.info(ufList);
 		
-		UfEntity id = new UfEntity();
+		//List<CidadesEntity> cidadesList = this.cidadesRepository.findByCidades("Curitiba");
+	 //   LOGGER.info(cidadesList);
+	    
+	    List<BairrosEntity> bairrosList = this.bairrosRepository.findByBairros("Centro");
+	    LOGGER.info(bairrosList);
+	
 		
-		LOGGER.info(UfEntity.getSerialversionuid());
+		System.out.println(ufEntity.getId());
+		LOGGER.info(ufEntity.getId());
+
+		
+		
+		
 		LOGGER.info(ufList);
 		
-	   // For(UfEntity id : ufList){  
-	   //       System.out.print(id.getNome());  
-	   // }  
+
+
 	}
 	
-	
 	UfEntity ufEntity = new UfEntity();
+	CidadesEntity cidadesEntity = new CidadesEntity();
+	BairrosEntity bairrosEntity = new BairrosEntity();
+	
+
 }
