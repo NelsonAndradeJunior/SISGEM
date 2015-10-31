@@ -12,7 +12,6 @@
 		<h:form id="clientePesquisaForm">
 			<p:panel header="Pesquisa Cliente"
 				rendered="#{clienteAddEditMB.flagExibeConsultaCliente}">
-
 				<p:inputText value="#{clienteMB.paramCliente}"
 					placeholder="Pesquise por Telefone, Nome ou CPF" size="55" />
 				<br />
@@ -20,12 +19,9 @@
 				<p:commandButton value="Pesquisar"
 					action="#{clienteMB.findCliente(clienteMB.paramCliente)}"
 					widgetVar="searchButton" update="pesquisaClienteDataTable" />
-
 				<p:commandButton widgetVar="addButton" value="Novo"
 					actionListener="#{clienteAddEditMB.exibeFormularioCliente}"
 					update=":clientePesquisaForm :clienteForm" ajax="false" />
-
-
 				<p:dialog id="dialogListaClientes" header="Lista de Clientes"
 					widgetVar="dialogListaResultado" resizable="false"
 					position="center">
@@ -35,7 +31,6 @@
 						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 						rowsPerPageTemplate="5,10,15" rowKey="#{cliente.id}"
 						selectionMode="single">
-
 						<p:ajax event="rowSelect" listener="#{clienteMB.selectCliente}"
 							update=":clientePesquisaForm:panelGroupBotoes" />
 						<p:ajax event="page" listener="#{clienteMB.unselectCliente}"
@@ -44,28 +39,22 @@
 						<p:ajax event="rowUnselect"
 							listener="#{clienteMB.unselectCliente}"
 							update=":clientePesquisaForm:panelGroupBotoes" />
-
 						<p:column sortBy="#{cliente.nomeRazaoS}">
 							<f:facet name="header">
 								<h:outputText value="Nome" />
 							</f:facet>
 							<h:outputText value="#{cliente.nomeRazaoS}" />
 						</p:column>
-
-
 					</p:dataTable>
 					<h:panelGroup id="panelGroupBotoes">
-
 						<p:commandButton widgetVar="addButton" value="Novo"
 							actionListener="#{clienteAddEditMB.exibeFormularioCliente}"
 							update=":clientePesquisaForm :clienteForm" ajax="false" />
-
 						<p:commandButton widgetVar="updateButton" value="Editar"
 							disabled="#{clienteMB.flagBotaoUpdate}"
 							action="/pages/cliente/clienteAddEdit.faces"
 							update="pesquisaClienteDataTable"
 							actionListener="#{clienteAddEditMB.update}" />
-
 						<p:commandButton widgetVar="deleteButton"
 							disabled="#{clienteMB.flagBotaoDelete}"
 							value="#{labels.button_delete}" update="pesquisaClienteDataTable"
@@ -84,8 +73,6 @@
 			</p:panel>
 		</h:form>
 
-
-
 		<h:form id="clienteForm">
 			<p:panel rendered="#{clienteAddEditMB.flagExibeFormularioCliente}">
 
@@ -102,229 +89,230 @@
 						</f:facet>
 						<p:row>
 							<p:column>
+								<p:outputLabel value="Tipo de  Cliente" for="tipoCadastro" />
+							</p:column>
+							<p:column>
+								<p:selectOneRadio id="tipoCadastro"
+									value="#{clienteAddEditMB.clienteObj.flagPFPJ}">
+									<f:selectItem itemLabel="Pessoa Fisica" itemValue="1" />
+									<f:selectItem itemLabel="Pessoa Juridica" itemValue="2" />
+									<p:ajax listener="#{clienteAddEditMB.switchPFPJ}"
+										update="clienteForm" />
+								</p:selectOneRadio>
+							</p:column>
+							<p:column>
 								<p:outputLabel value="Status Cliente" for="situacao" />
 							</p:column>
 							<p:column>
 								<p:selectOneRadio id="situacao" required="true"
-									requiredMessage="Status cliente é obrigatório" value="#">
-									<f:selectItem itemLabel="Ativo" itemValue="1" />
-									<f:selectItem itemLabel="Inativo" itemValue="0" />
+									requiredMessage="Status fornecedor é obrigatório"
+									value="#{clienteAddEditMB.clienteObj.statusCliente}">
+									<f:selectItem itemLabel="Ativo" itemValue="Ativo" />
+									<f:selectItem itemLabel="Inativo" itemValue="Inativo" />
 								</p:selectOneRadio>
 							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Tipo de  Cliente" for="tipo" />
-							</p:column>
-							<p:column>
-								<p:selectOneRadio id="tipo" value="#">
-									<f:selectItem itemLabel="Pessoa Fisica" itemValue="1" />
-									<f:selectItem itemLabel="Pessoa Juridica" itemValue="0" />
-								</p:selectOneRadio>
-							</p:column>
-
 						</p:row>
 
 						<p:row>
-
 							<p:column>
-								<p:outputLabel value="Nome : " for="nome" />
+								<p:outputLabel value="Receber SMS" />
 							</p:column>
 							<p:column>
+								<p:selectOneRadio id="receberSms"
+									value="#{clienteAddEditMB.clienteObj.receberSMS}">
+									<f:selectItem itemLabel="Sim" itemValue="1" />
+									<f:selectItem itemLabel="Não" itemValue="0" />
+								</p:selectOneRadio>
+							</p:column>
+							<p:column rendered="#{clienteAddEditMB.flagTipoClientePF}">
+								<p:outputLabel value="Nome" for="nome" />
+							</p:column>
+							<p:column rendered="#{clienteAddEditMB.flagTipoClientePF}">
 								<p:inputText id="nome" required="true"
 									requiredMessage="Nome é obrigatório" maxlength="100" size="40"
 									value="#{clienteAddEditMB.clienteObj.nomeRazaoS}" />
 							</p:column>
-
-							<p:column>
-								<p:outputLabel value="CNPJ : " for="cnpj" />
+							<p:column rendered="#{clienteAddEditMB.flagTipoClientePJ}">
+								<p:outputLabel value="Nome Fantasia" for="nomeFantasia" />
 							</p:column>
-							<p:column>
-								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true"
-									requiredMessage="CNPJ é obrigatório" value=" " />
+							<p:column rendered="#{clienteAddEditMB.flagTipoClientePJ}">
+								<p:inputText id="nomeFantasia" required="true"
+									requiredMessage="Nome é obrigatório" maxlength="100" size="40"
+									value="#{clienteAddEditMB.clienteObj.nomeFantasia}" />
 							</p:column>
 
 						</p:row>
 
-						<p:row>
+						<p:row id="pj1" rendered="#{clienteAddEditMB.flagTipoClientePJ}">
 							<p:column>
-								<p:outputLabel value="Razão Social : " for="rs" />
+								<p:outputLabel value="Razão Social" for="rs" />
 							</p:column>
 							<p:column>
 								<p:inputText id="rs" required="true"
 									requiredMessage="Razão social obrigatório" maxlength="100"
-									size="40" value="" />
+									size="40" value="#{clienteAddEditMB.clienteObj.nomeRazaoS}" />
+							</p:column>
+							<p:column>
+								<p:outputLabel value="CNPJ" for="cnpj" />
+							</p:column>
+							<p:column>
+								<p:inputMask mask="99.999.999/9999-99" id="cnpj" required="true"
+									requiredMessage="CNPJ é obrigatório"
+									value="#{clienteAddEditMB.clienteObj.CNPJCPF}" />
 							</p:column>
 
-							<p:column>
-								<p:outputLabel value="Inscrição Municipal : " for="im" />
-							</p:column>
-							<p:column>
-								<p:inputMask id="im"
-									requiredMessage="Inscrição municipal obrigatório"
-									mask="99999999-99" value=" " />
-							</p:column>
 						</p:row>
 
-						<p:row>
+						<p:row id="pj2" rendered="#{clienteAddEditMB.flagTipoClientePJ}">
 							<p:column>
-								<p:outputLabel value="Inscrição Estadual : " for="ie" />
+								<p:outputLabel value="Inscrição Estadual" for="ie" />
 							</p:column>
 							<p:column>
 								<p:inputMask id="ie"
 									requiredMessage="Inscrição estadual obrigatório"
-									mask="99999999-99" value="" />
-							</p:column>
-
-
-
-							<p:column>
-								<p:outputLabel value="Telefone : " for="telefone" />
+									mask="99999999-99" value="#{clienteAddEditMB.clienteObj.IE}" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="telefone" value="" mask="(99) 9999-9999" />
+								<p:outputLabel value="Inscrição Municipal" for="im" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="im"
+									requiredMessage="Inscrição municipal obrigatório"
+									mask="99999999-99" value="#{clienteAddEditMB.clienteObj.IM}" />
+							</p:column>
 
+						</p:row>
+
+						<p:row id="pf1" rendered="#{clienteAddEditMB.flagTipoClientePF}">
+							<p:column>
+								<p:outputLabel value="Data de Aniversario" for="dataaniversario" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="dataaniversario" mask="99/99/9999"
+									value="#{clienteAddEditMB.clienteObj.dtaAniversario}" />
+							</p:column>
+							<p:column>
+								<p:outputLabel value="CPF" for="cpf" />
+							</p:column>
+							<p:column>
+								<p:inputMask mask="999.999.999-99" id="cpf" required="true"
+									requiredMessage="cpf é obrigatório"
+									value="#{clienteAddEditMB.clienteObj.CNPJCPF}" />
 							</p:column>
 						</p:row>
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="Telefone 2 : " for="telefone2" />
+								<p:outputLabel value="Telefone" for="telefone" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="telefone2" value="" mask="(99) 9999-9999" />
-
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Celular : " for="celular" />
+								<p:inputMask id="telefone"
+									value="#{clienteAddEditMB.clienteObj.telefone}"
+									mask="(99) 9999-9999" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="celular" value="" mask="(99) 9999-9999" />
-
-							</p:column>
-						</p:row>
-
-						<p:row>
-							<p:column>
-								<p:outputLabel value="Endereço : " for="endereço" />
+								<p:outputLabel value="Celular" for="celular" />
 							</p:column>
 							<p:column>
-								<p:inputText id="endereço" required="true"
-									requiredMessage="Endereço é obrigatório" maxlength="100"
-									size="40" value="" />
-							</p:column>
-
-
-							<p:column>
-								<p:outputLabel value="Número : " for="numero" />
-							</p:column>
-							<p:column>
-								<p:inputText id="numero" required="true"
-									requiredMessage="Número é obrigatório" maxlength="100"
-									size="40" value="" />
-							</p:column>
-
-						</p:row>
-
-						<p:row>
-							<p:column>
-								<p:outputLabel value="Complemento : " for="complemento" />
-							</p:column>
-							<p:column>
-								<p:inputText id="complemento" required="true"
-									requiredMessage="Complemento é obrigatório" maxlength="100"
-									size="40" value="" />
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="CEP : " for="cep" />
-							</p:column>
-							<p:column>
-								<p:inputText id="cep" required="true"
-									requiredMessage="CEP é obrigatório" maxlength="100" size="40"
-									mask="(99) 9999-9999" value="" />
-							</p:column>
-
-
-						</p:row>
-
-						<p:row>
-							<p:column>
-								<p:outputLabel value="Bairro : " for="bairro" />
-							</p:column>
-							<p:column>
-								<p:inputText id="bairro" required="true"
-									requiredMessage="Bairro é obrigatório" maxlength="100"
-									size="40" value="" />
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Cidade : " for="cidade" />
-							</p:column>
-							<p:column>
-								<p:inputText id="cidade" required="true"
-									requiredMessage="Cidade é obrigatório" maxlength="100"
-									size="40" value="" />
+								<p:inputMask id="celular"
+									value="#{clienteAddEditMB.clienteObj.celular}"
+									mask="(99) 9999-9999" />
 							</p:column>
 						</p:row>
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="Estado : " for="estado" />
+								<p:outputLabel value="Telefone 2" for="telefone2" />
 							</p:column>
 							<p:column>
-								<p:inputText id="estado" required="true"
-									requiredMessage="Estado é obrigatório" maxlength="100"
-									size="40" value="" />
-							</p:column>
-
-							<p:column>
-								<p:outputLabel value="Data de Aniversario : "
-									for="dataaniversario" />
+								<p:inputMask id="telefone2"
+									value="#{clienteAddEditMB.clienteObj.telefone2}"
+									mask="(99) 9999-9999" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="dataaniversario" mask="99/99/9999" value="" />
-							</p:column>
-						</p:row>
-
-						<p:row>
-
-							<p:column>
-								<p:outputLabel value="E-mail : " for="email" />
+								<p:outputLabel value="E-mail" for="email" />
 							</p:column>
 							<p:column>
 								<p:inputMask id="email" rendered="true"
 									requiredMessage="E-mail é obrigatório" maxlength="100"
-									size="40" value=" " />
+									size="40" value="#{clienteAddEditMB.clienteObj.email}" />
 							</p:column>
-
-							<p:column>
-								<p:outputLabel value="CPF : " for="cpf" />
-							</p:column>
-							<p:column>
-								<p:inputMask mask="999.999.999-99" id="cpf" required="true"
-									requiredMessage="cpf é obrigatório" value=" " />
-							</p:column>
-
 						</p:row>
 
 						<p:row>
 							<p:column>
-								<p:outputLabel value="Receber SMS : " for="recebersms" />
+								<p:outputLabel value="CEP" for="cep" />
 							</p:column>
 							<p:column>
-								<p:inputMask id="recebersms" value=" " />
+								<p:inputText id="cep" required="true"
+									requiredMessage="CEP é obrigatório" maxlength="100" size="40"
+									mask="(99) 9999-9999" value="#" />
 							</p:column>
+							<p:column>
+								<p:outputLabel value="Estado" for="estado" />
+							</p:column>
+							<p:column>
+								<p:inputText id="estado" required="true"
+									requiredMessage="Estado é obrigatório" maxlength="100"
+									size="40" value="#" />
+							</p:column>
+						</p:row>
 
+						<p:row>
 							<p:column>
-								<p:outputLabel value="Observação : " for="observação" />
+								<p:outputLabel value="Cidade" for="cidade" />
+							</p:column>
+							<p:column>
+								<p:inputText id="cidade" required="true"
+									requiredMessage="Cidade é obrigatório" maxlength="100"
+									size="40" value="#" />
+							</p:column>
+							<p:column>
+								<p:outputLabel value="Bairro" for="bairro" />
+							</p:column>
+							<p:column>
+								<p:inputText id="bairro" required="true"
+									requiredMessage="Bairro é obrigatório" maxlength="100"
+									size="40" value="#" />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Rua" for="endereço" />
+							</p:column>
+							<p:column>
+								<p:inputText id="endereço" required="true"
+									requiredMessage="Endereço é obrigatório" maxlength="100"
+									size="40" value="#" />
+							</p:column>
+							<p:column>
+								<p:outputLabel value="Número" for="numero" />
+							</p:column>
+							<p:column>
+								<p:inputText id="numero" required="true"
+									requiredMessage="Número é obrigatório" maxlength="100"
+									size="40" value="#{clienteAddEditMB.clienteObj.numeroEnd}" />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Complemento" for="complemento" />
+							</p:column>
+							<p:column>
+								<p:inputText id="complemento" required="true"
+									requiredMessage="Complemento é obrigatório" maxlength="100"
+									size="40" value="#{clienteAddEditMB.clienteObj.complemento}" />
+							</p:column>
+							<p:column>
+								<p:outputLabel value="Observação" for="observação" />
 							</p:column>
 							<p:column>
 								<p:inputMask id="observação" rendered="true"
 									requiredMessage="E-mail é obrigatório" maxlength="100"
 									size="40" value=" " />
 							</p:column>
-
 						</p:row>
 
 						<f:facet name="footer">

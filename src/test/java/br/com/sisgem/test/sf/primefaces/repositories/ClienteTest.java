@@ -42,7 +42,7 @@ public class ClienteTest extends AbstractDatabaseTest {
 		clienteEntity.setIM("898878");
 		clienteEntity.setNomeRazaoS("condor");
 		clienteEntity.setNumeroEnd(500);
-		clienteEntity.setReceberSMS("1");
+		clienteEntity.setReceberSMS(1);
 		clienteEntity.setTelefone("34250809");
 		clienteEntity.setDtaAniversario(d);
 		clienteEntity.setRuasCorreio_idRuasCorreio(1);
