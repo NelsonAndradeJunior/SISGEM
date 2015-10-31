@@ -54,7 +54,7 @@ public class EnderecosTest extends AbstractDatabaseTest {
 		
 		
 		
-		LOGGER.info(ufList);
+		//LOGGER.info(ufList);
 		
 
 
