@@ -73,8 +73,6 @@ public class UfEntity extends BaseEntities<Long> {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-
 	
 	
 	
