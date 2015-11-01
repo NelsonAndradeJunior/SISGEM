@@ -13,6 +13,8 @@
 		<class>br.com.sisgem.model.CidadesEntity</class>
 		<class>br.com.sisgem.model.FormapagamentoEntity</class>
 		<class>br.com.sisgem.model.UfEntity</class>
+		<class>br.com.sisgem.model.LogradourosEntity</class>
+		
 		
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
