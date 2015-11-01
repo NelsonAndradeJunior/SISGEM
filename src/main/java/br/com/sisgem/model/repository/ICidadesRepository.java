@@ -10,6 +10,6 @@ import br.com.sisgem.model.FornecedorEntity;
 import br.com.sisgem.model.UfEntity;
 
 public interface ICidadesRepository extends JpaRepository<CidadesEntity, Long>{
-	@Query("select p from CidadesEntity p where p.ds_cidade_nome like %?1% ")
+	@Query("select p from CidadesEntity p where p.ds_cidade_nome like ?1")
 	public List<CidadesEntity> findByCidades(String paramCidades);
 }

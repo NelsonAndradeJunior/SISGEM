@@ -39,18 +39,20 @@ public class UfEntity extends BaseEntities<Long> {
 	private String  ds_uf_nome;
 		
 	@OneToMany(mappedBy="cd_uf", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private List<CidadesEntity> cidadesEntity;	
+    private List<CidadesEntity> cidadesEntity;	
 	
 	public UfEntity() {
 		
 	}
 
+
 	public UfEntity(String ds_uf_sigla, String ds_uf_nome, List<CidadesEntity> cidadesEntity) {
 		super();
 		this.ds_uf_sigla = ds_uf_sigla;
 		this.ds_uf_nome = ds_uf_nome;
-		
+		this.cidadesEntity = cidadesEntity;
 	}
+
 
 	public String getDs_uf_sigla() {
 		return ds_uf_sigla;
@@ -74,7 +76,7 @@ public class UfEntity extends BaseEntities<Long> {
 
 	public void setCidadesEntity(List<CidadesEntity> cidadesEntity) {
 		this.cidadesEntity = cidadesEntity;
-	}
+   }
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

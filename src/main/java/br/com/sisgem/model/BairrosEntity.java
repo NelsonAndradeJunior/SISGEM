@@ -36,13 +36,16 @@ public class BairrosEntity extends BaseEntities<Long> {
 		
 	@ManyToOne
 	@JoinColumn(name="cd_cidade")
-	private UfEntity cd_cidade;
+	private CidadesEntity cd_cidade;
+	
+	@OneToMany(mappedBy="cd_bairro", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<LogradourosEntity> LogradourosEntity;	
 	
 	public BairrosEntity() {
 		
 	}
 
-	public BairrosEntity(String ds_bairro_nome, UfEntity cd_cidade) {
+	public BairrosEntity(String ds_bairro_nome, CidadesEntity cd_cidade) {
 		super();
 		this.ds_bairro_nome = ds_bairro_nome;
 		this.cd_cidade = cd_cidade;
@@ -56,11 +59,12 @@ public class BairrosEntity extends BaseEntities<Long> {
 		this.ds_bairro_nome = ds_bairro_nome;
 	}
 
-	public UfEntity getCd_cidade() {
+	
+	public CidadesEntity getCd_cidade() {
 		return cd_cidade;
 	}
 
-	public void setCd_cidade(UfEntity cd_cidade) {
+	public void setCd_cidade(CidadesEntity cd_cidade) {
 		this.cd_cidade = cd_cidade;
 	}
 

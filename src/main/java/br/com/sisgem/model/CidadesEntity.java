@@ -45,11 +45,11 @@ public class CidadesEntity extends BaseEntities<Long> {
 		
 	}
 
-	public CidadesEntity(String ds_cidade_nome, UfEntity cd_uf) {
+	public CidadesEntity(String ds_cidade_nome, UfEntity cd_uf, List<BairrosEntity> bairrosEntity) {
 		super();
-	
 		this.ds_cidade_nome = ds_cidade_nome;
 		this.cd_uf = cd_uf;
+		this.bairrosEntity = bairrosEntity;
 	}
 
 	public String getDs_cidade_nome() {
@@ -68,8 +68,17 @@ public class CidadesEntity extends BaseEntities<Long> {
 		this.cd_uf = cd_uf;
 	}
 
+	public List<BairrosEntity> getBairrosEntity() {
+		return bairrosEntity;
+	}
+
+	public void setBairrosEntity(List<BairrosEntity> bairrosEntity) {
+		this.bairrosEntity = bairrosEntity;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
+	
 }

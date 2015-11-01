@@ -32,42 +32,118 @@ public class LogradourosEntity extends BaseEntities<Long> {
 
 	
 	@Size(max=244)
-	private String  ds_bairro_nome;
+	private String DS_LOGRADOURO_NOME;;
 		
 	@ManyToOne
-	@JoinColumn(name="cd_cidade")
-	private UfEntity cd_cidade;
+	@JoinColumn(name="CD_BAIRRO")
+	private BairrosEntity cd_bairro;
+	
+	
+	@Size(max=10)
+	private Integer CD_TIPO;
+	
+	@Size(max=10)
+	private Integer CD_TIPO_LOGRADOUROS;
+	
+	@Size(max=10)
+	private Integer NO_LOGRADOURO_CEP;
+	
+
+	
 	
 	public LogradourosEntity() {
 		
 	}
 
-	public LogradourosEntity(String ds_bairro_nome, UfEntity cd_cidade) {
+
+
+
+	public LogradourosEntity(String dS_LOGRADOURO_NOME, BairrosEntity cd_bairro, Integer cD_TIPO,
+			Integer cD_TIPO_LOGRADOUROS, Integer nO_LOGRADOURO_CEP) {
 		super();
-		this.ds_bairro_nome = ds_bairro_nome;
-		this.cd_cidade = cd_cidade;
+		DS_LOGRADOURO_NOME = dS_LOGRADOURO_NOME;
+		this.cd_bairro = cd_bairro;
+		CD_TIPO = cD_TIPO;
+		CD_TIPO_LOGRADOUROS = cD_TIPO_LOGRADOUROS;
+		NO_LOGRADOURO_CEP = nO_LOGRADOURO_CEP;
 	}
 
-	public String getDs_bairro_nome() {
-		return ds_bairro_nome;
+
+
+
+	public String getDS_LOGRADOURO_NOME() {
+		return DS_LOGRADOURO_NOME;
 	}
 
-	public void setDs_bairro_nome(String ds_bairro_nome) {
-		this.ds_bairro_nome = ds_bairro_nome;
+
+
+
+	public void setDS_LOGRADOURO_NOME(String dS_LOGRADOURO_NOME) {
+		DS_LOGRADOURO_NOME = dS_LOGRADOURO_NOME;
 	}
 
-	public UfEntity getCd_cidade() {
-		return cd_cidade;
+
+
+
+	public BairrosEntity getCd_bairro() {
+		return cd_bairro;
 	}
 
-	public void setCd_cidade(UfEntity cd_cidade) {
-		this.cd_cidade = cd_cidade;
+
+
+
+	public void setCd_bairro(BairrosEntity cd_bairro) {
+		this.cd_bairro = cd_bairro;
 	}
+
+
+
+
+	public Integer getCD_TIPO() {
+		return CD_TIPO;
+	}
+
+
+
+
+	public void setCD_TIPO(Integer cD_TIPO) {
+		CD_TIPO = cD_TIPO;
+	}
+
+
+
+
+	public Integer getCD_TIPO_LOGRADOUROS() {
+		return CD_TIPO_LOGRADOUROS;
+	}
+
+
+
+
+	public void setCD_TIPO_LOGRADOUROS(Integer cD_TIPO_LOGRADOUROS) {
+		CD_TIPO_LOGRADOUROS = cD_TIPO_LOGRADOUROS;
+	}
+
+
+
+
+	public Integer getNO_LOGRADOURO_CEP() {
+		return NO_LOGRADOURO_CEP;
+	}
+
+
+
+
+	public void setNO_LOGRADOURO_CEP(Integer nO_LOGRADOURO_CEP) {
+		NO_LOGRADOURO_CEP = nO_LOGRADOURO_CEP;
+	}
+
+
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 	
-
 }
