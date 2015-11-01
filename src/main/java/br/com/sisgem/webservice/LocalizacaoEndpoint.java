@@ -32,9 +32,6 @@ public class LocalizacaoEndpoint implements LocalizacaoWebService{
 					
 		this.localizacaologRepository.save(localizacaologEntity);
         
-    	
-    	
-    	
     	return x;
     }
     
