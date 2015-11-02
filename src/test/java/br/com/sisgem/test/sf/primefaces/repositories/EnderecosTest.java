@@ -1,8 +1,6 @@
 package br.com.sisgem.test.sf.primefaces.repositories;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -35,31 +33,7 @@ public class EnderecosTest extends AbstractDatabaseTest {
 	public void testFindTeste(){
 	List<UfEntity> ufList = this.ufRepository.findByUf("PR");
 	LOGGER.info(ufList);
-		
-	
-		
-		System.out.println(ufEntity.getId());
-		LOGGER.info(ufEntity.getId());
-
-		
-		
-		
-		LOGGER.info(ufList);
-		
-
-   //List<CidadesEntity> cidadesList = this.cidadesRepository.findByCidades("Curitiba",18);
-   //LOGGER.info(cidadesList);
-	    
-	   // List<BairrosEntity> bairrosList = this.bairrosRepository.findByBairros("Centro",6015);
-	   // LOGGER.info(bairrosList);
-
-   //List<CidadesEntity> cidadesList = this.cidadesRepository.findByCidades("Curitiba",18);
-   //LOGGER.info(cidadesList);
-	    
-	   // List<BairrosEntity> bairrosList = this.bairrosRepository.findByBairros("Centro",6015);
-	   // LOGGER.info(bairrosList);
 
 	}
 	
-	UfEntity ufEntity = new UfEntity();
 }

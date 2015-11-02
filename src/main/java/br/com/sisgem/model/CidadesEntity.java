@@ -24,12 +24,13 @@ import br.com.sisgem.enums.EinativoAtivo;
 import br.com.sisgem.model.utils.BaseEntities;
 
 @Entity
-@Table(name="uf")
+@Table(name="cidades")
 @AttributeOverride(name = "id", column = @Column(name = "cd_cidade"))
 public class CidadesEntity extends BaseEntities<Long> {
 
 	private static final long serialVersionUID = 201404140102L;
 
+	
 	@Size(max=40)
 	private String  ds_cidade_nome;
 		
@@ -37,19 +38,19 @@ public class CidadesEntity extends BaseEntities<Long> {
 	@JoinColumn(name="cd_uf")
 	private UfEntity cd_uf;
 	
+	@OneToMany(mappedBy="cd_cidade", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<BairrosEntity> bairrosEntity;	
+	
 	public CidadesEntity() {
 		
 	}
 
-	
-	
-	public CidadesEntity(String ds_cidade_nome, UfEntity cd_uf) {
+	public CidadesEntity(String ds_cidade_nome, UfEntity cd_uf, List<BairrosEntity> bairrosEntity) {
 		super();
 		this.ds_cidade_nome = ds_cidade_nome;
 		this.cd_uf = cd_uf;
+		this.bairrosEntity = bairrosEntity;
 	}
-
-
 
 	public String getDs_cidade_nome() {
 		return ds_cidade_nome;
@@ -67,11 +68,17 @@ public class CidadesEntity extends BaseEntities<Long> {
 		this.cd_uf = cd_uf;
 	}
 
+	public List<BairrosEntity> getBairrosEntity() {
+		return bairrosEntity;
+	}
+
+	public void setBairrosEntity(List<BairrosEntity> bairrosEntity) {
+		this.bairrosEntity = bairrosEntity;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
-	
-	
 	
 }

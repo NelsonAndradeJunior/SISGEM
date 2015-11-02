@@ -3,6 +3,7 @@ package br.com.sisgem.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.CascadeType;
@@ -37,21 +38,20 @@ public class UfEntity extends BaseEntities<Long> {
 	@Size(max=40)
 	private String  ds_uf_nome;
 		
-	//@ManyToOne
-	//@JoinColumn(name="Usuario_idUsuario")
-	//private UsuarioEntity Usuario_idUsuario;
+	@OneToMany(mappedBy="cd_uf", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    private List<CidadesEntity> cidadesEntity;	
 	
 	public UfEntity() {
 		
 	}
 
-		
-	public UfEntity(String ds_uf_sigla, String ds_uf_nome) {
+
+	public UfEntity(String ds_uf_sigla, String ds_uf_nome, List<CidadesEntity> cidadesEntity) {
 		super();
 		this.ds_uf_sigla = ds_uf_sigla;
 		this.ds_uf_nome = ds_uf_nome;
+		this.cidadesEntity = cidadesEntity;
 	}
-
 
 
 	public String getDs_uf_sigla() {
@@ -70,11 +70,18 @@ public class UfEntity extends BaseEntities<Long> {
 		this.ds_uf_nome = ds_uf_nome;
 	}
 
+	public List<CidadesEntity> getCidadesEntity() {
+		return cidadesEntity;
+	}
+
+	public void setCidadesEntity(List<CidadesEntity> cidadesEntity) {
+		this.cidadesEntity = cidadesEntity;
+   }
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
+
 	
 	
 }
