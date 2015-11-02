@@ -1,23 +1,40 @@
 package br.com.sisgem.webservice;
  
 import javax.inject.Inject;
+
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.xml.bind.annotation.XmlTransient;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Type;
+import java.util.List;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import br.com.sisgem.model.LocalizacaoLogEntity;
 import br.com.sisgem.model.UsuarioEntity;
 import br.com.sisgem.model.repository.ILocalizacaoLogRepository;
- 
+
+
 @WebService(serviceName="Localizacao/longlatVendedor")
-public class LocalizacaoEndpoint implements LocalizacaoWebService{
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
+public class LocalizacaoEndpoint extends SpringBeanAutowiringSupport implements LocalizacaoWebService{
  
-	@Inject
+	
+	@Autowired
 	private ILocalizacaoLogRepository localizacaologRepository;
 	
-    @Override
+	@Override
     @WebMethod
-    public String localizacaolog(@WebParam(name = "latitude") String x,
+    public void localizacaolog(@WebParam(name = "latitude") String x,
             			   @WebParam(name = "longitude") String y,
             			   @WebParam(name = "idUsuario") String id) {
     	
@@ -29,11 +46,10 @@ public class LocalizacaoEndpoint implements LocalizacaoWebService{
 		localizacaologEntity.setUsuario_idUsuario(usuario);
 		localizacaologEntity.setLatitude(x);
 		localizacaologEntity.setLongitude(y);
-					
+	
+		
 		this.localizacaologRepository.save(localizacaologEntity);
         
-    	return x;
     }
-    
    
 }
