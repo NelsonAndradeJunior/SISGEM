@@ -31,11 +31,20 @@ public class FormapagamentoTest extends AbstractDatabaseTest {
 		LOGGER.info(formapagamentoList);
 	}
 	
+	
+	@Test
+	public void testFind(){
+		
+		List<FormapagamentoEntity> formapagamentoList = this.formapagamentoRepository.findByNome("Dinheiro");
+		LOGGER.info(formapagamentoList);
+	}
+	
+	
 	@Test
 	public void testInsertFormapagamento(){
 		Date d = new Date(); 
 	
-		formapagamentoEntity.setNome("Dinheiro");
+		formapagamentoEntity.setNome("Credito");
 		formapagamentoEntity.setStatusFP(EinativoAtivo.Ativo);
 		formapagamentoEntity.setVencimento(0);
 	

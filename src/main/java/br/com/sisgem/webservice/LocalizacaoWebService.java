@@ -18,7 +18,7 @@ public interface LocalizacaoWebService {
 	
 	@Autowired
 	@WebMethod
-    void localizacaolog(@WebParam(name = "Latitude") String latitude
+    void LocalizacaoLog(@WebParam(name = "Latitude") String latitude
     		, @WebParam(name = "Longitude") String longitude
-    		, @WebParam(name = "idUsuario") String idUsuario);
+    		, @WebParam(name = "idUsuario") Integer idUsuario);
 }

@@ -49,9 +49,7 @@ public class FornecedorTest extends AbstractDatabaseTest {
 			
 			this.fornecedorRepository.save(fornecedorEntity);
 			Long id = fornecedorEntity.getId();
-//			PessoaJuridicaFornecedorEntity fornecedorInserido = this.fornecedorRepository.findOne(id);
-			
-//			LOGGER.info(fornecedorInserido);
+
 	}
 	
 	FornecedorEntity fornecedorEntity = new FornecedorEntity();

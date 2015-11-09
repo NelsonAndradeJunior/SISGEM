@@ -88,11 +88,6 @@ public class ClienteEntity extends BaseEntities<Long>{
 
 
 
-
-
-
-
-
 	public ClienteEntity(String nomeRazaoS, Integer numeroEnd, String complemento, String telefone, String celular,
 			String cNPJCPF, String email, Date dtaAniversario, String iE, String iM, Integer flagPFPJ,
 			Integer receberSMS, String telefone2, Integer ruasCorreio_idRuasCorreio, EinativoAtivo statusCliente,
@@ -114,7 +109,14 @@ public class ClienteEntity extends BaseEntities<Long>{
 		RuasCorreio_idRuasCorreio = ruasCorreio_idRuasCorreio;
 		StatusCliente = statusCliente;
 		this.nomeFantasia = nomeFantasia;
+	
 	}
+
+
+
+
+
+
 
 
 

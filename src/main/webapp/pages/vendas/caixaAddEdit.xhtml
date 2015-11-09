@@ -9,61 +9,83 @@
 
 	<ui:define name="content">
 		<h:form id="pdvPesquisaForm">
-			<p:panel header="Pesquisa Caixa" rendered="true">
-
-				<p:inputText value="" placeholder="Pesquise de Data Fechamento"
-					size="55" />
-				<br />
-				<br />
-				<p:commandButton value="Abertura de Caixa " type="button"
-					onclick="PF('dlg2').show();" />
+			
+			<p:panel header="Pesquisa Caixa" rendered="#{caixaAddEditMB.flagExibeConsultaCaixa}">
+				<p:inputText value="#{caixaMB.paramCaixa}" placeholder="Pesquise ..." size="55" />
 				
-				<p:commandButton value="Fechamento de Caixa " type="button"
-					onclick="PF('dlg2').show();" />
+				<br/><br/>
+				
+				<p:commandButton widgetVar="addButton" value="Abrir Caixa"
+							actionListener="#{caixaAddEditMB.exibeFormularioCaixa}"
+							update=":pdvPesquisaForm :abrircaixaForm" />
+								
+				<p:commandButton value="Pesquisar"
+					action="#{caixaMB.findByData(caixaMB.paramCaixa)}"
+					widgetVar="searchButton" update="pesquisaCaixaDataTable" />
 
-				<p:commandButton value="Pesquisa " type="button"
-					onclick="PF('dlg1').show();" />
 
-
-
-
-				<p:dialog header="Pesquisa Caixa" widgetVar="dlg1">
-
-
-					<p:dataTable id="teste" widgetVar="dataTable" var="cliente"
-						loadingMessage="Carregando..." value="#" paginator="true"
-						rows="10"
+				<p:dialog id="dialogListaCaixa"
+					header="Lista de Caixa" widgetVar="dialogListaCaixa"
+					resizable="false" position="center">
+					<p:dataTable id="pesquisaCaixaDataTable" widgetVar="dataTable"
+						var="caixa" loadingMessage="Carregando..."
+						value="#{caixaMB.caixaList}" paginator="true" rows="10"
 						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-						rowsPerPageTemplate="5,10,15" rowKey="#" selectionMode="single">
-						<p:ajax event="rowSelect" />
-						<p:ajax event="page" oncomplete="dataTable.unselectAllRows()" />
-						<p:ajax event="rowUnselect" />
-						<p:column sortBy="">
-							<f:facet name="header">
-								<h:outputText value="Data Abertura" />
+						rowsPerPageTemplate="5,10,15" rowKey="#{caixa.id}"
+						selectionMode="single">
+							
+						<p:ajax event="rowSelect" listener="#{caixaMB.selectCaixa}"
+							update=":pdvPesquisaForm:panelGroupBotoes" />
+						<p:ajax event="page" listener="#{caixaMB.unselectCaixa}"
+							update=":pdvPesquisaForm:panelGroupBotoes"
+							oncomplete="dataTable.unselectAllRows()" />
+						<p:ajax event="rowUnselect"
+							listener="#{caixaMB.unselectCaixa}"
+							update=":pdvPesquisaForm:panelGroupBotoes" />
+						
+						
+						<p:column sortBy="#{caixa.dataAbertura}">
+								<f:facet name="header">
+								<h:outputText value="Data Abertura" >
+								</h:outputText>
+								
 							</f:facet>
-							<h:outputText value="" />
+							<h:outputText value="#{caixa.dataAbertura}">
+								 <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+							
+							</h:outputText>
 						</p:column>
-							<p:column sortBy="">
+							<p:column sortBy="#{caixa.dataFechamento}">
 							<f:facet name="header">
 								<h:outputText value="Data Fechamento" />
 							</f:facet>
-							<h:outputText value="" />
+							<h:outputText value="#{caixa.dataFechamento}" >
+								 <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+							</h:outputText>
 						</p:column>
-							<p:column sortBy="">
-							<f:facet name="header">
-								<h:outputText value="Valor" />
-							</f:facet>
-							<h:outputText value="" />
-						</p:column>
-						<p:column sortBy="">
+						
+						<p:column sortBy="#{caixa.erro}">
 							<f:facet name="header">
 								<h:outputText value="Valor Errata" />
 							</f:facet>
-							<h:outputText value="" />
+							<h:outputText value="#{caixa.erro}" />
 						</p:column>
 					</p:dataTable>
-				</p:dialog>
+					
+					
+							<h:panelGroup id="panelGroupBotoes">
+
+						<p:commandButton widgetVar="addButton" value="Abrir Caixa"
+							actionListener="#{caixaAddEditMB.exibeFormularioCaixa}"
+							update=":pdvPesquisaForm :abrircaixaForm" />
+
+						<p:commandButton widgetVar="updateButton" value="Fechar Caixa"
+							disabled="#{caixaMB.flagBotaoUpdate}"
+							actionListener="#{caixaAddEditMB.update}"
+							update=":pdvPesquisaForm :fecharcaixaForm" />
+
+					
+					</h:panelGroup>
 
 				<p:confirmDialog global="true" showEffect="fade">
 					<p:commandButton value="Sim" type="button"
@@ -71,194 +93,118 @@
 					<p:commandButton value="Não" type="button"
 						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 				</p:confirmDialog>
-
-
+				</p:dialog>
 			</p:panel>
 		</h:form>
 
-
-		<h:form id="pdvForm">
-			<p:dialog header="Fechamento de Caixa" widgetVar="dlg2">
-				<h:inputHidden value="#" />
-
-				<p:messages id="messages" autoUpdate="true" closable="true" />
-				<p:panelGrid style="margin-bottom:10px" cellpadding="5">
-
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Vendedor :" />
-						</p:column>
-						<p:column>
-							<p:inputText value="" placeholder="Pesquise por Nome" size="75" />
-						</p:column>
-
-						<p:column colspan="2">
-							<p:commandButton value="Pesquisar Vendedor" action="#"
-								widgetVar="searchButton" size="40" />
-						</p:column>
-					</p:row>
-
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Cliente :" />
-						</p:column>
-						<p:column>
-							<p:inputText value=""
-								placeholder="Pesquise por Nome , CPF ou Telefone" size="75" />
-						</p:column>
-
-						<p:column colspan="2">
-							<p:commandButton value="Pesquisar Cliente" action="#"
-								widgetVar="searchButton" />
-						</p:column>
-					</p:row>
-
-
-					<p:row>
-						<p:column>
-							<p:outputLabel value="Produto :" />
-						</p:column>
-						<p:column>
-							<p:inputText maxlength="40" size="62"
-								placeholder="Pesquise por Nome de Produto" value="" />
-							<p:commandButton value="Pesquisar" action="#"
-								widgetVar="searchButton" />
-						</p:column>
-						<p:column colspan="2">
-							<p:outputLabel value="Quantidade : " />
-
-							<p:inputText maxlength="2" size="8" value="" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-						</p:column>
-						<p:column colspan="4">
-							<p:commandButton value="Adicionar Produto"
-								style="margin: 110 auto" actionListener="#">
-								<p:confirm header="Comfirmação"
-									message="Tem que deseja adicionar este produto ?"
-									icon="ui-icon-alert" />
-							</p:commandButton>
-
-
-						</p:column>
-					</p:row>
-					<p:row>
-				<p:column colspan="4">
-								<p:dataTable id="teste" widgetVar="dataTable" var="cliente"
-								loadingMessage="Carregando..." value="#" paginator="true"
-								rows="10"
-								paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-								rowsPerPageTemplate="5,10,15" rowKey="#" selectionMode="single" >
-								<p:ajax event="rowSelect" />
-								<p:ajax event="page" oncomplete="dataTable.unselectAllRows()" />
-								<p:ajax event="rowUnselect" />
-								<p:column sortBy="">
-									<f:facet name="header">
-										<h:outputText value="Nome" />
-									</f:facet>
-									<p:row>
-										<h:outputText value="Vamix Rosa" />
-									</p:row>
-
+<h:form id="abrircaixaForm">
+			<p:panel
+				rendered="#{caixaAddEditMB.flagExibeFormularioCaixa}">
+				<h:inputHidden value="#{caixaAddEditMB.caixaObj.id}" />
+				<h:panelGroup>
+					<p:messages id="messages" autoUpdate="true" closable="true" />
+					<p:panelGrid style="margin-bottom:10px" cellpadding="5">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="4">
+									<p:outputLabel value="Abrir Caixa" />
 								</p:column>
-								<p:column sortBy="">
-									<f:facet name="header">
-										<h:outputText value="Quantidade" />
-									</f:facet>
-
-									<p:row>
-										<h:outputText value="2" />
-									</p:row>
-								</p:column>
-							</p:dataTable>
-							
-							<h:panelGroup id="panelGroupBotoes">
-
-						<p:commandButton widgetVar="deleteButton"
-							disabled="#"
-							value="#{labels.button_delete}"						
-							>
-							<p:confirm header="Comfirmação" message="Tem Certeza?"
-								icon="ui-icon-alert" />
-						</p:commandButton>
-					</h:panelGroup>
-						</p:column>
-					</p:row>
-					<p:row>
+							</p:row>
+						</f:facet>
+						<p:row>
 							<p:column>
-								<p:outputLabel value="Forma de Pagamento :" />
+								<p:outputLabel value="Data Abertura" for="dataAbertura" />
 							</p:column>
 							<p:column>
-								<p:inputText value="" placeholder="Pesquise por Forma de Pagamento" size="75" />
-							</p:column>
-							
-							<p:column colspan="2">
-								<p:commandButton value="Pesquisar " action="#"	widgetVar="searchButton"  />
-						    </p:column>
-						</p:row>
-						<p:row>
-						<p:column>
-							<p:outputLabel value="Nota Fiscal :"  />
-						</p:column>
-						<p:column colspan="3">
-							<p:selectBooleanButton id="value2" value="#{selectBooleanView.value2}" onLabel="Sim" offLabel="Não" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:60px">
-           					
-       						 </p:selectBooleanButton>
-							
-						</p:column>
-
-					
-					</p:row>
-
-				<f:facet name="footer">
-						<p:row>
-							<p:column colspan="4">
-								<p:commandButton value="Salvar" style="margin: 130 auto"
-									ajax="false" actionListener="#">
-									<p:confirm header="Comfirmação" message="Salvar o Pedido ?"
-										icon="ui-icon-alert" />
-								</p:commandButton>
-								<p:commandButton value="Novo Pedido" style="margin: 130 auto"
-									ajax="false" actionListener="#">
-									<p:confirm header="Comfirmação" message="Fazer um novo Pedido ?"
-										icon="ui-icon-alert" />
-								</p:commandButton>
+									<p:calendar id="dataAbertura" value="#{caixaAddEditMB.caixaObj.dataAbertura}" pattern="MM/dd/yyyy HH:mm:ss" />
 							</p:column>
 						</p:row>
-					</f:facet>
+					<f:facet name="footer">
+							<p:row>
+								<p:column colspan="4">
+									<p:commandButton value="Salvar" style="margin: 130 auto"
+										ajax="false" actionListener="#{caixaAddEditMB.salvar}">
+										<p:confirm header="Comfirmação" message="Tem Certeza?"
+											icon="ui-icon-alert" />
+									</p:commandButton>
+								</p:column>
+							</p:row>
+						</f:facet>
 
-				</p:panelGrid>
-
+					</p:panelGrid>
+				</h:panelGroup>
 				<p:confirmDialog global="true" showEffect="fade">
 					<p:commandButton value="Sim" type="button"
 						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-					<p:commandButton value="Não" type="button"
-						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+					<p:commandButton value="Não" type="button"/>
 				</p:confirmDialog>
-
-			</p:dialog>
-			
-			
-			<p:dialog header="Abertura de Caixa" widgetVar="dlg3">
-			
-			
-			</p:dialog>
-			
-			
+			</p:panel>
 		</h:form>
+		
+<h:form id="fecharcaixaForm">
+			<p:panel
+				rendered="#{caixaAddEditMB.flagExibeFormularioCaixaFechar}">
+				<h:inputHidden value="#{caixaAddEditMB.caixaObj.id}" />
+				<h:panelGroup>
+					<p:messages id="messages1" autoUpdate="true" closable="true" />
+					<p:panelGrid style="margin-bottom:10px" cellpadding="5">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="4">
+									<p:outputLabel value="Fechar Caixa" />
+								</p:column>
+							</p:row>
+						</f:facet>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Data Abertura" for="dataAbertura" />
+							</p:column>
+							<p:column>
+									<p:calendar id="dataAbertura" value="#{caixaAddEditMB.caixaObj.dataAbertura}" pattern="MM/dd/yyyy HH:mm:ss" disabled="true" />
+							</p:column>
+						</p:row>
+						
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Data Fechamento" for="dataFechamento" />
+							</p:column>
+							<p:column>
+									<p:calendar id="dataFechamento" value="#{caixaAddEditMB.caixaObj.dataFechamento}" pattern="MM/dd/yyyy HH:mm:ss" />
+							</p:column>
+						</p:row>
+						
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Valor Errata" for="erro" />
+							</p:column>
+							<p:column>
+								<p:inputMask id="erro" 
+									mask="9999.99"
+									value="#{caixaAddEditMB.caixaObj.erro}" />
+							</p:column>
+						</p:row>
+						
+						
+					<f:facet name="footer">
+							<p:row>
+								<p:column colspan="4">
+									<p:commandButton value="Salvar" style="margin: 130 auto"
+										ajax="false" actionListener="#{caixaAddEditMB.salvar}">
+										<p:confirm header="Comfirmação" message="Tem Certeza?"
+											icon="ui-icon-alert" />
+									</p:commandButton>
+								</p:column>
+							</p:row>
+						</f:facet>
 
-
-
-
-
-
-
-
+					</p:panelGrid>
+				</h:panelGroup>
+				<p:confirmDialog global="true" showEffect="fade">
+					<p:commandButton value="Sim" type="button"
+						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					<p:commandButton value="Não" type="button"/>
+				</p:confirmDialog>
+			</p:panel>
+		</h:form>
 	</ui:define>
 </ui:composition>
-
-
-
-

@@ -1,12 +1,17 @@
 package br.com.sisgem.model;
 
+import java.util.List;
+
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.NotNull;
@@ -49,13 +54,29 @@ public class ProdutoEntity extends BaseEntities<Long> {
 	@JoinColumn(name="Fornecedor_idPessoaJuridica")
 	private FornecedorEntity Fornecedor_idPessoaJuridica;
 	
+	@OneToMany(mappedBy="Produto_idProduto", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    private List<EstoqueUsuarioEntity> EstoqueUsuarioEntity;
+
+	  
 	public ProdutoEntity() {
 		
 	}
 
-	public ProdutoEntity(String nome, String unidade, Double valorVenda,
-			Double valorCompra, String epi, EinativoAtivo statusProduto,
-			FornecedorEntity fornecedor_idPessoaJuridica) {
+
+	
+
+
+
+
+
+
+
+
+
+
+	public ProdutoEntity(String nome, String unidade, Double valorVenda, Double valorCompra, String epi,
+			EinativoAtivo statusProduto, FornecedorEntity fornecedor_idPessoaJuridica,
+			List<br.com.sisgem.model.EstoqueUsuarioEntity> estoqueUsuarioEntity) {
 		super();
 		this.nome = nome;
 		this.unidade = unidade;
@@ -64,7 +85,57 @@ public class ProdutoEntity extends BaseEntities<Long> {
 		this.epi = epi;
 		this.statusProduto = statusProduto;
 		Fornecedor_idPessoaJuridica = fornecedor_idPessoaJuridica;
+		EstoqueUsuarioEntity = estoqueUsuarioEntity;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public List<EstoqueUsuarioEntity> getEstoqueUsuarioEntity() {
+		return EstoqueUsuarioEntity;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setEstoqueUsuarioEntity(List<EstoqueUsuarioEntity> estoqueUsuarioEntity) {
+		EstoqueUsuarioEntity = estoqueUsuarioEntity;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 
 	public String getNome() {
 		return nome;

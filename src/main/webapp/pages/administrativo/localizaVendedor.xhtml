@@ -16,7 +16,7 @@
 		var map = null;
 		var terra = "Vazio";
 		 
-		function chamaMapa(latitude,longitude)
+		function chamaMapa(latitude,longitude,terra)
 		{
 			//DEFINE AS COORDENADAS DA RUA OU AVENIDA
 			var latlng = new google.maps.LatLng(latitude, longitude); //DEFINE A LOCALIZAÇÃO EXATA DO MAPA
@@ -86,11 +86,11 @@
 							listener="#{usuarioMB.unselectUsuario}"
 							update=":usuarioPesquisaForm:panelGroupBotoes" />
 
-						<p:column sortBy="#{usuario.nome}">
+						<p:column sortBy="#{usuario.name}">
 							<f:facet name="header">
 								<h:outputText value="Nome" />
 							</f:facet>
-							<h:outputText value="#{usuario.nome}" />
+							<h:outputText value="#{usuario.name}" />
 						</p:column>
 						<p:column sortBy="#{usuario.celular}">
 							<f:facet name="header">
@@ -120,7 +120,7 @@
 							<p:commandButton widgetVar="updateButton" value="Buscar no Mapa"
 							action="#{usuarioAddEditMB.update}"
 							update=":mapaForm"
-							onclick="chamaMapa('-25.4771375','-49.2580232');" 
+							onclick="chamaMapa('-25.4942171','-49.3405816','Administrador');" 
 							/>
 							
 							 
@@ -132,7 +132,7 @@
        
        
  <br></br>
-  				<h:outputLabel value="#{usuarioAddEditMB.usuarioObj.nome}"/>
+  				<h:outputLabel value= "#{usuarioAddEditMB.usuarioObj.name}"/>
    				<body>
 				<div id="map_canvas" style="width: 200%; height: 400px ;text-align:center"></div>
 				</body>
@@ -144,7 +144,7 @@
   
     <p:outputPanel id="display" style="width:550px;padding-left:7px;margin-top:10px">
   
-	<h:outputLabel value="#{usuarioAddEditMB.usuarioObj.nome}"/>
+	<h:outputLabel value="#{usuarioAddEditMB.usuarioObj.name}"/>
 	
 
 </p:outputPanel>

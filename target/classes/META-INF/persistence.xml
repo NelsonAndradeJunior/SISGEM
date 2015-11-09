@@ -14,7 +14,8 @@
 		<class>br.com.sisgem.model.FormapagamentoEntity</class>
 		<class>br.com.sisgem.model.UfEntity</class>
 		<class>br.com.sisgem.model.LogradourosEntity</class>
-		
+		<class>br.com.sisgem.model.CaixaEntity</class>
+		<class>br.com.sisgem.model.EstoqueUsuarioEntity</class>
 		
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />

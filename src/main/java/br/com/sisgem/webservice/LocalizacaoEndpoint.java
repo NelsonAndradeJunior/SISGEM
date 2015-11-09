@@ -34,20 +34,19 @@ public class LocalizacaoEndpoint extends SpringBeanAutowiringSupport implements 
 	
 	@Override
     @WebMethod
-    public void localizacaolog(@WebParam(name = "latitude") String x,
-            			   @WebParam(name = "longitude") String y,
-            			   @WebParam(name = "idUsuario") String id) {
+    public void LocalizacaoLog(@WebParam(name = "Latitude") String x,
+            			   @WebParam(name = "Longitude") String y,
+            			   @WebParam(name = "idUsuario") Integer id) {
     	
     	UsuarioEntity usuario = new UsuarioEntity();
         LocalizacaoLogEntity localizacaologEntity = new LocalizacaoLogEntity();
 
-		usuario.setId((long) 1);
+		usuario.setId((long) id);
 			
 		localizacaologEntity.setUsuario_idUsuario(usuario);
 		localizacaologEntity.setLatitude(x);
 		localizacaologEntity.setLongitude(y);
 	
-		
 		this.localizacaologRepository.save(localizacaologEntity);
         
     }

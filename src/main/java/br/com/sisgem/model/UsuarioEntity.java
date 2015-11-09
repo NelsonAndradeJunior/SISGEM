@@ -89,6 +89,9 @@ public class UsuarioEntity extends BaseEntities<Long> {
 	@OneToMany(mappedBy="Usuario_idUsuario", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private List<LocalizacaoLogEntity> LocalizacaologEntity;
 
+	@OneToMany(mappedBy="Usuario_idUsuario", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    private List<EstoqueUsuarioEntity> EstoqueUsuarioEntity;
+
 	
 
 	 //---------------Mapeamento para pedido-------------------------
